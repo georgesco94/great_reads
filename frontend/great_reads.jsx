@@ -2,4 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-document.addEventListener('')
+document.addEventListener('DOMContentLoaded', ()=>{
+  const root = document.getElementById('root');
+  ReactDOM.render(<h1> greatreads </h1>,root)
+});
