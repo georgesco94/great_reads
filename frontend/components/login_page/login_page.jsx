@@ -4,10 +4,10 @@ import NavBar from '../nav_bar/nav_bar';
 
 
 const LoginPage = () => (
-  <div>
+  <main className="login-signup-page">
     <NavBar />
     <SessionFormContainer />
-  </div>
+  </main>
 );
 
 export default LoginPage;

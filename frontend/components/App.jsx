@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 const App = (props) => {
   return (
-    <div>
+    <div id="App">
       {
         !props.loggedIn ? (
           <LoginPage />
