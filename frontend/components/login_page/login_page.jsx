@@ -1,12 +1,13 @@
 import React from 'react';
+import SessionFormContainer from '../session_form/session_form';
 import NavBar from '../nav_bar/nav_bar';
-import LoginPage from 
 
 
 const LoginPage = () => (
   <div>
-    <LoginPage />
+    <NavBar />
+    <SessionFormContainer />
   </div>
 );
 
-export default App;
+export default LoginPage;
