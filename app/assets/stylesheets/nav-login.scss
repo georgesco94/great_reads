@@ -1,0 +1,24 @@
+.nav-bar{
+  display: flex;
+  margin:auto;
+  justify-content: space-around;
+  width: 80%;
+  padding-top: 15px;
+}
+
+.nav-logo{
+
+}
+
+.signin-input{
+  margin-left: 2px;
+  margin-right: 1px;
+  height: 20px;
+}
+
+.nav-sign-button{
+  margin-left: 5px;
+  height:30px;
+  background: rgb(56, 33, 16);
+  color: white;
+}

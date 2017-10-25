@@ -9,12 +9,12 @@ class NavLoginForm extends React.Component{
       username: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
   }
 
 
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const user = this.state;
     this.props.login(user);
@@ -26,14 +26,21 @@ class NavLoginForm extends React.Component{
     });
   }
 
+  handleDemoSubmit(e) {
+    e.preventDefault();
+    const user = {username:"guest",password:"123456"};
+    this.props.login(user);
+  }
+
   render(){
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <input placeholder="Username" type="text" onChange={this.update('username')} />
-          <input placeholder="Password" type="password" onChange={this.update('password')} />
+          <input className="signin-input" placeholder="Username" type="text" onChange={this.update('username')} />
+          <input className="signin-input" placeholder="Password" type="password" onChange={this.update('password')} />
 
-          <input type="submit" value="Sign In"/>
+          <input className="nav-sign-button" type="submit" value="Sign In"/>
+          <button className="nav-sign-button" onClick={this.handleDemoSubmit}>Demo</button>
         </form>
       </div>
     );
