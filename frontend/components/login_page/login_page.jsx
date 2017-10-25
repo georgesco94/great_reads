@@ -1,12 +1,11 @@
 import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
-import SessionFormContainer from '../session_form/session_form';
+import LoginPage from 
 
 
 const LoginPage = () => (
   <div>
-    <NavBar />
-
+    <LoginPage />
   </div>
 );
 

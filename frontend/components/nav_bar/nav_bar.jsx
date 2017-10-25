@@ -1,10 +1,10 @@
 import React from 'react';
-import SessionFromContainer from './session_form/session_form_container';
+import NavLoginFormContainer from './nav_login_form/nav_login_form_container';
 
 const NavBar = () => (
-  <div>
-    <h1>GreatReads</h1>
-    <SessionFromContainer />
+  <div className="nav-bar">
+    <h1 className="nav-logo">GreatReads</h1>
+    <NavLoginFormContainer />
   </div>
 );
 

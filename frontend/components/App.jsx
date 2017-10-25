@@ -1,9 +1,9 @@
 import React from 'react';
 import SessionFormContainer from './session_form/session_form_container';
-
+import NavBar from './nav_bar/nav_bar';
 const App = () => (
   <div>
-    <h1>GreatReads</h1>
+    <NavBar />
     <SessionFormContainer />
   </div>
 );
