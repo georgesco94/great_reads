@@ -1,10 +1,10 @@
 import React from 'react';
-import SessionFromContainer from './session_form/session_form_container';
+import SessionFormContainer from './session_form/session_form_container';
 
 const App = () => (
   <div>
     <h1>GreatReads</h1>
-    <SessionFromContainer />
+    <SessionFormContainer />
   </div>
 );
 
