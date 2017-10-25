@@ -17,7 +17,7 @@ class NavLoginForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login(user);
+    this.props.action(user);
   }
 
   update(field){
@@ -29,10 +29,22 @@ class NavLoginForm extends React.Component{
   handleDemoSubmit(e) {
     e.preventDefault();
     const user = {username:"guest",password:"123456"};
-    this.props.login(user);
+    this.props.action(user);
+  }
+
+  loggedNav(){
+    return (
+      <div className="login-form-container">
+        <h1>Great Reads</h1>
+        <button className="nav-sign-button" onClick={this.handleSubmit}>Logout</button>
+      </div>
+    );
   }
 
   render(){
+    if(this.props.logged){
+      return this.loggedNav();
+    }else{
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
@@ -44,6 +56,7 @@ class NavLoginForm extends React.Component{
         </form>
       </div>
     );
+    }
   }
 
 
