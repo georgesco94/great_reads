@@ -10,7 +10,7 @@ const App = (props) => {
         !props.loggedIn ? (
           <LoginPage />
         ) : (
-          <h1>Logged in </h1>
+          <h1>Loggedin </h1>
         )
       }
     </div>

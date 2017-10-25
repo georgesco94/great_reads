@@ -6,7 +6,7 @@ class NavLoginForm extends React.Component{
     super(props);
     this.state = {
       password: '',
-      email: ''
+      username: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,6 +14,7 @@ class NavLoginForm extends React.Component{
 
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const user = this.state;
     this.props.login(user);
@@ -29,7 +30,7 @@ class NavLoginForm extends React.Component{
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <input placeholder="Email address" type="text" onChange={this.update('email')} />
+          <input placeholder="Username" type="text" onChange={this.update('username')} />
           <input placeholder="Password" type="password" onChange={this.update('password')} />
 
           <input type="submit" value="Sign In"/>
