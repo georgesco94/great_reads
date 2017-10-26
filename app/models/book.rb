@@ -12,7 +12,7 @@
 
 class Book < ApplicationRecord
   validates :title, :description, :author, presence: true
-
+  
   # should eventually add has_many shelf_assignmets
 
 end
