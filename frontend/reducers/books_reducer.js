@@ -4,7 +4,7 @@ import {RECEIVE_BOOKS,RECEIVE_BOOK} from '../actions/book_actions';
 
 
 
-const BooksReducer = (state = {books:{}} , action) => {
+const BooksReducer = (state = {} , action) => {
   switch(action.type) {
     case RECEIVE_BOOKS:
       return action.books;
