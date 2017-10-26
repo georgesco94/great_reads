@@ -1,2 +1,10 @@
-<h1>Api::Books#index</h1>
-<p>Find me in app/views/api/books/index.html.erb</p>
+json.books do
+
+  @books.each do |book|
+    json.set! book.id do
+      json.partial! 'api/books/book', book: book
+    end
+
+  end
+
+end
