@@ -52,7 +52,6 @@ class NavLoginForm extends React.Component{
           <input className="signin-input" placeholder="Password" type="password" onChange={this.update('password')} />
           <input className="nav-sign-button" type="submit" value="Sign In"/>
           <button className="nav-sign-button" onClick={this.handleDemoSubmit}>Demo</button>
-          {this.props.errors}
         </form>
       </div>
     );
