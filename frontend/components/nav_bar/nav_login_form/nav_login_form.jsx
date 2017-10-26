@@ -33,6 +33,7 @@ class NavLoginForm extends React.Component{
   }
 
   loggedNav(){
+    debugger
     return (
       <div className="login-form-container">
         <h1>Great Reads</h1>
@@ -42,6 +43,7 @@ class NavLoginForm extends React.Component{
   }
 
   render(){
+    debugger
     if(this.props.logged){
       return this.loggedNav();
     }else{
