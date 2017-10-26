@@ -5,8 +5,12 @@ import NavBar from '../nav_bar/nav_bar';
 
 const LoginPage = () => (
   <main className="login-signup-page">
-    <NavBar />
-    <SessionFormContainer />
+    <div className="nav-and-form">
+      <div className="ui-content">
+        <NavBar />
+        <SessionFormContainer />
+      </div>
+    </div>
   </main>
 );
 

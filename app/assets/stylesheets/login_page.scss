@@ -1,6 +1,15 @@
 .login-signup-page{
-  background-image: url("masthead_background.jpg");
-  background-size:contain;
   height: 100%;
-  background-repeat: no-repeat;
+}
+
+.nav-and-form{
+  background-image: url("masthead_background.jpg");
+  background-position: center;
+  background-repeat:no-repeat;
+  height: 370px;
+}
+
+.ui-content{
+  width: 965px;
+  margin: 0 auto 20px;
 }

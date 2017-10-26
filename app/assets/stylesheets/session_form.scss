@@ -1,26 +1,47 @@
 .signup-form-container{
   display: flex;
   margin:auto;
-  width: 65%;
+  height: 295px;
   align-items: center;
-  justify-content: space-around;
-  margin-top: 40px;
+  justify-content: space-between;
+  position: relative;
 }
-
 .signup-form-box{
   display: flex;
   flex-direction: column;
-
+  width: 280px;
+  height: 186px;
+  font-family: "Helvetica", sans-serif;
+  margin-bottom: auto;
 }
-input{
-  margin-bottom: 5px;
+.input-signup{
+  width: 280px;
+  height: 35px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-family: "Helvetica", sans-serif;
+  border-radius: 3px;
+  border: #DCD6CC 1px solid;
+}
+h2{
+  font-size: 17px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+}
+#login-headling{
+  height: 121px;
+  width: 446px;
+  margin-left: 95px;
+  margin-top: 50px;
+  margin-bottom: auto;
 }
 .signup-button{
   background-color: rgb(253, 208, 95);
   width: 85px;
   height: 38px;
+  box-sizing: border-box;
+  border-style: none;
+  cursor:pointer;
   margin-top: 2px;
   border-radius: 7px;
   font-size: 18px;
-  font-family: sans-serif;
 }
