@@ -6,4 +6,4 @@ export default combineReducers(
   {
     books: BooksReducer
   }
-)
+);
