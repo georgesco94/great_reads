@@ -37,18 +37,18 @@ class SessionForm extends React.Component{
     });
     return (
 
-      <nav className="signup-errors-box">
+      <div className="signup-errors-box">
         <ul className="errors-ul">
           {errs}
         </ul>
-      </nav>
+      </div>
     )
   }
 
   removeErrors(){
     setTimeout(function() {
        this.setState({displayErrors: false});
-     }.bind(this), 3000);
+     }.bind(this), 1500);
   }
 
   render(){
