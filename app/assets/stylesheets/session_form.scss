@@ -13,6 +13,7 @@
   height: 186px;
   font-family: "Helvetica", sans-serif;
   margin-bottom: auto;
+<<<<<<< HEAD
 }
 .input-signup{
   width: 280px;
@@ -27,6 +28,23 @@ h2{
   font-size: 17px;
   font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 }
+=======
+}
+.input-signup{
+  width: 270px;
+  height: 35px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-family: "Helvetica", sans-serif;
+  border-radius: 3px;
+  border: #DCD6CC 1px solid;
+}
+h2{
+  font-size: 17px;
+  font-weight: normal;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+}
+>>>>>>> userAuth
 #login-headling{
   height: 121px;
   width: 446px;
@@ -44,4 +62,20 @@ h2{
   margin-top: 2px;
   border-radius: 7px;
   font-size: 18px;
+<<<<<<< HEAD
+=======
+}
+
+.signup-errors-box{
+  position: fixed;
+  right:20px;
+  top: 30px;
+  color: white;
+  background-color:#f45c42;
+  border-radius: 8px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+}
+.errors{
+  margin-right: 12px;
+>>>>>>> userAuth
 }
