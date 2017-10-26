@@ -1,9 +1,9 @@
 .nav-bar{
   display: flex;
   margin:auto;
-  justify-content: space-around;
-  width: 80%;
-  padding-top: 15px;
+  justify-content: space-between;
+  height: 65px;
+  padding-top: 10px ;
 }
 
 .nav-logo{
@@ -20,5 +20,8 @@
   margin-left: 5px;
   height:30px;
   background: rgb(56, 33, 16);
+  border-radius: 3px;
+  border-style: none;
+  cursor:pointer;
   color: white;
 }
