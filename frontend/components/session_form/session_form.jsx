@@ -57,17 +57,11 @@ class SessionForm extends React.Component{
     }
     return (
       <div className="signup-form-container">
-<<<<<<< HEAD
-        <div id="login-headling">
-          <img alt="Meet your next favorite book." src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" />
-        </div>
-
-=======
         {this.state.displayErrors ? this.renderErrors() : ""}
         <div id="login-headling">
           <img alt="Meet your next favorite book." src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" />
         </div>
->>>>>>> userAuth
+
         <form className="signup-form-box" onSubmit={this.handleSubmit}>
           <h2>New Here? Create a free account!</h2>
           <input className="input-signup" placeholder="Username" type="text" onChange={this.update('username')} />
