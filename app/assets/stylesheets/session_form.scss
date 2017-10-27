@@ -5,27 +5,19 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 }
 .signup-form-box{
   display: flex;
   flex-direction: column;
   width: 280px;
   height: 186px;
-  font-family: "Helvetica", sans-serif;
   margin-bottom: auto;
+  background: inherit ;
 }
-.input-signup{
-  width: 280px;
-  height: 35px;
-  margin-top: 5px;
-  font-size: 16px;
-  font-family: "Helvetica", sans-serif;
-  border-radius: 3px;
-  border: #DCD6CC 1px solid;
-}
+
 h2{
   font-size: 17px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .input-signup{
@@ -33,7 +25,6 @@ h2{
   height: 35px;
   margin-top: 5px;
   font-size: 16px;
-  font-family: "Helvetica", sans-serif;
   border-radius: 3px;
   border: #DCD6CC 1px solid;
 }
@@ -59,10 +50,11 @@ h2{
   margin-top: 2px;
   border-radius: 7px;
   font-size: 18px;
-
+  text-align: center;
 }
 
 .signup-errors-box{
+  padding: 14px;
   position: fixed;
   right:20px;
   top: 30px;
@@ -72,5 +64,6 @@ h2{
   font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 }
 .errors{
+  list-style-position: inside;
   margin-right: 12px;
 }

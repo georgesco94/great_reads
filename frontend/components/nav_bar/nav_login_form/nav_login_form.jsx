@@ -34,9 +34,9 @@ class NavLoginForm extends React.Component{
 
   loggedNav(){
     return (
-      <div className="login-form-container">
+      <div className="logged-form-container">
         <h1>Great Reads</h1>
-        <button className="nav-sign-button" onClick={this.handleSubmit}>Logout</button>
+        <button className="signout-button" onClick={this.handleSubmit}>Logout</button>
       </div>
     );
   }

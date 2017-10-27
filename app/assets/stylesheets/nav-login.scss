@@ -4,9 +4,14 @@
   justify-content: space-between;
   height: 65px;
   padding-top: 10px ;
+  font-family: "Helvetica", sans-serif;
 }
 
 .nav-logo{
+
+}
+
+.login-form-box{
 
 }
 
@@ -22,9 +27,20 @@
 .nav-sign-button{
   margin-left: 5px;
   height:30px;
+  width: 45px;;
   background: rgb(56, 33, 16);
   border-radius: 3px;
+  text-align: center;
   border-style: none;
   cursor:pointer;
   color: white;
+  font-size: 11px;
+}
+
+
+
+
+
+.logged-form-container{
+  display: flex;
 }
