@@ -3,9 +3,9 @@ import { login,logout } from '../../../actions/session_actions';
 import NavLoginForm from './nav_login_form';
 
 
-const mapStateToProps = (state,{logged}) => {
+const mapStateToProps = (state) => {
   return {
-    logged:logged,
+    logged:state.session.currentUser,
     errors: state.errors.session
   }
 };

@@ -4,10 +4,8 @@ import LoginPage from './login_page/login_page';
 import { Provider } from 'react-redux';
 import NavLoginFormContainer from './nav_bar/nav_login_form/nav_login_form_container';
 import BookIndexContainer from './books_index/book_index_container';
-import NavBar from './nav_bar/nav_bar';
 
 const App = (props) => {
-  debugger
   return (
     <div id="App">
       {
@@ -15,7 +13,7 @@ const App = (props) => {
           <LoginPage />
         ) : (
             <div>
-              <NavBar />
+              <NavLoginFormContainer logged={"true"} />
               <BookIndexContainer />
             </div>
         )
