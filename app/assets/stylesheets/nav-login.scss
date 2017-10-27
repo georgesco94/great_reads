@@ -37,10 +37,15 @@
   font-size: 11px;
 }
 
-
-
-
-
-.logged-form-container{
+.logged-nav{
+  margin:auto;
+  justify-content: space-between;
+  height: 45px;
+  width: 60%;
+  padding-top: 10px ;
+  font-family: "Helvetica", sans-serif;
   display: flex;
+}
+.logged-form-container{
+  background-color: #F4F1EA;
 }

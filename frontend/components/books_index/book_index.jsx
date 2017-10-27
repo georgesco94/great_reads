@@ -12,9 +12,10 @@ class BooksIndex extends React.Component{
   }
 
   render(){
-    debugger
     const books = this.props.books.map(book => (
-      <BookIndexItem book={book} />
+      <ul className="book-item-wrapper">
+        <BookIndexItem book={book} />
+      </ul>
     ));
 
     return (
@@ -22,11 +23,7 @@ class BooksIndex extends React.Component{
         <div className="user-info-column"></div>
 
         <div className="books-index-column">
-
-          <ul className="temp-books">
-            {books}
-          </ul>
-
+          {books}
         </div>
 
         <div className="recommendations-column"></div>
