@@ -19,12 +19,10 @@
 .book-info-column{
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 4fr;
-  grid-area: 2/2/3/3
-}
-.info-attributes{
-
+  grid-area: 2/2/3/3;
 
 }
+
 .book-title{
   margin-top:8px;
   font-size: 18px;
@@ -37,6 +35,14 @@
 }
 
 .book-status{
+}
+.book-description{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.description-text{
+  width: 90%;
+  height: 85%;
 }
 
 .status-button{

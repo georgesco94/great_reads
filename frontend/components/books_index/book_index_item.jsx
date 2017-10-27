@@ -23,7 +23,9 @@ export const BookIndexItem = ({book}) => {
                 </div>
 
                 <div className="book-description">
-                  {book.description}
+                  <div className="description-text">
+                    {book.description}
+                  </div>
                 </div>
             </div>
 
