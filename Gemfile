@@ -24,6 +24,7 @@ gem 'pry-rails'
 gem 'annotate'
 gem 'jquery-rails'
 gem "paperclip", '~> 5.0.0'
+gem 'figaro'
 gem 'aws-sdk', '< 3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
