@@ -2,13 +2,13 @@ import React from 'react';
 
 
 export const BookIndexItem = ({book}) => {
-
+  debugger
   return (
       <div className="book-item-box">
 
           <div className="image-column">
               <div className="book-image">
-
+                <img src={book.image_url}/>
               </div>
           </div>
 
