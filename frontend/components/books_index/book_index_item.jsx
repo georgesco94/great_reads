@@ -20,7 +20,10 @@ export const BookIndexItem = ({book}) => {
             </div>
             <div className="book-status">
               <button className="status-button">Status</button>
-              <button className="change-status-button"><i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+              <button className="change-status-button">
+                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+              </button>
+              <div className="star-rating">Rate it</div>
             </div>
 
             <div className="book-description">
