@@ -14,7 +14,6 @@ import {
 } from 'react-router-dom';
 
 const App = (props) => {
-  debugger
   return (
     <div id="App">
       {
