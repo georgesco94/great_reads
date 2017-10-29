@@ -17,7 +17,7 @@
 class Book < ApplicationRecord
   validates :title, :description, :author, presence: true
 
-  has_attached_file :image, default_url: "default_user.png"
+  has_attached_file :image, s3_protocol: :https, default_url: "default_user.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   # should eventually add has_many shelf_assignmets
 
