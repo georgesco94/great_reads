@@ -5,21 +5,32 @@ import {BookIndexItem} from './book_index_item';
 class BooksIndex extends React.Component{
   constructor(props){
     super(props);
-    this.state = {offset:0};
+    this.state = {
+      offset:0,
+      books: this.props.books
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchBooks(this.state.offset);
-    window.onscroll = function(ev) {
+    window.onscroll = (ev) => {
+      let off = this.state.books.length;
       if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
-          // you're at the bottom of the page
-        alert("bottom!");
+        this.props.fetchBooks(off);
       }
     };
   }
 
-  render(){
-    const books = this.props.books.map(book => (
+  componentWillReceiveProps(newProps) {
+    this.setState(function(state) {
+      return {
+      books: state.books.concat(newProps.books)
+      };
+    });
+  }
+
+  render() {
+    const books = this.state.books.map(book => (
       <ul className="book-item-wrapper">
         <BookIndexItem book={book} />
       </ul>

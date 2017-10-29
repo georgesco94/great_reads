@@ -21,7 +21,7 @@ export const BookIndexItem = ({book}) => {
             <div className="book-status">
               <button className="status-button">Status</button>
               <button className="change-status-button">
-                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                <i className="fa fa-sort-desc" aria-hidden="true"></i>
               </button>
               <div className="star-rating">Rate it</div>
             </div>
