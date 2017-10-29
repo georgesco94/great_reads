@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchBooks: () => dispatch(fetchBooks())
+    fetchBooks: (offset) => dispatch(fetchBooks(offset))
   };
 };
 

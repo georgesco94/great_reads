@@ -4,8 +4,9 @@ export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
 
 
-export const fetchBooks = () => dispatch => {
-  return APIUtil.fetchBooks().then(books => (
+export const fetchBooks = (offset) => dispatch => {
+  debugger
+  return APIUtil.fetchBooks(offset).then(books => (
     dispatch(receiveBooks(books))
   ));
 };

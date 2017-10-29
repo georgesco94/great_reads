@@ -1,8 +1,9 @@
-export const fetchBooks = () => (
+export const fetchBooks = (offset) => (
   $.ajax(
     {
       method: "GET",
       url: "api/books",
+      data: {offset:offset}
     }
   )
 );

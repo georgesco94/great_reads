@@ -5,10 +5,11 @@ import {BookIndexItem} from './book_index_item';
 class BooksIndex extends React.Component{
   constructor(props){
     super(props);
+    this.state = {offset:0};
   }
 
   componentDidMount(){
-    this.props.fetchBooks();
+    this.props.fetchBooks(this.state.offset);
   }
 
   render(){
