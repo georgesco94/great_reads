@@ -12,7 +12,7 @@ const App = (props) => {
         !props.loggedIn ? (
           <LoginPage />
         ) : (
-            <div>
+            <div className="logged-overall">
               <NavLoginFormContainer logged={"true"} />
               <BookIndexContainer />
             </div>

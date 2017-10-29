@@ -1,46 +1,56 @@
 .book-item-box{
   border: 1px solid #D8D8D8;
-  width: 85%;
+  border-radius: 2px;
+  background-color: white;
+  width: 95%;
   height: 85%;
+  margin:auto;
+  display: flex;
+}
+
+
+.book-item-content{
+  width: 85%;
+  height: 70%;
   margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 3fr 1fr;
-  grid-column-gap: 8px;
+  display: flex;
 }
 
 .image-column{
-  display: flex;
+  object-fit: contain;
+  width: 30%;
   justify-content: center;
   align-items: center;
-  grid-area: 2/1/3/2;
 }
 
 .book-info-column{
+  width: 70%;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 4fr;
-  grid-area: 2/2/3/3;
+  margin-left: 6px;
+  grid-template-rows: 1fr 1fr 1fr 5fr;
+}
 
+.book-cover{
+  max-width: 100%;
+  height: 100%;
 }
 
 .book-title{
-  grid-area: 1/1/1/1;
-  margin-top:8px;
   font-size: 18px;
   font-weight: bold;
   font-family: "Merriweather", "Georgia", serif;
 }
 .book-author{
-  grid-area: 2/1/2/1;
   font-size: 14px;
-  margin-top:3px;
+  font-family: Merriweather, Georgia, serif;
 }
 
 .book-status{
-  grid-area: 3/1/3/1;
+  display: flex;
 }
 .book-description{
-  grid-area: 4/1/4/1;
+  font-size: 14px;
+  margin-top: 7px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -65,4 +75,10 @@
   color:white;
   text-align: center;
   background-color: rgb(64, 157, 105);
+}
+
+.star-rating{
+  font-size: 12px;
+  margin-bottom: auto;
+  margin-top: auto;
 }

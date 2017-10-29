@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-User.destroy_all
 Book.destroy_all
+User.destroy_all
 
 guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
+
 
 war_peace = Book.new(title:"War and Peace", author: "Lev Tolstoy" ,
 description:"The novel chronicles the history of the French invasion of Russia and
@@ -27,3 +27,23 @@ snows = Book.new(title:"Snows of Kilimanjaro", author: "Ernest Hemingway" ,
 description:"Collection of short stories by Hemingway")
 snows.image = File.open("app/assets/images/snows.jpg")
 snows.save!
+
+ezra = Book.new(title:"Selected Poems", author: "Ezra Pound" ,
+description:"Poems by Ezra pound")
+ezra.image = File.open("app/assets/images/ezra.jpg")
+ezra.save!
+
+henry = Book.new(title:"King Henry iv", author: "William Shakespeare" ,
+description:"Henry IV, Part 1 is a history play by William Shakespeare, believed to have been written no later than 1597.")
+henry.image = File.open("app/assets/images/henry.jpg")
+henry.save!
+
+lear = Book.new(title:"King Lear", author: "William Shakespeare" ,
+description:"King Lear is a tragedy written by William Shakespeare. It depicts the gradual descent into madness of the title character, after he disposes of his kingdom giving ")
+lear.image = File.open("app/assets/images/lear.jpg")
+lear.save!
+
+twelfth = Book.new(title:"Twelfth Night", author: "William Shakespeare" ,
+description:"Play by Shakespeare")
+twelfth.image = File.open("app/assets/images/twelfth.jpg")
+twelfth.save!
