@@ -20,7 +20,7 @@ class NavLoginForm extends React.Component{
     this.props.action(user);
   }
 
-  update(field){
+  update(field) {
     return e => this.setState({
       [field]: e.target.value
     });
@@ -32,10 +32,10 @@ class NavLoginForm extends React.Component{
     this.props.action(user);
   }
 
-  loggedNav(){
+  loggedNav() {
     return (
       <div className="logged-form-container">
-        <nav className="logged-nav">          
+        <nav className="logged-nav">
           <h1>Great Reads</h1>
           <button className="nav-sign-button" onClick={this.handleSubmit}>Logout</button>
         </nav>
