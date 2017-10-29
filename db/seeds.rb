@@ -47,3 +47,13 @@ twelfth = Book.new(title:"Twelfth Night", author: "William Shakespeare" ,
 description:"Play by Shakespeare")
 twelfth.image = File.open("app/assets/images/twelfth.jpg")
 twelfth.save!
+
+slaughter = Book.new(title:"Slaughterhouse-Five", author: "Kurt Vonnegut Jr." ,
+description:"Kurt Vonnegut's absurdist classic Slaughterhouse-Five introduces us to Billy Pilgrim, a man who becomes unstuck in time ")
+slaughter.image = File.open("app/assets/images/slaughter.jpg")
+slaughter.save!
+
+tale = Book.new(title:"A tale of Two Cities", author: "Charles Dickens" ,
+description:"'Liberty, equality, fraternity, or death; -- the last, much the easiest to bestow, O Guillotine!' After eighteen years as a political prisoner in the Bastille ")
+tale.image = File.open("app/assets/images/tale.jpg")
+tale.save!
