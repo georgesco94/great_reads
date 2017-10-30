@@ -9,22 +9,26 @@ class BooksIndex extends React.Component{
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchBooks(this.props.books.length);
     window.addEventListener('scroll',this.fetchMore);
   }
 
   componentWillUnmount() {
+    debugger
     window.removeEventListener('scroll',this.fetchMore);
   }
 
   fetchMore() {
     let off = this.props.books.length;
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
+      debugger
       this.props.fetchBooks(off);
     }
   }
 
   render() {
+    debugger
     const books = this.props.books.map(book => (
         <BookIndexItem book={book} />
     ));

@@ -31,11 +31,11 @@ const receiveCurrentUser = currentUser => (
     type: RECEIVE_CURRENT_USER,
     currentUser
   }
-)
+);
 
 const receiveErrors = errors => (
   {
     type: RECEIVE_SESSION_ERRORS,
     errors
   }
-)
+);

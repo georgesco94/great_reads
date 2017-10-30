@@ -4,6 +4,7 @@ import { connect, Provider } from 'react-redux';
 import NavLoginFormContainer from './nav_bar/nav_login_form/nav_login_form_container';
 import BookIndexContainer from './books_index/book_index_container';
 import BookShowContainer from './book_show/book_show_container';
+import BookCreateContainer from './book_create/book_create_container';
 import LoginPage from './login_page/login_page';
 import { withRouter } from 'react-router';
 import {
@@ -23,8 +24,11 @@ const App = (props) => {
         ) : (
             <div className="logged-overall">
                 <NavLoginFormContainer logged={"true"} />
-                <Route path="/books/:bookId" component={BookShowContainer} />
-                <Route exact path="/" component={BookIndexContainer} />
+                <Switch>
+                  <Route exact path="/books/new" component={BookCreateContainer} />
+                  <Route path="/books/:bookId" component={BookShowContainer} />
+                  <Route exact path="/" component={BookIndexContainer} />
+                </Switch>
             </div>
         )
       }

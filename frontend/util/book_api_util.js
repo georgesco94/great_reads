@@ -16,3 +16,15 @@ export const fetchBook = (id) => {
     }
   );
 };
+
+export const createBook = (book) => {
+  return $.ajax(
+    {
+      method: "POST",
+      url: `api/books`,
+      contentType: false,
+      processData: false,
+      data: book
+    }
+  );
+};
