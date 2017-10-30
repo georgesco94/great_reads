@@ -21,6 +21,8 @@ class BookShow extends React.Component{
     return (
       <div className="bookshow-container">
         <div className="bookshow-data">
+
+
           <div className="book-show">
             <div className="image-status-column">
               <div className="show-image">
@@ -54,6 +56,8 @@ class BookShow extends React.Component{
 
             </div>
           </div>
+
+
         </div>
       </div>
     );
