@@ -5,7 +5,7 @@ class BookShow extends React.Component{
   constructor(props){
     super(props);
     this.state= {
-      book: this.props.book
+      book: {}
     };
   }
 
@@ -14,14 +14,14 @@ class BookShow extends React.Component{
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({book: newProps.book.title});
+    this.setState({book: newProps.book});
   }
 
   render() {
     return (
       <div>
         <p>BOOKSHOW</p>
-        {this.state.book}
+        {this.state.book.title}
       </div>
     );
 

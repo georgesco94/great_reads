@@ -1,10 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import LoginPage from './login_page/login_page';
-import { Provider } from 'react-redux';
+import { connect, Provider } from 'react-redux';
+
 import NavLoginFormContainer from './nav_bar/nav_login_form/nav_login_form_container';
 import BookIndexContainer from './books_index/book_index_container';
 import BookShowContainer from './book_show/book_show_container';
+import LoginPage from './login_page/login_page';
+import { withRouter } from 'react-router';
 import {
   Route,
   Redirect,
@@ -22,8 +23,8 @@ const App = (props) => {
         ) : (
             <div className="logged-overall">
                 <NavLoginFormContainer logged={"true"} />
-                <Route exact path="/" component={BookIndexContainer} />
                 <Route path="/books/:bookId" component={BookShowContainer} />
+                <Route exact path="/" component={BookIndexContainer} />
             </div>
         )
       }
@@ -39,4 +40,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

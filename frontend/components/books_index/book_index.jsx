@@ -24,7 +24,7 @@ class BooksIndex extends React.Component{
   componentWillReceiveProps(newProps) {
     this.setState(function(state) {
       return {
-      books: state.books.concat(newProps.books)
+      books: newProps.books
       };
     });
   }

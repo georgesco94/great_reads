@@ -42,7 +42,7 @@ class SessionForm extends React.Component{
           {errs}
         </ul>
       </div>
-    )
+    );
   }
 
   removeErrors(){
