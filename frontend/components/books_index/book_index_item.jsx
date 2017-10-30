@@ -4,14 +4,15 @@ import { Link,withRouter } from 'react-router-dom';
 export const BookIndexItem = ({book}) => {
 
   return (
+    <div className="book-item-wrapper">
       <div className="book-item-box">
 
         <div className="book-item-content">
 
           <div className="image-column">
-              <Link to={`/books/${book.id}`}>
-                <img className="book-cover" src={book.image_url}/>
-              </Link>
+            <Link to={`/books/${book.id}`}>
+              <img className="book-cover" src={book.image_url}/>
+            </Link>
           </div>
 
           <div className="book-info-column">
@@ -42,5 +43,7 @@ export const BookIndexItem = ({book}) => {
 
 
       </div>
+
+    </div>
   );
 };

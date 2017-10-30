@@ -40,6 +40,12 @@ class NavLoginForm extends React.Component{
           <Link to={`/`}>
             <h1>Great Reads</h1>
           </Link>
+          <Link to={`/`}>
+            <h1>My Books</h1>
+          </Link>
+          <Link to={`/`}>
+            <h1>Make Book</h1>
+          </Link>
           <button className="nav-sign-button" onClick={this.handleSubmit}>Logout</button>
         </nav>
       </div>

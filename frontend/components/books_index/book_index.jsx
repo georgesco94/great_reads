@@ -5,38 +5,30 @@ import {BookIndexItem} from './book_index_item';
 class BooksIndex extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      offset:0,
-      books: []
-    };
+    this.fetchMore = this.fetchMore.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchBooks(this.state.offset);
-    window.onscroll = (ev) => {
-      let off = this.state.books.length;
-      if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
-        this.props.fetchBooks(off);
-      }
-    };
+    this.props.fetchBooks(this.props.books.length);
+    window.addEventListener('scroll',this.fetchMore);
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState(function(state) {
-      return {
-      books: newProps.books
-      };
-    });
+  componentWillUnmount() {
+    window.removeEventListener('scroll',this.fetchMore);
+  }
+
+  fetchMore() {
+    let off = this.props.books.length;
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
+      this.props.fetchBooks(off);
+    }
   }
 
   render() {
-    debugger
-    const books = this.state.books.map(book => (
-      <ul className="book-item-wrapper">
+    const books = this.props.books.map(book => (
         <BookIndexItem book={book} />
-      </ul>
     ));
-    debugger
+
     return (
       <div className="column-wrapper">
         <div className="user-info-column"></div>
@@ -48,7 +40,7 @@ class BooksIndex extends React.Component{
         <div className="recommendations-column"></div>
 
       </div>
-    )
+    );
 
   }
 

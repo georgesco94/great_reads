@@ -57,7 +57,6 @@ class BookShow extends React.Component{
             </div>
           </div>
 
-
         </div>
       </div>
     );
