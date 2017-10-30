@@ -48,7 +48,7 @@ class SessionForm extends React.Component{
   removeErrors(){
     setTimeout(function() {
        this.setState({displayErrors: false});
-     }.bind(this), 1500);
+     }.bind(this), 2000);
   }
 
   render(){

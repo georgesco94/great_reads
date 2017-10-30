@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BookShow from './book_show';
-import {fetchBooks} from '../../actions/book_actions';
+import {fetchBook} from '../../actions/book_actions';
 
 const mapStateToProps = (state,ownProps) => {
   return (
@@ -13,7 +13,7 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = (dispatch,ownProps) => {
   return {
-    fetchBooks: (offset) => dispatch(fetchBooks(offset))
+    fetchBook: (id) => dispatch(fetchBook(id))
   };
 };
 

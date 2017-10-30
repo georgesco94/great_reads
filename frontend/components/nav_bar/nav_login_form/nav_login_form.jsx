@@ -16,6 +16,7 @@ class NavLoginForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.history.replace('/');
     const user = this.state;
     this.props.action(user);
   }

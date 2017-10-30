@@ -10,11 +10,11 @@ export const fetchBooks = (offset) => dispatch => {
   ));
 };
 
-export const fetchBook = (id) => dispatch => (
-  APIUtil.fetchBook(id).then(book => (
+export const fetchBook = (id) => dispatch => {
+  return APIUtil.fetchBook(id).then(book => (
     dispatch(receiveBook(book))
-  ))
-);
+  ));
+};
 
 
 export const receiveBooks = books => ({

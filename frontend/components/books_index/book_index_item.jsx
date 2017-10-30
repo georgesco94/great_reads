@@ -1,19 +1,24 @@
 import React from 'react';
-
+import { Link,withRouter } from 'react-router-dom';
 
 export const BookIndexItem = ({book}) => {
+
   return (
       <div className="book-item-box">
 
         <div className="book-item-content">
 
           <div className="image-column">
-              <img className="book-cover" src={book.image_url}/>
+              <Link to={`/books/${book.id}`}>
+                <img className="book-cover" src={book.image_url}/>
+              </Link>
           </div>
 
           <div className="book-info-column">
             <div className="book-title">
-              {book.title}
+              <Link to={`/books/${book.id}`}>
+                {book.title}
+              </Link>
             </div>
             <div className="book-author">
               by {book.author}

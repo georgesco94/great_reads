@@ -1,15 +1,15 @@
 class Api::BooksController < ApplicationController
   def index
     numBooks=3
-    
+
     if params[:offset]
-      
+
       offsetInt = params[:offset].to_i
       @books = Book.limit(numBooks).offset(offsetInt)
     else
       @books = Book.all()
     end
-    
+
     render :index
   end
 
