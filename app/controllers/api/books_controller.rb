@@ -14,7 +14,6 @@ class Api::BooksController < ApplicationController
   end
 
   def create
-    debugger
     @book = Book.new(book_params)
     if @book.save
       render 'api/books/show'

@@ -10,7 +10,7 @@ class BooksIndex extends React.Component{
 
   componentDidMount() {
     debugger
-    this.props.fetchBooks(this.props.books.length);
+    this.props.fetchBooks(0);
     window.addEventListener('scroll',this.fetchMore);
   }
 

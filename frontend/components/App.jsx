@@ -25,9 +25,9 @@ const App = (props) => {
             <div className="logged-overall">
                 <NavLoginFormContainer logged={"true"} />
                 <Switch>
-                  <Route exact path="/books/new" component={BookCreateContainer} />
+                  <Route path="/books/new" component={BookCreateContainer} />
                   <Route path="/books/:bookId" component={BookShowContainer} />
-                  <Route exact path="/" component={BookIndexContainer} />
+                  <Route path="/" component={BookIndexContainer} />
                 </Switch>
             </div>
         )
