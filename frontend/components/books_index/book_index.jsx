@@ -7,7 +7,7 @@ class BooksIndex extends React.Component{
     super(props);
     this.state = {
       offset:0,
-      books: this.props.books
+      books: []
     };
   }
 
@@ -30,12 +30,13 @@ class BooksIndex extends React.Component{
   }
 
   render() {
+    debugger
     const books = this.state.books.map(book => (
       <ul className="book-item-wrapper">
         <BookIndexItem book={book} />
       </ul>
     ));
-
+    debugger
     return (
       <div className="column-wrapper">
         <div className="user-info-column"></div>
