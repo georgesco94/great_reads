@@ -11,8 +11,8 @@ class BookCreate extends React.Component {
       title: "",
       author: "",
       description: "",
-      imageFile: null,
-      imageUrl: null,
+      imageFile: "",
+      imageUrl: "",
       displayErrors:  this.props.errors.length ? true : false
     };
   }
