@@ -40,7 +40,6 @@
 .logged-nav{
   margin:auto;
   justify-content: space-between;
-  height: 45px;
   width: 60%;
   padding-top: 10px ;
   font-family: "Helvetica", sans-serif;
@@ -51,6 +50,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
   position: fixed;
   width: 100%;
+  height: 45px;
   top: 0;
 
 }
@@ -59,4 +59,5 @@
   color: rgb(56, 33, 16);
   font-size: 16px;
   text-decoration: none;
+
 }
