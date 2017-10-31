@@ -6,29 +6,27 @@ class BooksIndex extends React.Component{
   constructor(props){
     super(props);
     this.fetchMore = this.fetchMore.bind(this);
+    this.state = {loading: false};
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBooks(0);
     window.addEventListener('scroll',this.fetchMore);
   }
 
   componentWillUnmount() {
-    debugger
     window.removeEventListener('scroll',this.fetchMore);
   }
 
   fetchMore() {
     let off = this.props.books.length;
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
-      debugger
-      this.props.fetchBooks(off);
+      this.setState({loading: true});
+      setTimeout(() => this.props.fetchBooks(off).then(() => this.setState({loading: false})), 500);
     }
   }
 
   render() {
-    debugger
     const books = this.props.books.map(book => (
         <BookIndexItem book={book} />
     ));
@@ -39,6 +37,9 @@ class BooksIndex extends React.Component{
 
         <div className="books-index-column">
           {books}
+          <div className="spinner">
+            {this.state.loading ? <i class="fa fa-spinner" aria-hidden="true"></i> : ""}
+          </div>
         </div>
 
         <div className="recommendations-column"></div>
