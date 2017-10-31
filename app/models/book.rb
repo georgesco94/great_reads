@@ -21,4 +21,7 @@ class Book < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   # should eventually add has_many shelf_assignmets
 
+  has_many :reviews,
+    foreign_key: :book_id,
+    class_name: "Review"
 end

@@ -15,7 +15,7 @@ export const SearchResultBook = ({book}) => {
             <h1>{book.title}</h1>
           </Link>
           <Link to={`/books/${book.id}`}>
-            <h1>{book.author}</h1>
+            <p className="book-author">{book.author}</p>
           </Link>
         </div>
       </div>
