@@ -22,6 +22,7 @@ class DiscoverBox extends React.Component{
   }
 
   handleSubmit() {
+    debugger
     this.props.searchBooks(this.state.search).then(() => this.props.history.push('/search'));
   }
 
