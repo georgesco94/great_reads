@@ -37,13 +37,13 @@ class NavLoginForm extends React.Component{
     return (
       <div className="logged-form-container">
         <nav className="logged-nav">
-          <Link to={`/`}>
+          <Link className="nav-link" to={`/`}>
             <h1>Great Reads</h1>
           </Link>
-          <Link to={`/`}>
+          <Link className="nav-link" to={`/`}>
             <h1>My Books</h1>
           </Link>
-          <Link to={`/books/new`}>
+          <Link className="nav-link" to={`/books/new`}>
             <h1>Make Book</h1>
           </Link>
           <button className="nav-sign-button" onClick={this.handleSubmit}>Logout</button>
