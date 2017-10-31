@@ -1,0 +1,40 @@
+.search-res-wrap {
+  background-color: white;
+  display: grid;
+  grid-template-columns:1fr 5fr 1fr;
+}
+.search-results {
+  grid-area: 1/2/1/3;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.new-search-wrap {
+  border: 1px solid rgb(220, 214, 204);
+  width: 40%;
+  height: 18px;
+}
+.book-hold{
+  display: flex;
+
+}
+.search-books-column {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.result-item {
+  width: 625px;;
+  height: 80px;
+  display: flex;
+  border-bottom: 1px solid rgb(232, 232, 232);
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.hold {
+  margin-left: 10px;
+}
+.search-cover {
+  height: 75px;
+  width: 48px;
+}

@@ -1,0 +1,65 @@
+.discover-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  width: 68%;
+}
+
+.discover-text {
+  display: flex;
+  color: #333333;
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+.header-discover{
+  font-size: 18px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.text-div {
+  margin-right: 25px;
+}
+
+.discover-books {
+  background-color: #ede5cb;
+  border-radius: 2px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.book-row {
+  display:flex;
+  flex-wrap:nowrap;
+  overflow-x: auto;
+  width: 68%;
+}
+.discover-item{
+  width: 95px;
+  height: 135px;
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+.discover-search {
+  display:flex;
+  flex-direction: column;
+}
+
+.search-submit {
+  background-image: image-url("search_glass.png");
+  height: 90%;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: right;
+  background-color: white;
+}
+.search-wrap {
+  margin-top: 5px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  font-size: 14px;
+  width: 30%;
+}

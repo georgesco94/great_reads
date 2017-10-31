@@ -7,12 +7,10 @@ class BookShow extends React.Component{
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBook(this.props.match.params.bookId);
   }
 
   render() {
-    debugger
     if (this.props.book){
       return (
         <div className="bookshow-container">

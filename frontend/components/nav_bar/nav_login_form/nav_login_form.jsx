@@ -18,9 +18,9 @@ class NavLoginForm extends React.Component{
     e.preventDefault();
     const user = this.state;
     let goTo = this.props.logged ? "/" : "/books";
-    debugger
+    
     this.props.action(user).then(()=>{
-      debugger
+
       this.props.history.push(goTo);
     });
   }

@@ -3,13 +3,13 @@ class Api::BooksController < ApplicationController
     numBooks=3
 
     if params[:offset]
-
       offsetInt = params[:offset].to_i
       @books = Book.limit(numBooks).offset(offsetInt)
+    elsif params[:searchQuery]
+      @books = Book.where("lower(title) LIKE ? OR lower(author) LIKE ?", ("%#{params[:searchQuery]}%").downcase,  ("%#{params[:searchQuery]}%").downcase)
     else
       @books = Book.all()
     end
-
     render :index
   end
 

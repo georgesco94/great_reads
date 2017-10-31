@@ -3,6 +3,7 @@ import {RECEIVE_SESSION_ERRORS} from './session_actions';
 
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
+export const RECEIVE_SEARCH_BOOKS = 'RECEIVE_SEARCH_BOOKS';
 
 
 export const fetchBooks = (offset) => dispatch => {
@@ -17,8 +18,14 @@ export const fetchBook = (id) => dispatch => {
   ));
 };
 
+export const searchBooks = (searchQuery) => dispatch => {
+  return APIUtil.searchBooks(searchQuery).then(books => (
+    dispatch(receiveSearchBooks(books))
+  ));
+};
+
+
 export const createBook = (book) => dispatch => {
-  debugger
   return APIUtil.createBook(book).then(book => (
     dispatch(receiveBook(book))
   ), err => (
@@ -28,6 +35,11 @@ export const createBook = (book) => dispatch => {
 
 export const receiveBooks = books => ({
   type: RECEIVE_BOOKS,
+  books
+});
+
+export const receiveSearchBooks = books => ({
+  type: RECEIVE_SEARCH_BOOKS,
   books
 });
 

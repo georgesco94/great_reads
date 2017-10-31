@@ -28,3 +28,13 @@ export const createBook = (book) => {
     }
   );
 };
+
+export const searchBooks = (searchQuery) => {
+  return $.ajax(
+    {
+      method: "GET",
+      url: `api/books`,
+      data:{searchQuery:searchQuery}
+    }
+  );
+};
