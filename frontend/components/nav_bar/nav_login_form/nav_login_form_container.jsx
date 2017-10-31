@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return {
     logged:state.session.currentUser,
     errors: state.errors.session
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch,{logged}) => {

@@ -16,9 +16,13 @@ class NavLoginForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.replace('/');
     const user = this.state;
-    this.props.action(user);
+    let goTo = this.props.logged ? "/" : "/books";
+    debugger
+    this.props.action(user).then(()=>{
+      debugger
+      this.props.history.push(goTo);
+    });
   }
 
   update(field) {
@@ -30,17 +34,17 @@ class NavLoginForm extends React.Component{
   handleDemoSubmit(e) {
     e.preventDefault();
     const user = {username:"guest",password:"123456"};
-    this.props.action(user);
+    this.props.action(user).then(()=> this.props.history.push("/books"));
   }
 
   loggedNav() {
     return (
       <div className="logged-form-container">
         <nav className="logged-nav">
-          <Link className="nav-link" to={`/`}>
+          <Link className="nav-link" to={`/books`}>
             <h1>Great Reads</h1>
           </Link>
-          <Link className="nav-link" to={`/`}>
+          <Link className="nav-link" to={`/books`}>
             <h1>My Books</h1>
           </Link>
           <Link className="nav-link" to={`/books/new`}>

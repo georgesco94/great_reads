@@ -17,25 +17,26 @@ import {
 
 const App = (props) => {
   return (
+
     <div id="App">
       {
-        !props.loggedIn ? (
-          <LoginPage />
-        ) : (
-            <div className="logged-overall">
-                <NavLoginFormContainer logged={"true"} />
-                <Switch>
-                  <Route path="/books/new" component={BookCreateContainer} />
-                  <Route path="/books/:bookId" component={BookShowContainer} />
-                  <Route path="/" component={BookIndexContainer} />
-                </Switch>
-            </div>
-        )
+        <div className="logged-overall">
+          {!props.loggedIn ? (
+            <Route exact path="/" component={LoginPage} />
+          ) : (
+            <NavLoginFormContainer logged={"true"} />
+          )}
+          <Switch>
+            <Route path="/books/new" component={BookCreateContainer} />
+            <Route path="/books/:bookId" component={BookShowContainer} />
+            <Route path="/books" component={BookIndexContainer} />
+          </Switch>
+        </div>
+
       }
     </div>
   );
 };
-
 const mapStateToProps = (state) => {
   return {
     loggedIn: state.session.currentUser
