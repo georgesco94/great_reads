@@ -33,7 +33,7 @@ class BookCreate extends React.Component {
     formData.append("book[author]",this.state.author);
     formData.append("book[description]",this.state.description);
     formData.append("book[image]",this.state.imageFile);
-    this.props.createBook(formData).then(() => this.props.history.push("/"));
+    this.props.createBook(formData).then(() => this.props.history.push("/books"));
   }
   updateFile (e) {
     var file = e.currentTarget.files[0];
