@@ -22,7 +22,7 @@ class BooksIndex extends React.Component{
     let off = this.props.books.length;
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
       this.setState({loading: true});
-      setTimeout(() => this.props.fetchBooks(off).then(() => this.setState({loading: false})), 500);
+      setTimeout(() => this.props.fetchBooks(off).then(() => this.setState({loading: false})), 700);
     }
   }
 
@@ -38,7 +38,7 @@ class BooksIndex extends React.Component{
         <div className="books-index-column">
           {books}
           <div className="spinner">
-            {this.state.loading ? <i class="fa fa-spinner" aria-hidden="true"></i> : ""}
+            {this.state.loading ? <i class="fa fa-spinner fa-spin" aria-hidden="true"></i> : ""}
           </div>
         </div>
 
