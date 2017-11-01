@@ -19,7 +19,7 @@ class UnlogNav extends React.Component{
     return (
       <div className="unlog-wrap">
         <div className="unlog-nav">
-          <Link className="nav-link" to={`/books`}>
+          <Link className="nav-link" to={`/`}>
             <h1>Great Reads</h1>
           </Link>
           <Link className="nav-link" to={`/`}>

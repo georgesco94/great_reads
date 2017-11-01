@@ -7,6 +7,9 @@ class Api::BooksController < ApplicationController
       @books = Book.limit(numBooks).offset(offsetInt)
     elsif params[:searchQuery]
       @books = Book.where("lower(title) LIKE ? OR lower(author) LIKE ?", ("%#{params[:searchQuery]}%").downcase,  ("%#{params[:searchQuery]}%").downcase)
+    elsif params[:num]
+      num = params[:num].to_i
+      @books = Book.limit(num)
     else
       @books = Book.all()
     end

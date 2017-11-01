@@ -24,6 +24,12 @@ export const searchBooks = (searchQuery) => dispatch => {
   ));
 };
 
+export const fetchRandom = (num) => dispatch => {
+  return APIUtil.fetchRandom(num).then(books => (
+    dispatch(receiveSearchBooks(books))
+  ));
+};
+
 
 export const createBook = (book) => dispatch => {
   return APIUtil.createBook(book).then(book => (

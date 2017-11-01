@@ -38,3 +38,14 @@ export const searchBooks = (searchQuery) => {
     }
   );
 };
+
+
+export const fetchRandom = (num) => {
+  return $.ajax(
+    {
+      method: "GET",
+      url: `api/books`,
+      data:{num:num}
+    }
+  );
+};

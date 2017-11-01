@@ -12,7 +12,7 @@ class DiscoverBox extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchBooks(0);
+    this.props.fetchRandom(7);
   }
 
   update(field) {

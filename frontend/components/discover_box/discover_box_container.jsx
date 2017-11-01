@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import DiscoverBox from './discover_box';
-import {searchBooks,fetchBooks} from '../../actions/book_actions';
+import {searchBooks,fetchRandom} from '../../actions/book_actions';
 const mapStateToProps = (state, ownProps) => {
   return ({
     books: Object.values(state.entities.books)
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return (
     {
-      fetchBooks: (offset) => dispatch(fetchBooks(offset)),
+      fetchRandom: (num) => dispatch(fetchRandom(num)),
       searchBooks: (queryString) => dispatch(searchBooks(queryString))
     }
   );
