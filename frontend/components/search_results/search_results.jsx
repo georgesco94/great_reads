@@ -22,6 +22,8 @@ class SearchResults extends React.Component{
     e.preventDefault();
     this.props.searchBooks(this.state.search).then(
       () => this.props.history.push('/search'));
+    var form = document.getElementById("inp");
+    form.reset();
   }
 
   render() {
@@ -32,7 +34,7 @@ class SearchResults extends React.Component{
         <div className="search-res-wrap">
           <div className="search-results">
             <div className="new-search">
-              <form onSubmit={this.handleSubmit}>
+              <form id="inp" onSubmit={this.handleSubmit}>
                 <h1>Search and Browse Books</h1>
                 <div className="new-search-wrap">
                   <input onChange={this.update("search")}

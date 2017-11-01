@@ -20,13 +20,15 @@ class SearchForm extends React.Component{
     e.preventDefault();
     this.props.searchBooks(this.state.search).then(
       () => this.props.history.push('/search'));
+    var form = document.getElementById("form-search");
+    form.reset();
   }
 
 
   render() {
     return(
       <div className="nav-search">
-        <form className="nav-search-form" onSubmit={this.handleSubmit}>
+        <form id="form-search" className="nav-search-form" onSubmit={this.handleSubmit}>
             <input className="nav-search-input" onChange={this.update("search")} type="text" placeholder="Author/Title" />
             <input className="nav-search-submit" type="submit" value="" />
         </form>
