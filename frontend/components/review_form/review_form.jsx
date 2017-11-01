@@ -23,12 +23,7 @@ class ReviewForm extends React.Component{
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBook(this.props.match.params.bookId);
-  }
-
-  componentWillReceiveProps() {
-    debugger
   }
 
   update(field){
@@ -39,14 +34,17 @@ class ReviewForm extends React.Component{
 
 
   render(){
-    debugger
     if(!this.props.book) {
       return ("");
     }
     return (
       <div className="review-container">
         <div className="review-items">
+          <div className="review-title">{this.props.book.title} > Review </div>
           <SearchResultItem review={true} book={this.props.book} />
+          <div className="my-rating">myrating</div>
+          <div className="review-shelve">shelves/tags</div>
+          <div className="my-review">whatdoyouthink</div>
         </div>
       </div>
     );
