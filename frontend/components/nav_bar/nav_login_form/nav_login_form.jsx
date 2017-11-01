@@ -20,7 +20,6 @@ class NavLoginForm extends React.Component{
     let goTo = this.props.logged ? "/" : "/books";
 
     this.props.action(user).then(()=>{
-
       this.props.history.push(goTo);
     });
   }

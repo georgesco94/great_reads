@@ -28,7 +28,7 @@ class BooksIndex extends React.Component{
 
   render() {
     const books = this.props.books.map(book => (
-        <BookIndexItem book={book} />
+        <BookIndexItem key={book.id} book={book} />
     ));
 
     return (
@@ -38,7 +38,7 @@ class BooksIndex extends React.Component{
         <div className="books-index-column">
           {books}
           <div className="spinner">
-            {this.state.loading ? <i class="fa fa-spinner fa-spin" aria-hidden="true"></i> : ""}
+            {this.state.loading ? <i className="fa fa-spinner fa-spin" aria-hidden="true"></i> : ""}
           </div>
         </div>
 

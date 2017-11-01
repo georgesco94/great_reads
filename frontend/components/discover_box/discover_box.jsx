@@ -21,14 +21,15 @@ class DiscoverBox extends React.Component{
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.searchBooks(this.state.search).then(
       () => this.props.history.push('/search'));
   }
 
   render() {
     let books = this.props.books.map( (book) => {
-        return <DiscoverBoxBook book={book}/>;
+        return <DiscoverBoxBook key={book.id} book={book}/>;
       });
     return (
       <div className="discover-box">

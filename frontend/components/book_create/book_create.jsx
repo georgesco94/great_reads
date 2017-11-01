@@ -28,6 +28,7 @@ class BookCreate extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     var formData = new FormData();
     formData.append("book[title]",this.state.title);
     formData.append("book[author]",this.state.author);
@@ -65,7 +66,6 @@ class BookCreate extends React.Component {
   }
 
   render () {
-    debugger
     if(this.state.displayErrors) {
       this.removeErrors();
     }

@@ -19,7 +19,6 @@ export const fetchBook = (id) => dispatch => {
 };
 
 export const searchBooks = (searchQuery) => dispatch => {
-  debugger
   return APIUtil.searchBooks(searchQuery).then(books => (
     dispatch(receiveSearchBooks(books))
   ));

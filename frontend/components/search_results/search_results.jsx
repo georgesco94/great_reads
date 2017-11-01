@@ -9,6 +9,7 @@ class SearchResults extends React.Component{
       search: ""
     };
     this.handleSubmit=this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field) {
@@ -17,17 +18,16 @@ class SearchResults extends React.Component{
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.searchBooks(this.state.search).then(
       () => this.props.history.push('/search'));
   }
 
   render() {
-    debugger;
     const books = this.props.books.map(book => (
         <SearchResultItem key={book.id} book={book} />
     ));
-    debugger;
     return (
         <div className="search-res-wrap">
           <div className="search-results">
