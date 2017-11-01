@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import {SearchResultBook} from "./search_result_item";
+import {SearchResultItem} from "./search_result_item";
+
 class SearchResults extends React.Component{
   constructor(props){
     super(props);
@@ -17,15 +18,16 @@ class SearchResults extends React.Component{
   }
 
   handleSubmit() {
-    this.props.searchBooks(this.state.search).then(() => this.props.history.push('/search'));
+    this.props.searchBooks(this.state.search).then(
+      () => this.props.history.push('/search'));
   }
 
   render() {
-    debugger
+    debugger;
     const books = this.props.books.map(book => (
-        <SearchResultBook book={book} />
+        <SearchResultItem key={book.id} book={book} />
     ));
-    debugger
+    debugger;
     return (
         <div className="search-res-wrap">
           <div className="search-results">
@@ -33,7 +35,9 @@ class SearchResults extends React.Component{
               <form onSubmit={this.handleSubmit}>
                 <h1>Search and Browse Books</h1>
                 <div className="new-search-wrap">
-                  <input onChange={this.update("search")} type="text" className="search-input" placeholder="Author/Title" />
+                  <input onChange={this.update("search")}
+                    type="text" className="search-input"
+                    placeholder="Author/Title" />
                   <input className="search-submit" type="submit" value="" />
                 </div>
               </form>

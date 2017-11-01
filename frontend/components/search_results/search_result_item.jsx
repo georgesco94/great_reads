@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link,withRouter } from 'react-router-dom';
 
-export const SearchResultBook = ({book}) => {
-  debugger
+export const SearchResultItem = ({book}) => {
   return (
     <div className="result-item">
       <div className="book-hold">

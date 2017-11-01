@@ -30,6 +30,7 @@ export const createBook = (book) => {
 };
 
 export const searchBooks = (searchQuery) => {
+  debugger
   return $.ajax(
     {
       method: "GET",

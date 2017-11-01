@@ -33,7 +33,7 @@
 .logged-nav{
   margin:auto;
   justify-content: space-between;
-  width: 60%;
+  width: 70%;
   padding-top: 10px ;
   font-family: "Helvetica", sans-serif;
   display: flex;
@@ -52,5 +52,8 @@
   color: rgb(56, 33, 16);
   font-size: 16px;
   text-decoration: none;
-
+}
+.unlog-nav {
+  width: 80%;
+  margin: auto;
 }

@@ -27,7 +27,9 @@ const App = (props) => {
           {!props.loggedIn ? (
             <Switch>
               <Route exact path="/" component={LoginPage} />
-              <NavBar />
+              <div className="unlog-nav">
+                <NavBar />
+              </div>
             </Switch>
           ) : (
             <NavLoginFormContainer logged={"true"} />
