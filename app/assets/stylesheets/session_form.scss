@@ -6,12 +6,13 @@
   justify-content: space-between;
   position: relative;
   margin-top: 32px;
+  min-width: 900px;
 }
 .signup-form-box{
   display: flex;
   flex-direction: column;
-  width: 280px;
-  height: 186px;
+  max-width: 280px;
+  max-height: 186px;
   margin-bottom: auto;
   background: inherit ;
 }
@@ -33,9 +34,9 @@ h2{
   font-weight: normal;
 }
 #login-headling{
-  height: 121px;
-  width: 446px;
-  margin-left: 95px;
+  max-height: 121px;
+  max-width: 446px;
+
   margin-top: 50px;
   margin-bottom: auto;
 }
