@@ -2,6 +2,7 @@
   background-color: white;
   display: grid;
   grid-template-columns:1fr 4fr 1fr;
+  margin-top: 45px;
 }
 .search-results {
   grid-area: 1/2/1/3;

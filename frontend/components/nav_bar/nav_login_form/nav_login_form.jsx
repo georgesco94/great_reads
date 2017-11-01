@@ -18,7 +18,7 @@ class NavLoginForm extends React.Component{
     e.preventDefault();
     const user = this.state;
     let goTo = this.props.logged ? "/" : "/books";
-    
+
     this.props.action(user).then(()=>{
 
       this.props.history.push(goTo);
@@ -59,7 +59,8 @@ class NavLoginForm extends React.Component{
   render(){
     if(this.props.logged){
       return this.loggedNav();
-    }else{
+    }
+    else{
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>

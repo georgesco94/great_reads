@@ -7,6 +7,7 @@ import BookShowContainer from './book_show/book_show_container';
 import BookCreateContainer from './book_create/book_create_container';
 import SearchResultsContainer from './search_results/search_results_container';
 import NavBar from './nav_bar/nav_bar';
+import UnlogContainer from './nav_bar/unlog_container';
 import LoginPage from './login_page/login_page';
 import { withRouter } from 'react-router';
 import {
@@ -18,7 +19,6 @@ import {
 } from 'react-router-dom';
 
 const App = (props) => {
-  debugger
   return (
 
     <div id="App">
@@ -27,9 +27,7 @@ const App = (props) => {
           {!props.loggedIn ? (
             <Switch>
               <Route exact path="/" component={LoginPage} />
-              <div className="unlog-nav">
-                <NavBar />
-              </div>
+              <UnlogContainer />
             </Switch>
           ) : (
             <NavLoginFormContainer logged={"true"} />

@@ -55,6 +55,19 @@
   text-decoration: none;
 }
 .unlog-nav {
+  display: flex;
+  justify-content: space-around;
   width: 80%;
   margin: auto;
+  align-items: center;
+  margin-top: 8px;
+}
+.unlog-wrap {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+  top: 0;
+  height: 45px;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(244, 241, 234);
+  align-items: center;
 }
