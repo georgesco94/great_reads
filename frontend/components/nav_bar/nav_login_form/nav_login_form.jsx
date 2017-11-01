@@ -47,7 +47,7 @@ class NavLoginForm extends React.Component{
             <h1>My Books</h1>
           </Link>
           <Link className="nav-link" to={`/books/new`}>
-            <h1>Make Book</h1>
+            <h1>Add Book</h1>
           </Link>
           <SearchFormContainer />
           <button className="nav-sign-button" onClick={this.handleSubmit}>Logout</button>

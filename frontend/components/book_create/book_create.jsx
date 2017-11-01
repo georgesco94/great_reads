@@ -102,9 +102,11 @@ class BookCreate extends React.Component {
               </div>
               <div className="image-upload">
                 Add cover image for the book <br/>
-              <input type="file" onChange={this.updateFile}></input>
+              <div className="preview-image">
+                <input type="file" onChange={this.updateFile}></input>
+                <img className="prev-img" src={this.state.imageUrl} />
+              </div>
             </div>
-            <img src={this.state.imageUrl} />
           </form>
 
         </div>

@@ -17,10 +17,22 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+  def update
+
+    @review = Review.find(params[:id])
+    if @track.update(review_params)
+      render 'api/reviews/show'
+    else
+      render json: @review.errors.full_messages, status: 422
+    end
+
+  end
+
+
   def destroy
   end
 
   def review_params
-    params.require(:review).permit(:review, :book_id, :user_id)
+    params.require(:review).permit(:review, :book_id, :user_id, :rating)
   end
 end

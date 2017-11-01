@@ -11,6 +11,16 @@ export const createReview = (review) => dispatch => {
   ));
 };
 
+export const updateReview = (review) => dispatch => {
+  return APIUtil.updateReview(review).then(review => (
+    dispatch(receiveReview(review))
+  ), err => (
+    dispatch(receiveReviewErrors(err.responseJSON))
+  ));
+};
+
+
+
 
 export const receiveReview = review => ({
   type: RECEIVE_REVIEW,

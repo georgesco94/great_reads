@@ -7,3 +7,12 @@ export const createReview = (review) => {
     }
   );
 };
+export const updateReview = (review) => {
+  return $.ajax(
+    {
+      method: "PATCH",
+      url: `api/reviews`,
+      data: review
+    }
+  );
+};

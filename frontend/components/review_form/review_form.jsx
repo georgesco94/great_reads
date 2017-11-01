@@ -19,7 +19,7 @@ class ReviewForm extends React.Component{
       rating:this.state.rating,user_id:this.props.user.id,
       book_id:this.props.book.id};
 
-    this.props.createReview(review);
+    this.props.updateReview(review);
   }
 
   componentDidMount() {
@@ -44,7 +44,17 @@ class ReviewForm extends React.Component{
           <SearchResultItem review={true} book={this.props.book} />
           <div className="my-rating">myrating</div>
           <div className="review-shelve">shelves/tags</div>
-          <div className="my-review">whatdoyouthink</div>
+          <form className="my-review">
+            <p>What do you think?</p>
+            <textarea
+              className="review-input"
+              placeholder="Enter your review (optional)"
+              value={this.state.review}
+              onChange={this.update('review')} />
+
+          </form>
+
+          <input className="submit" type="submit" value="Save" />
         </div>
       </div>
     );
