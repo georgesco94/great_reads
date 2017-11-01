@@ -22,7 +22,16 @@ class BooksIndex extends React.Component{
     let off = this.props.books.length;
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
       this.setState({loading: true});
-      setTimeout(() => this.props.fetchBooks(off).then(() => this.setState({loading: false})), 700);
+      setTimeout(() => this.props.fetchBooks(off).then(
+        (action) =>
+        {
+          if(Object.keys(action.books).length === 0){
+            window.removeEventListener('scroll',this.fetchMore);
+          }
+          this.setState({loading: false});}
+      )
+        , 700);
+
     }
   }
 
