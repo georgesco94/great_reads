@@ -70,37 +70,38 @@ class BookCreate extends React.Component {
       this.removeErrors();
     }
     return (
-      <div className="create-book-component">
-        <div className="create-form-box">
-          <h3>Add a New Book</h3>
-          <form className="create-form" onSubmit={this.handleSubmit}>
-            <div className="text-input">
-              <label>Title
-                <input
-                  className="create-input"
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')} />
-              </label>
-              <label>Author
-                <input
-                  className="create-input"
-                  type="text"
-                  value={this.state.author}
-                  onChange={this.update('author')} />
-              </label>
+      <div className="create-wrap">
+        <div className="create-book-component">
+          <div className="create-form-box">
+            <h3>Add a New Book</h3>
+            <form className="create-form" onSubmit={this.handleSubmit}>
+              <div className="text-input">
+                <label>Title
+                  <input
+                    className="create-input"
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')} />
+                </label>
+                <label>Author
+                  <input
+                    className="create-input"
+                    type="text"
+                    value={this.state.author}
+                    onChange={this.update('author')} />
+                </label>
 
-              <label>
-                <p>Description</p>
-                <textarea
-                  className="create-input"
-                  value={this.state.description}
-                  onChange={this.update('description')} />
-              </label>
-              <input className="submit" type="submit" value="Create Book" />
-            </div>
-            <div className="image-upload">
-              Add cover image for the book <br/>
+                <label>
+                  <p>Description</p>
+                  <textarea
+                    className="create-input"
+                    value={this.state.description}
+                    onChange={this.update('description')} />
+                </label>
+                <input className="submit" type="submit" value="Create Book" />
+              </div>
+              <div className="image-upload">
+                Add cover image for the book <br/>
               <input type="file" onChange={this.updateFile}></input>
             </div>
             <img src={this.state.imageUrl} />
@@ -109,6 +110,7 @@ class BookCreate extends React.Component {
         </div>
 
         {this.state.displayErrors ? this.renderErrors() : ""}
+      </div>
       </div>
     );
   }
