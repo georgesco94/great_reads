@@ -40,8 +40,8 @@ class NavLoginForm extends React.Component{
     return (
       <div className="logged-form-container">
         <nav className="logged-nav">
-          <Link className="nav-link" to={`/books`}>
-            <h1>Great Reads</h1>
+          <Link className="nav-link-img" to={`/books`}>
+            <div className="logo"></div>
           </Link>
           <Link className="nav-link" to={`/books`}>
             <h1>My Books</h1>
