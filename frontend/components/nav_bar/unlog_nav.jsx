@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import SearchFormContainer from '../search_form/search_form_container';
 
 class UnlogNav extends React.Component{
   constructor(props){
@@ -28,6 +29,7 @@ class UnlogNav extends React.Component{
           <Link className="nav-link" to={`/`}>
             <h1>Make Book</h1>
           </Link>
+          <SearchFormContainer />
           <button className="nav-sign-button" onClick={this.handleDemoSubmit}>Demo</button>
         </div>
       </div>
