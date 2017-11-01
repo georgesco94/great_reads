@@ -8,6 +8,7 @@
 #  book_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  rating     :integer
 #
 
 class Review < ApplicationRecord

@@ -6,6 +6,7 @@ import BookIndexContainer from './books_index/book_index_container';
 import BookShowContainer from './book_show/book_show_container';
 import BookCreateContainer from './book_create/book_create_container';
 import SearchResultsContainer from './search_results/search_results_container';
+import ReviewFormContainer from './review_form/review_form_container';
 import NavBar from './nav_bar/nav_bar';
 import UnlogContainer from './nav_bar/unlog_container';
 import LoginPage from './login_page/login_page';
@@ -37,6 +38,7 @@ const App = (props) => {
             <Route path="/books/:bookId" component={BookShowContainer} />
             <Route path="/books" component={BookIndexContainer} />
             <Route path="/search" component={SearchResultsContainer} />
+            <Route path="/review/:bookId" component={ReviewFormContainer} />
           </Switch>
         </div>
 
