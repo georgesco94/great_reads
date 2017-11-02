@@ -2,13 +2,17 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  email              :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -27,7 +31,9 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Review"
 
-
+  has_many :shelfs,
+    foreign_key: :user_id,
+    class_name: "Shelf"
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

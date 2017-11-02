@@ -19,9 +19,18 @@ class Book < ApplicationRecord
 
   has_attached_file :image, default_url: "default_user.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-  # should eventually add has_many shelf_assignmets
 
   has_many :reviews,
     foreign_key: :book_id,
     class_name: "Review"
+
+  has_many :shelve_assignmets,
+    foreign_key: :book_id,
+    class_name: "ShelveAssignment"
+
+  has_many :shelves,
+    through: :shelve_assignmets,
+    source: :shelf
+
+
 end
