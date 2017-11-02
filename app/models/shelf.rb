@@ -19,7 +19,6 @@ class Shelf < ApplicationRecord
     foreign_key: :shelf_id,
     class_name: "ShelveAssignment"
 
-
   has_many :books,
     through: :shelve_assignmets,
     source: :book

@@ -7,9 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Book.destroy_all
 User.destroy_all
+Review.destroy_all
+Shelf.destroy_all
 
 guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
 
+read_shelf = Shelf.create(name:"read", user_id:guest.id)
+toread = Shelf.create(name:"to-read", user_id:guest.id)
+currread = Shelf.create(name:"currently-reading", user_id:guest.id)
 
 war_peace = Book.new(title:"War and Peace", author: "Lev Tolstoy" ,
 description:"The novel chronicles the history of the French invasion of Russia and
