@@ -18,7 +18,15 @@ class SessionForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.signup(user);
+    this.props.signup(user).then(
+
+        (action) => {
+            if(action.type != "RECEIVE_SESSION_ERRORS"){
+              this.props.history.push("/books");
+            }
+        }
+
+    );
   }
 
   componentWillReceiveProps(nextProps) {

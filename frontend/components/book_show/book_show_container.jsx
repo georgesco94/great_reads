@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import BookShow from './book_show';
 import {fetchBook} from '../../actions/book_actions';
+import {fetchUsers} from '../../actions/user_actions';
+import {fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state,ownProps) => {
   debugger
@@ -13,6 +15,7 @@ const mapStateToProps = (state,ownProps) => {
       {
         return state.entities.reviews[reviewId];
       }),
+      users: state.entities.users,
       errors: state.errors
     }
   );
@@ -20,7 +23,9 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = (dispatch,ownProps) => {
   return {
-    fetchBook: (id) => dispatch(fetchBook(id))
+    fetchBook: (id) => dispatch(fetchBook(id)),
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchReviews: () => dispatch(fetchBook())
   };
 };
 

@@ -1,8 +1,6 @@
 .bookshow-container {
   display: grid;
   grid-template-columns: 1fr 6fr 2fr;
-  height: 100%;
-  width: 100%;
   background-color: white;
 }
 
@@ -66,4 +64,9 @@
   line-height: 21px;
   word-wrap: break-word;
   grid-area: 3/1/4/1;
+}
+
+
+.reviewer-rating {
+  display: flex;
 }

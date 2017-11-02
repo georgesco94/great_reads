@@ -1,0 +1,29 @@
+.reviewz {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.review-item {
+  display: flex;
+  margin-right:  auto;
+  max-width: 70%;
+  margin-bottom: 10px;
+}
+.rev-col{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.user-image-col {
+
+}
+.user-img {
+  max-height: 50px;
+  max-width: 50px;
+}
+.review {
+  margin-top: 5px;
+}
