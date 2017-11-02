@@ -32,5 +32,8 @@ class Book < ApplicationRecord
     through: :shelve_assignmets,
     source: :shelf
 
+  has_many :statuses,
+    foreign_key: :book_id,
+    class_name: "Status"
 
 end

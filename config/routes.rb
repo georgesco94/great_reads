@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :books, only: [:show,:index,:update,:create]
     resource :session, only: [:create, :destroy, :show]
     resources :reviews, only: [:show,:index,:create,:destroy,:update]
+    resources :statuses, only: [:show,:create,:index]
   end
 end

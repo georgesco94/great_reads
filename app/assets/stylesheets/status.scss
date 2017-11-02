@@ -1,0 +1,20 @@
+.hid{
+  display: none;
+  border: 1px solid gray;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.book-drop{
+  position: relative;
+  display: inline-block;
+}
+
+
+.book-drop:hover .hid {
+    display: flex;
+    flex-direction: column;
+}
+.hid button:hover {
+  background-color: lightgray;
+}

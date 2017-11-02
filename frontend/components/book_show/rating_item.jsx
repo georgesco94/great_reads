@@ -2,8 +2,6 @@ import React from 'react';
 import { Link,withRouter } from 'react-router-dom';
 
 export const RatingItem = (props) => {
-  console.log(props.rating);
-
       if(!props.rating){
         return (
           <div>

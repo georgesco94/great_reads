@@ -35,6 +35,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Shelf"
 
+  has_many :statuses,
+    foreign_key: :user_id,
+    class_name: "Status"
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     (user && user.is_password?(password)) ? user : nil

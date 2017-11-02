@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { ReviewItem } from './review_item';
+import BookStatus from '../book_status/book_status';
 
 class BookShow extends React.Component{
   constructor(props){
@@ -8,14 +9,13 @@ class BookShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchBook(this.props.match.params.bookId).then(()=>
-      this.props.fetchReviews().
-        then(()=> this.props.fetchUsers()
-    ));
-
+    this.props.fetchBook(parseInt(this.props.match.params.bookId));
+    this.props.fetchReviews();
+    this.props.fetchUsers();
   }
 
   render() {
+    debugger
     if (this.props.book){
       const reviews = this.props.reviews.map( review =>
         (
@@ -26,22 +26,12 @@ class BookShow extends React.Component{
         <div className="bookshow-wrap">
           <div className="bookshow-container">
             <div className="bookshow-data">
-
-
               <div className="book-show">
                 <div className="image-status-column">
                   <div className="show-image">
                     <img className="book-cover-show" src={this.props.book.image_url}/>
                   </div>
-                  <div className="book-status-box">
-                    <div>
-                      <button className="status-button">Status</button>
-                      <button className="change-status-button">
-                        <i className="fa fa-sort-desc" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <div className="star-rating">Rate it</div>
-                  </div>
+                  <BookStatus book={this.props.book} user={this.props.currUser} />
                 </div>
                 <div className="book-data-column">
 

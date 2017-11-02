@@ -15,6 +15,7 @@ const mapStateToProps = (state,ownProps) => {
         return state.entities.reviews[reviewId];
       }),
       users: state.entities.users,
+      currUser: state.session.currentUser,
       errors: state.errors
     }
   );
