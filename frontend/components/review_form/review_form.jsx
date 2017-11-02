@@ -18,7 +18,7 @@ class ReviewForm extends React.Component{
     const review = {review:this.state.review,
       rating:this.state.rating,user_id:this.props.user.id,
       book_id:this.props.book.id};
-
+      debugger
     this.props.updateReview(review);
   }
 
@@ -44,17 +44,16 @@ class ReviewForm extends React.Component{
           <SearchResultItem review={true} book={this.props.book} />
           <div className="my-rating">myrating</div>
           <div className="review-shelve">shelves/tags</div>
-          <form className="my-review">
+          <form className="my-review" onSubmit={this.handleSubmit}>
             <p>What do you think?</p>
             <textarea
               className="review-input"
               placeholder="Enter your review (optional)"
               value={this.state.review}
               onChange={this.update('review')} />
-
+            <input className="submit" type="submit" value="Save" />
           </form>
 
-          <input className="submit" type="submit" value="Save" />
         </div>
       </div>
     );
