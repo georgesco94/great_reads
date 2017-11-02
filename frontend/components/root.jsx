@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import { fetchReviews } from '../actions/review_actions';
+import { fetchUsers } from '../actions/user_actions';
 
 import App from './App';
 
@@ -12,6 +13,7 @@ class Root extends React.Component{
 
   componentDidMount(){
     this.props.store.dispatch(fetchReviews());
+    this.props.store.dispatch(fetchUsers());
   }
 
   render(){

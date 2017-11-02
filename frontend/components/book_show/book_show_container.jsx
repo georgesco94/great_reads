@@ -3,6 +3,7 @@ import BookShow from './book_show';
 import {fetchBook} from '../../actions/book_actions';
 
 const mapStateToProps = (state,ownProps) => {
+  debugger
   let booki = state.entities.books[ownProps.match.params.bookId] || {reviewIds:[]};
   return (
     {

@@ -12,11 +12,13 @@ class BookShow extends React.Component{
   }
 
   render() {
-    let reviews = this.props.reviews.map((review) => {
-      return <ReviewItem key={review.id} review={review} />;
-    });
-    debugger
     if (this.props.book){
+      debugger
+      const reviews = this.props.reviews.map( review =>
+        (
+          <ReviewItem key={review.id} review={review} />
+        )
+      );
       return (
         <div className="bookshow-wrap">
           <div className="bookshow-container">
