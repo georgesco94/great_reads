@@ -5,7 +5,6 @@ import {fetchBook} from '../../actions/book_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state,ownProps) => {
-  debugger
   return (
     {
       user: state.session.currentUser,

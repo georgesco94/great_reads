@@ -2,7 +2,6 @@ import React from 'react';
 import { Link,withRouter } from 'react-router-dom';
 
 export const SearchResultItem = ({book,review}) => {
-  debugger
   let stat;
   if(!review){
     stat =

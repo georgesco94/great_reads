@@ -9,17 +9,12 @@ class BookShow extends React.Component{
 
   componentDidMount() {
     this.props.fetchBook(this.props.match.params.bookId);
-    if (!this.props.reviews){
-      this.props.fetchReviews();
-    }
-    if(!this.props.users) {
-      this.props.fetchUsers();
-    }
+    this.props.fetchReviews();
+    this.props.fetchUsers();
   }
 
   render() {
     if (this.props.book){
-      debugger
       const reviews = this.props.reviews.map( review =>
         (
           review ? <ReviewItem key={review.id} review={review} user={this.props.users[review.user_id]} /> : ""

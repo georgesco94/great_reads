@@ -5,7 +5,6 @@ import {fetchUsers} from '../../actions/user_actions';
 import {fetchReviews} from '../../actions/review_actions';
 
 const mapStateToProps = (state,ownProps) => {
-  debugger
   let booki = state.entities.books[ownProps.match.params.bookId] || {reviewIds:[]};
   return (
     {

@@ -18,8 +18,7 @@ class ReviewForm extends React.Component{
     const review = {review:this.state.review,
       rating:this.state.rating,user_id:this.props.user.id,
       book_id:this.props.book.id};
-      debugger
-    this.props.updateReview(review);
+    this.props.updateReview(review).then(this.props.history.push(`/books/${this.props.book.id}`));
   }
 
   componentDidMount() {
