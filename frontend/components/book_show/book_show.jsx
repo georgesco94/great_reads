@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { ReviewItem } from './review_item';
 
 class BookShow extends React.Component{
   constructor(props){
@@ -11,6 +12,10 @@ class BookShow extends React.Component{
   }
 
   render() {
+    let reviews = this.props.reviews.map((review) => {
+      return <ReviewItem key={review.id} review={review} />;
+    });
+    debugger
     if (this.props.book){
       return (
         <div className="bookshow-wrap">
@@ -52,11 +57,15 @@ class BookShow extends React.Component{
                 </div>
               </div>
 
+              <div className="review-items">
+                {reviews}
+              </div>
+
             </div>
           </div>
 
         </div>
-      )
+      );
 
     }else{
       return (<p>Loading</p>) ;
