@@ -35,11 +35,12 @@ class BookStatus extends React.Component{
         <div className="book-drop">
           <button className="status-button">
             {status}
+            <i class="fa fa-sort-desc" aria-hidden="true"></i>
           </button>
           <div className="hid">
-            <button onClick={(e) => this.handleClick("read",status,e)}>read</button>
-            <button onClick={(e) => this.handleClick("curr",status,e)}>currently reading</button>
-            <button onClick={(e) => this.handleClick("to",status,e)}>to read</button>
+            <button onClick={(e) => this.handleClick("Read",status,e)}>read</button>
+            <button onClick={(e) => this.handleClick("Currently Reading",status,e)}>currently reading</button>
+            <button onClick={(e) => this.handleClick("To-Read",status,e)}>to read</button>
           </div>
         </div>
       </div>

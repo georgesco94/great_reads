@@ -27,7 +27,6 @@ export const BookIndexItem = ({book}) => {
             </div>
             <div className="book-status">
               <BookStatusContainer book={book} />
-              <div className="star-rating">Rate it</div>
             </div>
 
             <div className="book-description">
