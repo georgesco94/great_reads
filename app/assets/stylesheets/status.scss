@@ -1,5 +1,6 @@
 .hid{
   display: none;
+  position: absolute;
   border: 1px solid gray;
   min-width: 160px;
   min-height: 50px;
@@ -9,8 +10,7 @@
   font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 }
 .book-drop{
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 
