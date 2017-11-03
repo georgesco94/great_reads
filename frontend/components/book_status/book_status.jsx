@@ -11,16 +11,16 @@ class BookStatus extends React.Component{
     if(oldstat!="Want To Read"){
       this.props.updateStatus(
         {book_id: this.props.book.id,
-           user_id: this.props.user.id, status: newstat }).then(()=>{
-             if(newstat==="read"){
+           user_id: this.props.currUser.id, status: newstat }).then(()=>{
+             if(newstat==="Read"){
                this.props.history.push(`/review/${this.props.book.id}`);
              }
            });
     }else{
       this.props.createStatus(
         {book_id: this.props.book.id,
-         user_id: this.props.user.id, status: newstat }).then(()=>{
-           if(newstat==="read"){
+         user_id: this.props.currUser.id, status: newstat }).then(()=>{
+           if(newstat==="Read"){
              this.props.history.push(`/review/${this.props.book.id}`);
         }
       });

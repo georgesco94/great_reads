@@ -5,13 +5,8 @@ class Api::StatusesController < ApplicationController
   end
 
   def create
-
     @status = Status.new(status_params)
     if @status.save
-      if @status.status == "read"
-
-        Review.create(user_id: status_params[:user_id] , book_id: status_params[:book_id], review: "")
-      end
       render 'api/statuses/show'
     else
       render json: @status.errors.full_messages, status: 422

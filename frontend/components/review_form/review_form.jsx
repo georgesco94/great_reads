@@ -7,7 +7,7 @@ class ReviewForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      review: '',
+      review: this.props.review,
       rating: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,11 +18,17 @@ class ReviewForm extends React.Component{
     const review = {review:this.state.review,
       rating:this.state.rating,user_id:this.props.user.id,
       book_id:this.props.book.id};
-    this.props.updateReview(review).then(this.props.history.push(`/books/${this.props.book.id}`));
+    debugger
+    this.props.action(review).then(this.props.history.push(`/books/${this.props.book.id}`));
   }
 
   componentDidMount() {
     this.props.fetchBook(this.props.match.params.bookId);
+    this.props.fetchReviews();
+  }
+  componentWillReceiveProps(newProps) {
+    debugger
+    this.setState({review: newProps.review});
   }
 
   update(field){
@@ -33,6 +39,7 @@ class ReviewForm extends React.Component{
 
 
   render(){
+    debugger
     if(!this.props.book) {
       return ("");
     }
@@ -48,7 +55,7 @@ class ReviewForm extends React.Component{
             <textarea
               className="review-input"
               placeholder="Enter your review (optional)"
-              value={this.state.review}
+              value={this.state.review.review}
               onChange={this.update('review')} />
             <input className="submit" type="submit" value="Save" />
           </form>

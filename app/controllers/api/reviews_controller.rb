@@ -18,6 +18,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
+    debugger
     @review = Review.where( { book_id: review_params[:book_id] , user_id: review_params[:user_id] } ).first
     if @review.update(review_params)
       render 'api/reviews/show'

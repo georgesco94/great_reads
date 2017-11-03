@@ -38,8 +38,8 @@ const App = (props) => {
             <Route path="/books/:bookId" component={BookShowContainer} />
             <Route path="/books" component={BookIndexContainer} />
             <Route path="/search" component={SearchResultsContainer} />
+            <Route path="/review/:bookId/edit" component={ReviewFormContainer} />
             <Route path="/review/:bookId" component={ReviewFormContainer} />
-            <Route path="/shelf/:userId" component={ReviewFormContainer} />
           </Switch>
         </div>
 

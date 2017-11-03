@@ -3,7 +3,7 @@ export const createReview = (review) => {
     {
       method: "POST",
       url: `api/reviews`,
-      data: review
+      data: {review: review}
     }
   );
 };
@@ -17,6 +17,7 @@ export const fetchReviews = (reviews) => {
   );
 };
 export const updateReview = (review) => {
+  debugger
   return $.ajax(
     {
       method: "PATCH",

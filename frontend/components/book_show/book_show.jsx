@@ -32,7 +32,7 @@ class BookShow extends React.Component{
                   <div className="show-image">
                     <img className="book-cover-show" src={this.props.book.image_url}/>
                   </div>
-                  <BookStatus book={this.props.book} status={this.props.status} user={this.props.currUser} createStatus={this.props.createStatus} updateStatus={this.props.updateStatus} />
+                  <BookStatus book={this.props.book} status={this.props.status} currUser={this.props.currUser} createStatus={this.props.createStatus} updateStatus={this.props.updateStatus} />
                 </div>
                 <div className="book-data-column">
 
@@ -52,7 +52,6 @@ class BookShow extends React.Component{
 
                 </div>
               </div>
-
               <div className="reviewz">
                 {reviews}
               </div>
