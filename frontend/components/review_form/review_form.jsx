@@ -18,7 +18,6 @@ class ReviewForm extends React.Component{
     const review = {review:this.state.review,
       rating:this.state.rating,user_id:this.props.user.id,
       book_id:this.props.book.id};
-    debugger
     this.props.action(review).then(this.props.history.push(`/books/${this.props.book.id}`));
   }
 
@@ -27,7 +26,6 @@ class ReviewForm extends React.Component{
     this.props.fetchReviews();
   }
   componentWillReceiveProps(newProps) {
-    debugger
     this.setState({review: newProps.review});
   }
 
@@ -39,7 +37,6 @@ class ReviewForm extends React.Component{
 
 
   render(){
-    debugger
     if(!this.props.book) {
       return ("");
     }

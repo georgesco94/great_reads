@@ -52,6 +52,7 @@ class BookShow extends React.Component{
 
                 </div>
               </div>
+              {this.props.status ? <Link to={`/review/${this.props.book.id}/edit`}>Edit Review</Link> : <p>empty</p>}
               <div className="reviewz">
                 {reviews}
               </div>

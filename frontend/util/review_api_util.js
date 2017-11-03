@@ -17,7 +17,6 @@ export const fetchReviews = (reviews) => {
   );
 };
 export const updateReview = (review) => {
-  debugger
   return $.ajax(
     {
       method: "PATCH",
