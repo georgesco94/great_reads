@@ -7,7 +7,9 @@ GreatReads is a single page web application based on GoodReads. Users manage the
 
 ## Technologies
 ### Backend
-The backend for this application uses a PostgreSQL database and is built with Ruby on Rails. Data requests are made with AJAX and fulfilled by JSON Jbuilder. Users and Books are stored in the database with images using the paperclip gem (images are hosted on AWS). A shelveAssignments join table links books to shelfs , and a statuses table links books to users. 
+The backend for this application uses a PostgreSQL database and is built with Ruby on Rails. Data requests are made with AJAX and fulfilled by JSON Jbuilder. Users and Books are stored in the database with images using the paperclip gem (images are hosted on AWS). A shelveAssignments join table links books to shelfs , and a statuses table links books to users.
+Upon creating a profile, each user is assigned three default shelves which cannot be deleted - "read", "currently reading" and "to read". To do this, the create action in the users controller makes those shelves upon successfull save of the user to the database. 
+
 
 ### Frontend
 The frontend is implemented with the React JS library, and Redux. A normalized Redux state is kept.
@@ -33,8 +35,6 @@ Each Book show page displays all the reviews for the given book. In the redux st
 
 ![alt text](https://github.com/georgesco94/greatReads/blob/master/search.png)
 Users can search for a book via author and/or title. Case insensitive.
-
-Upon creating a profile, each user is assigned three default shelves which cannot be deleted - "read", "currently reading" and "to read". To do this, the create action in the users controller makes those shelves upon successfull save of the user to the database. 
 
 ## Future Directions
 * auto-complete search
