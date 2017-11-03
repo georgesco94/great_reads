@@ -30,7 +30,9 @@ The book index page employs an infinite scroll, where three books are fetched ea
 
 Each Book show page displays all the reviews for the given book. In the redux state, books have an array of reviewIds through which we can display the correct reviews.
 
-![alt text](https://github.com/georgesco94/greatReads/blob/master/Screen%20Shot%202017-11-03%20at%201.29.53%20AM.png)
+![alt text](https://github.com/georgesco94/greatReads/blob/master/statuses.png)
+
+When a user toggles the status of a book, it gets assigned to his bookshelf. On a "read" status, user is prompted to write a review.
 
 
 ![alt text](https://github.com/georgesco94/greatReads/blob/master/search.png)
