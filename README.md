@@ -19,6 +19,11 @@ A few of the things you can do with GreatReads:
 * Create a review (as well as assign a star rating)
 * Create bookshelf and add books to it
 
+![alt text](https://github.com/georgesco94/greatReads/blob/master/infinite%20scroll.png)
+
+The book index page employs an infinite scroll, where three books are fetched each time the bottom of the page is hit. An offset number is sent to the database so that it keeps track of what the next three books are. To avoid unnecessary fetches when all the books have already been displayed, the event listener is turned off when the controller returns no books. 
+
+
 ![alt text](https://github.com/georgesco94/greatReads/blob/master/Screen%20Shot%202017-11-03%20at%201.28.20%20AM.png)
 
 Each Book show page displays all the reviews for the given book. In the redux state, books have an array of reviewIds through which we can display the correct reviews.
@@ -26,16 +31,8 @@ Each Book show page displays all the reviews for the given book. In the redux st
 ![alt text](https://github.com/georgesco94/greatReads/blob/master/Screen%20Shot%202017-11-03%20at%201.29.53%20AM.png)
 
 
-![alt text](https://github.com/georgesco94/greatReads/blob/master/search.png&s=200)
+![alt text](https://github.com/georgesco94/greatReads/blob/master/search.png)
 Users can search for a book via author and/or title. Case insensitive.
-
-
-![alt text](https://github.com/georgesco94/greatReads/blob/master/infinite%20scroll.png)
-
-
-The book index page employs an infinite scroll, where three books are fetched each time the bottom of the page is hit. An offset number is sent to the database so that it keeps track of what the next three books are. To avoid unnecessary fetches when all the books have already been displayed, the event listener is turned off when the controller returns no books. 
-
-
 
 Upon creating a profile, each user is assigned three default shelves which cannot be deleted - "read", "currently reading" and "to read". To do this, the create action in the users controller makes those shelves upon successfull save of the user to the database. 
 
