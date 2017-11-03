@@ -20,6 +20,10 @@ A few of the things you can do with GreatReads:
 * Create bookshelf and add books to it
 
 images go here
+![alt text](https://github.com/georgesco94/greatReads/blob/master/Screen%20Shot%202017-11-03%20at%201.28.20%20AM.png)
+![alt text](https://github.com/georgesco94/greatReads/blob/master/Screen%20Shot%202017-11-03%20at%201.29.53%20AM.png)
+![alt text](https://github.com/georgesco94/greatReads/blob/master/search.png)
+![alt text](https://github.com/georgesco94/greatReads/blob/master/infinite%20scroll.png)
 
 Upon creating a profile, each user is assigned three default shelves which cannot be deleted - "read", "currently reading" and "to read". To do this, the create action in the users controller makes those shelves upon successfull save of the user to the database. 
 
