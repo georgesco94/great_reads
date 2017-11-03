@@ -13,6 +13,15 @@ export const createStatus = (status) => dispatch => {
 };
 
 
+export const updateStatus = (status) => dispatch => {
+
+  return APIUtil.updateStatus(status).then(status => (
+    dispatch(receiveStatus(status))
+  )
+  );
+};
+
+
 export const fetchStatuses = () => dispatch => {
 
   return APIUtil.fetchStatuses().then(statuses => (

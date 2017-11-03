@@ -1,5 +1,4 @@
 export const createStatus = (status) => {
-  debugger
   return $.ajax(
     {
       method: "POST",
@@ -8,6 +7,17 @@ export const createStatus = (status) => {
     }
   );
 };
+
+export const updateStatus = (status) => {
+  return $.ajax(
+    {
+      method: "PATCH",
+      url: `api/statuses/${status.book_id}`,
+      data: {status:status}
+    }
+  );
+};
+
 
 export const fetchStatuses = () => {
   return $.ajax(

@@ -14,11 +14,15 @@ ShelveAssignment.destroy_all
 
 guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
 
-user1 = User.create!(username:"george", email: "guestEmail", password:"123456")
-user2 = User.create!(username:"sam", email: "guestEmail", password:"123456")
-user3 = User.create!(username:"john baker", email: "guestEmail", password:"123456")
-
-
+user1 = User.new(username:"george", email: "guestEmail", password:"123456")
+user1.image = File.open("app/assets/images/park.jpg")
+user1.save!
+user2 = User.new(username:"sam", email: "guestEmail", password:"123456")
+user2.image = File.open("app/assets/images/SAM.jpg")
+user2.save!
+user3 = User.new(username:"john baker", email: "guestEmail", password:"123456")
+user3.image = File.open("app/assets/images/JB.jpg")
+user3.save!
 
 Shelf.create(name:"read", user_id:guest.id)
 Shelf.create(name:"to-read", user_id:guest.id)
