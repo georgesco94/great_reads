@@ -9,14 +9,26 @@ class BookStatus extends React.Component{
   handleClick(newstat,oldstat,e) {
     e.preventDefault();
     if(oldstat!="Want To Read"){
-      this.props.updateStatus({book_id: this.props.book.id, user_id: this.props.user.id, status: newstat });
+      this.props.updateStatus(
+        {book_id: this.props.book.id,
+           user_id: this.props.user.id, status: newstat }).then(()=>{
+             if(newstat==="read"){
+               this.props.history.push(`/review/${this.props.book.id}`);
+             }
+           });
     }else{
-      this.props.createStatus({book_id: this.props.book.id, user_id: this.props.user.id, status: newstat });
+      this.props.createStatus(
+        {book_id: this.props.book.id,
+         user_id: this.props.user.id, status: newstat }).then(()=>{
+           if(newstat==="read"){
+             this.props.history.push(`/review/${this.props.book.id}`);
+        }
+      });
     }
   }
 
   render() {
-
+    debugger
     let status = this.props.status.status ? this.props.status.status : "Want To Read";
     return (
       <div className="book-status-box">

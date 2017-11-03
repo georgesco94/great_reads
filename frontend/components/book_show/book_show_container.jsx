@@ -11,7 +11,8 @@ const mapStateToProps = (state,ownProps) => {
   let status = {status:""};
   if(state.session.currentUser){
     state.session.currentUser.statusIds.forEach((statId) => {
-      if(state.entities.statuses[statId]){
+      debugger
+      if(state.entities.statuses[statId] && booki.id === state.entities.statuses[statId].book_id){
         status=state.entities.statuses[statId];
       }
     });
