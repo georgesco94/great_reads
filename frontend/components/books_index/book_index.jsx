@@ -11,6 +11,7 @@ class BooksIndex extends React.Component{
 
   componentDidMount() {
     this.props.fetchBooks(0);
+    this.props.fetchStatuses();
     window.addEventListener('scroll',this.fetchMore);
   }
 

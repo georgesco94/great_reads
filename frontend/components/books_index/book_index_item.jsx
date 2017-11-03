@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link,withRouter } from 'react-router-dom';
+import BookStatusContainer from '../book_status/book_status_container';
 
 export const BookIndexItem = ({book}) => {
-
+  debugger
   return (
     <div className="book-item-wrapper">
       <div className="book-item-box">
@@ -25,10 +26,7 @@ export const BookIndexItem = ({book}) => {
               by {book.author}
             </div>
             <div className="book-status">
-              <button className="status-button">Status</button>
-              <button className="change-status-button">
-                <i className="fa fa-sort-desc" aria-hidden="true"></i>
-              </button>
+              <BookStatusContainer book={book} />
               <div className="star-rating">Rate it</div>
             </div>
 

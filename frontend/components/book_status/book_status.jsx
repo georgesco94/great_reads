@@ -42,7 +42,6 @@ class BookStatus extends React.Component{
             <button onClick={(e) => this.handleClick("to",status,e)}>to read</button>
           </div>
         </div>
-        <div className="star-rating">Rate it</div>
       </div>
     );
   }
