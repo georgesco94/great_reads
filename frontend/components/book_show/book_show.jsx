@@ -16,7 +16,7 @@ class BookShow extends React.Component{
   }
 
   render() {
-
+    
     if (this.props.book){
       const reviews = this.props.reviews.map( review =>
         (
@@ -52,7 +52,7 @@ class BookShow extends React.Component{
 
                 </div>
               </div>
-              {this.props.status ? <Link to={`/review/${this.props.book.id}/edit`}>Edit Review</Link> : <p>empty</p>}
+              {this.props.status.status ? <Link className="link-review-edit" to={`/review/${this.props.book.id}/edit`}>Edit Review</Link> : <p></p>}
               <div className="reviewz">
                 {reviews}
               </div>

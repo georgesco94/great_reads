@@ -5,7 +5,6 @@ import {fetchBook} from '../../actions/book_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state,ownProps) => {
-  debugger
   let rev = "";
   state.session.currentUser.reviewIds.forEach((revId) => {
 
@@ -27,7 +26,6 @@ const mapStateToProps = (state,ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch,ownProps) => {
-  debugger
   let action = ownProps.match.path === "/review/:bookId/edit" ? updateReview : createReview;
   return {
     action: (review) => dispatch(action(review)),

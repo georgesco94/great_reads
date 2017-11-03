@@ -3,7 +3,6 @@ import { Link,withRouter } from 'react-router-dom';
 import BookStatusContainer from '../book_status/book_status_container';
 
 export const BookIndexItem = ({book}) => {
-  debugger
   return (
     <div className="book-item-wrapper">
       <div className="book-item-box">

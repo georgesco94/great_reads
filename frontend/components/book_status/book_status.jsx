@@ -4,6 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 class BookStatus extends React.Component{
   constructor(props){
     super(props);
+    this.state= {
+      status: this.props.status
+    };
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({status: newProps.status});
   }
 
   handleClick(newstat,oldstat,e) {
@@ -29,7 +36,7 @@ class BookStatus extends React.Component{
 
   render() {
     debugger
-    let status = this.props.status.status ? this.props.status.status : "Want To Read";
+    let status = this.state.status.status ? this.state.status.status : "Want To Read";
     return (
       <div className="book-status-box">
         <div className="book-drop">

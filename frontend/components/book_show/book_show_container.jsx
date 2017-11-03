@@ -6,7 +6,7 @@ import {fetchReviews} from '../../actions/review_actions';
 import {createStatus,fetchStatuses,updateStatus} from '../../actions/status_actions';
 
 const mapStateToProps = (state,ownProps) => {
-
+  
   let booki = state.entities.books[ownProps.match.params.bookId] || {reviewIds:[]};
   let status = {status:""};
   if(state.session.currentUser){
