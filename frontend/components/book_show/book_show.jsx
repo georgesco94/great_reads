@@ -12,10 +12,11 @@ class BookShow extends React.Component{
     this.props.fetchBook(parseInt(this.props.match.params.bookId));
     this.props.fetchReviews();
     this.props.fetchUsers();
+    this.props.fetchStatuses();
   }
 
   render() {
-    debugger
+    
     if (this.props.book){
       const reviews = this.props.reviews.map( review =>
         (
@@ -31,7 +32,7 @@ class BookShow extends React.Component{
                   <div className="show-image">
                     <img className="book-cover-show" src={this.props.book.image_url}/>
                   </div>
-                  <BookStatus book={this.props.book} user={this.props.currUser} />
+                  <BookStatus book={this.props.book} status={this.props.status} user={this.props.currUser} createStatus={this.props.createStatus} />
                 </div>
                 <div className="book-data-column">
 

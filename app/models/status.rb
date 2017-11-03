@@ -11,6 +11,7 @@
 #
 
 class Status < ApplicationRecord
+  validates :user_id, :book_id, :status, presence: true
 
   belongs_to :user,
     foreign_key: :user_id,

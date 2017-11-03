@@ -9,12 +9,29 @@ Book.destroy_all
 User.destroy_all
 Review.destroy_all
 Shelf.destroy_all
+Status.destroy_all
+ShelveAssignment.destroy_all
 
 guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
 
-read_shelf = Shelf.create(name:"read", user_id:guest.id)
-toread = Shelf.create(name:"to-read", user_id:guest.id)
-currread = Shelf.create(name:"currently-reading", user_id:guest.id)
+user1 = User.create!(username:"george", email: "guestEmail", password:"123456")
+user2 = User.create!(username:"sam", email: "guestEmail", password:"123456")
+user3 = User.create!(username:"john baker", email: "guestEmail", password:"123456")
+
+
+
+Shelf.create(name:"read", user_id:guest.id)
+Shelf.create(name:"to-read", user_id:guest.id)
+Shelf.create(name:"currently-reading", user_id:guest.id)
+Shelf.create(name:"read", user_id:user1)
+Shelf.create(name:"to-read", user_id:user1)
+Shelf.create(name:"currently-reading", user_id:user1)
+Shelf.create(name:"read", user_id:user2)
+Shelf.create(name:"to-read", user_id:user2)
+Shelf.create(name:"currently-reading", user_id:user2)
+Shelf.create(name:"read", user_id:user3)
+Shelf.create(name:"to-read", user_id:user3)
+Shelf.create(name:"currently-reading", user_id:user3)
 
 war_peace = Book.new(title:"War and Peace", author: "Lev Tolstoy" ,
 description:"The novel chronicles the history of the French invasion of Russia and
@@ -62,3 +79,26 @@ tale = Book.new(title:"A tale of Two Cities", author: "Charles Dickens" ,
 description:"'Liberty, equality, fraternity, or death; -- the last, much the easiest to bestow, O Guillotine!' After eighteen years as a political prisoner in the Bastille ")
 tale.image = File.open("app/assets/images/tale.jpg")
 tale.save!
+
+
+Status.create(user_id:user1.id , book_id:war_peace.id ,status:"Read")
+Status.create(user_id:user1.id , book_id:snows.id ,status:"Read")
+Status.create(user_id:user1.id , book_id:henry.id ,status:"Currently Reading")
+
+Status.create(user_id:user2.id , book_id:war_peace.id ,status:"Read")
+Status.create(user_id:user2.id , book_id:snows.id ,status:"To Read")
+Status.create(user_id:user2.id , book_id:henry.id ,status:"Read")
+
+Status.create(user_id:user3.id , book_id:war_peace.id ,status:"Read")
+Status.create(user_id:user3.id , book_id:snows.id ,status:"Currently Reading")
+Status.create(user_id:user3.id , book_id:henry.id ,status:"To read")
+
+Review.create!(user_id:user1.id , book_id:war_peace.id ,review:"enjoyed the book a lot" ,rating:4)
+Review.create!(user_id:user1.id , book_id:snows.id ,review:"enjoyed the book a lot" ,rating:4)
+Review.create!(user_id:user1.id , book_id:henry.id ,review:"enjoyed the book a lot" ,rating:4)
+Review.create!(user_id:user3.id , book_id:war_peace.id ,review:"cld be beter" ,rating:3)
+Review.create!(user_id:user3.id , book_id:snows.id ,review:"cld be beter" ,rating:3)
+Review.create!(user_id:user3.id , book_id:henry.id ,review:"cld be beter" ,rating:3)
+Review.create!(user_id:user2.id , book_id:war_peace.id ,review:"aboslutely hated it !!" ,rating:2)
+Review.create!(user_id:user2.id , book_id:snows.id ,review:"aboslutely hated it !!" ,rating:2)
+Review.create!(user_id:user2.id , book_id:henry.id ,review:"aboslutely hated it !!" ,rating:2)

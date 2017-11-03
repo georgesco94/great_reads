@@ -1,5 +1,9 @@
 class Api::StatusesController < ApplicationController
 
+  def index
+    @statuses = Status.all()
+  end
+
   def create
     @status = Status.new(status_params)
     if @status.save

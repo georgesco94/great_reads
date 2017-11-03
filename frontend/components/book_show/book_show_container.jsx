@@ -3,9 +3,19 @@ import BookShow from './book_show';
 import {fetchBook} from '../../actions/book_actions';
 import {fetchUsers} from '../../actions/user_actions';
 import {fetchReviews} from '../../actions/review_actions';
+import {createStatus,fetchStatuses} from '../../actions/status_actions';
 
 const mapStateToProps = (state,ownProps) => {
+  
   let booki = state.entities.books[ownProps.match.params.bookId] || {reviewIds:[]};
+  let status = {status:""};
+  if(state.session.currentUser){
+    state.session.currentUser.statusIds.forEach((statId) => {
+      if(state.entities.statuses[statId]){
+        status=state.entities.statuses[statId];
+      }
+    });
+  }
   return (
     {
       book: booki,
@@ -16,6 +26,7 @@ const mapStateToProps = (state,ownProps) => {
       }),
       users: state.entities.users,
       currUser: state.session.currentUser,
+      status: status,
       errors: state.errors
     }
   );
@@ -25,7 +36,9 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     fetchBook: (id) => dispatch(fetchBook(id)),
     fetchUsers: () => dispatch(fetchUsers()),
-    fetchReviews: () => dispatch(fetchBook())
+    fetchReviews: () => dispatch(fetchReviews()),
+    fetchStatuses: () => dispatch(fetchStatuses()),
+    createStatus: (status) => dispatch(createStatus(status))
   };
 };
 
