@@ -14,7 +14,6 @@ class Root extends React.Component{
 
   componentDidMount(){
     this.props.store.dispatch(fetchReviews());
-    this.props.store.dispatch(fetchStatuses());
     this.props.store.dispatch(fetchUsers());
   }
 

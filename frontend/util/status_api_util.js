@@ -19,11 +19,13 @@ export const updateStatus = (status) => {
 };
 
 
-export const fetchStatuses = () => {
+export const fetchStatuses = (id) => {
+  debugger
   return $.ajax(
     {
       method: "GET",
-      url: `api/statuses`
+      url: `api/statuses`,
+      data: {id:id}
     }
   );
 };

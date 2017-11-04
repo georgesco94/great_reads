@@ -5,9 +5,12 @@ import {fetchStatuses} from '../../actions/status_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state) => {
+  debugger
   return (
     {
       books: Object.values(state.entities.books),
+      currUser: state.session.currentUser,
+      statuses: state.entities.statuses,
       errors: state.errors
     }
   );
@@ -16,7 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBooks: (offset) => dispatch(fetchBooks(offset)),
-    fetchStatuses: () => dispatch(fetchStatuses())
+    fetchStatuses: (id) => dispatch(fetchStatuses(id))
   };
 };
 

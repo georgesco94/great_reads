@@ -8,9 +8,9 @@ const mapStateToProps = (state,ownProps) => {
     let booki = ownProps.book;
     let status = {status:""};
     if(state.session.currentUser){
-      state.session.currentUser.statusIds.forEach((statId) => {
-        if(state.entities.statuses[statId] && booki.id === state.entities.statuses[statId].book_id){
-          status=state.entities.statuses[statId];
+      Object.values(state.entities.statuses).forEach((stat) => {
+        if(stat.book_id === booki.id){
+          status=stat;
         }
       });
     }

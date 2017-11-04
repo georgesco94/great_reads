@@ -14,6 +14,7 @@ class BookStatus extends React.Component{
   }
 
   handleClick(newstat,oldstat,e) {
+    debugger
     e.preventDefault();
     if(oldstat!="Want To Read"){
       this.props.updateStatus(
@@ -42,7 +43,7 @@ class BookStatus extends React.Component{
         <div className="book-drop">
           <button className="status-button">
             {status}
-            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+            <i className="fa fa-sort-desc" aria-hidden="true"></i>
           </button>
           <div className="hid">
             <button onClick={(e) => this.handleClick("Read",status,e)}>read</button>
