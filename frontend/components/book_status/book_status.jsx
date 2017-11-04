@@ -5,16 +5,33 @@ class BookStatus extends React.Component{
   constructor(props){
     super(props);
     this.state= {
-      status: this.props.status
+      status: this.props.status,
+      errors: false
     };
+    this.removeErrors = this.removeErrors.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     this.setState({status: newProps.status});
   }
 
+  renderErrors(){
+    return (
+      <div className="status-errors-box">
+        <ul className="errors-ul">
+          <li className="errors">Sign up to change status</li>
+        </ul>
+      </div>
+    );
+  }
+
   handleClick(newstat,oldstat,e) {
+    debugger
     e.preventDefault();
+    if(!this.props.currUser){
+      this.setState({errors: true});
+      return ;
+    }
     if(oldstat!="Want To Read"){
       this.props.updateStatus(
         {book_id: this.props.book.id,
@@ -33,11 +50,21 @@ class BookStatus extends React.Component{
       });
     }
   }
+  removeErrors(){
+    setTimeout(function() {
+       this.setState({errors: false});
+     }.bind(this), 2000);
+  }
+
 
   render() {
+    if(this.state.errors) {
+      this.removeErrors();
+    }
     let status = this.state.status.status ? this.state.status.status : "Want To Read";
     return (
       <div className="book-status-box">
+        {this.state.errors ? this.renderErrors() : ""}
         <div className="book-drop">
           <button className="status-button">
             {status}
