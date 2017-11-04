@@ -4,7 +4,6 @@ import {createStatus,updateStatus} from '../../actions/status_actions';
 
 
 const mapStateToProps = (state,ownProps) => {
-    debugger
     let booki = ownProps.book;
     let status = {status:""};
     if(state.session.currentUser){

@@ -10,7 +10,6 @@ class BooksIndex extends React.Component{
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBooks(0);
     this.props.fetchStatuses(this.props.currUser.id);
     window.addEventListener('scroll',this.fetchMore);
@@ -38,7 +37,6 @@ class BooksIndex extends React.Component{
   }
 
   render() {
-    debugger
     const books = this.props.books.map(book => (
         <BookIndexItem key={book.id} book={book}
            currUser={this.props.currUser} statuses={this.props.statuses} />

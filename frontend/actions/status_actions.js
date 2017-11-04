@@ -23,7 +23,6 @@ export const updateStatus = (status) => dispatch => {
 
 
 export const fetchStatuses = (id) => dispatch => {
-  debugger
   return APIUtil.fetchStatuses(id).then(statuses => (
     dispatch(receiveStatuses(statuses))
   )

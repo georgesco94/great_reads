@@ -1,7 +1,6 @@
 class Api::StatusesController < ApplicationController
 
   def index
-    debugger
     @statuses = Status.all()
     if (params[:id])
       @statuses = Status.where({user_id: (params[:id]).to_i})

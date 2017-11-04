@@ -20,7 +20,6 @@ export const updateStatus = (status) => {
 
 
 export const fetchStatuses = (id) => {
-  debugger
   return $.ajax(
     {
       method: "GET",
