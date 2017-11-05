@@ -22,8 +22,8 @@ class ReviewForm extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchBook(this.props.match.params.bookId);
-    this.props.fetchReviews();
+    this.props.fetchBook(parseInt(this.props.match.params.bookId));
+    this.props.fetchReviews(parseInt(this.props.match.params.bookId));
   }
   componentWillReceiveProps(newProps) {
     this.setState({review: newProps.review});

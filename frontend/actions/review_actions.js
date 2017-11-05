@@ -4,8 +4,8 @@ export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 
-export const fetchReviews = () => dispatch => {
-  return APIUtil.fetchReviews().then( (reviews) => (
+export const fetchReviews = (id) => dispatch => {
+  return APIUtil.fetchReviews(id).then( (reviews) => (
     dispatch(receiveReviews(reviews))
   ));
 };

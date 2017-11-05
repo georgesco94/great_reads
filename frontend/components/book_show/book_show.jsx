@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { ReviewItem } from './review_item';
-import BookStatus from '../book_status/book_status';
+import BookStatusContainer from '../book_status/book_status_container';
 
 class BookShow extends React.Component{
   constructor(props){
@@ -10,13 +10,14 @@ class BookShow extends React.Component{
 
   componentDidMount() {
     this.props.fetchBook(parseInt(this.props.match.params.bookId));
-    this.props.fetchReviews();
+    this.props.fetchReviews(parseInt(this.props.match.params.bookId));
     this.props.fetchUsers();
-    this.props.fetchStatuses();
+    debugger
+    this.props.fetchStatuses(this.props.currUser.id);
   }
 
   render() {
-    
+
     if (this.props.book){
       const reviews = this.props.reviews.map( review =>
         (
@@ -32,7 +33,7 @@ class BookShow extends React.Component{
                   <div className="show-image">
                     <img className="book-cover-show" src={this.props.book.image_url}/>
                   </div>
-                  <BookStatus book={this.props.book} status={this.props.status} currUser={this.props.currUser} createStatus={this.props.createStatus} updateStatus={this.props.updateStatus} />
+                  <BookStatusContainer book={this.props.book} />
                 </div>
                 <div className="book-data-column">
 

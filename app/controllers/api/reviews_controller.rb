@@ -2,6 +2,9 @@ class Api::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all()
+    if (params[:id])
+      @reviews = Review.where({book_id: (params[:id]).to_i})
+    end
   end
 
   def show

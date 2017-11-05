@@ -7,7 +7,7 @@ import { RECEIVE_REVIEW, RECEIVE_REVIEWS} from '../actions/review_actions';
 const ReviewsReducer = (state = {} , action) => {
   switch(action.type) {
     case RECEIVE_REVIEW:
-      return {[action.review.id]: action.review};
+      return merge({}, state, {[action.review.id]: action.review});
     case RECEIVE_REVIEWS:
       return action.reviews;
     default:
