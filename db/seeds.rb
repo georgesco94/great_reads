@@ -17,7 +17,7 @@ guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
 user1 = User.new(username:"george", email: "guestEmail", password:"123456")
 user1.save!
 user2 = User.new(username:"sam", email: "guestEmail", password:"123456")
-user2.image = File.open("app/assets/images/SAM.jpg")
+user2.image = File.open("app/assets/images/lear.jpg")
 user2.save!
 user3 = User.new(username:"john baker", email: "guestEmail", password:"123456")
 user3.image = File.open("app/assets/images/JB.jpg")
