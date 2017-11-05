@@ -102,7 +102,6 @@ Review.create!(user_id:user1.id , book_id:snows.id ,review:"enjoyed the book a l
 Review.create!(user_id:user1.id , book_id:henry.id ,review:"enjoyed the book a lot" ,rating:4)
 Review.create!(user_id:user3.id , book_id:war_peace.id ,review:"cld be beter" ,rating:3)
 Review.create!(user_id:user3.id , book_id:snows.id ,review:"cld be beter" ,rating:3)
-Review.create!(user_id:user3.id , book_id:henry.id ,review:"cld be beter" ,rating:3)
 Review.create!(user_id:user2.id , book_id:war_peace.id ,review:"aboslutely hated it !!" ,rating:2)
 Review.create!(user_id:user2.id , book_id:snows.id ,review:"aboslutely hated it !!" ,rating:2)
 Review.create!(user_id:user2.id , book_id:henry.id ,review:"aboslutely hated it !!" ,rating:2)
