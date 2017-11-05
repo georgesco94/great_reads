@@ -15,7 +15,6 @@ ShelveAssignment.destroy_all
 guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
 
 user1 = User.new(username:"george", email: "guestEmail", password:"123456")
-user1.image = File.open("app/assets/images/park.jpg")
 user1.save!
 user2 = User.new(username:"sam", email: "guestEmail", password:"123456")
 user2.image = File.open("app/assets/images/SAM.jpg")
