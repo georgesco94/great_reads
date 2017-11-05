@@ -12,7 +12,9 @@ class BookShow extends React.Component{
     this.props.fetchBook(parseInt(this.props.match.params.bookId));
     this.props.fetchReviews(parseInt(this.props.match.params.bookId));
     this.props.fetchUsers();
-    this.props.fetchStatuses(this.props.currUser.id);
+    if(this.props.currUser){
+      this.props.fetchStatuses(this.props.currUser.id);
+    }
   }
 
   render() {
