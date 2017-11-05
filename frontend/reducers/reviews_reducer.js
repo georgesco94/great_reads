@@ -5,6 +5,7 @@ import { RECEIVE_REVIEW, RECEIVE_REVIEWS} from '../actions/review_actions';
 
 
 const ReviewsReducer = (state = {} , action) => {
+  debugger
   switch(action.type) {
     case RECEIVE_REVIEW:
       return merge({}, state, {[action.review.id]: action.review});

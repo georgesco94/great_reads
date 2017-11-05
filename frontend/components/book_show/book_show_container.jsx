@@ -6,10 +6,8 @@ import {fetchReviews} from '../../actions/review_actions';
 import {createStatus,fetchStatuses,updateStatus} from '../../actions/status_actions';
 
 const mapStateToProps = (state,ownProps) => {
-  debugger
   let booki = state.entities.books[ownProps.match.params.bookId] || {reviewIds:[]};
   let status = {status:""};
-  debugger
   if(state.session.currentUser){
     Object.values(state.entities.statuses).forEach((stat) => {
       if(stat.book_id === booki.id){

@@ -60,7 +60,7 @@ class BookStatus extends React.Component{
     if(this.state.errors) {
       this.removeErrors();
     }
-    debugger
+    
     let status = this.state.status.status ? this.state.status.status : "Want To Read";
     return (
       <div className="book-status-box">
