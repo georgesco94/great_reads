@@ -1,0 +1,31 @@
+.my-books {
+  background-color: white;
+  margin: auto;
+  margin-top: 90px;
+}
+.shelfs {
+  width: 75%;
+  margin: auto;
+}
+
+.shelf-content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.shelf-header {
+  color: #00635d;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.shelf-columns {
+  width: 20%;
+  background-color: red;
+}
+
+.shelf-books {
+  width: 80%;
+  background-color: blue;
+}

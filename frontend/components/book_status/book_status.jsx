@@ -26,6 +26,7 @@ class BookStatus extends React.Component{
   }
 
   handleClick(newstat,oldstat,e) {
+    debugger
     e.preventDefault();
     if(!this.props.currUser){
       this.setState({errors: true});
@@ -57,10 +58,11 @@ class BookStatus extends React.Component{
 
 
   render() {
+    debugger
     if(this.state.errors) {
       this.removeErrors();
     }
-    
+
     let status = this.state.status.status ? this.state.status.status : "Want To Read";
     return (
       <div className="book-status-box">

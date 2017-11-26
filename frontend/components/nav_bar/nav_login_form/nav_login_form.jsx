@@ -43,7 +43,7 @@ class NavLoginForm extends React.Component{
           <Link className="nav-link-img" to={`/books`}>
             <div className="logo"></div>
           </Link>
-          <Link className="nav-link" to={`/books`}>
+          <Link className="nav-link" to={`/shelf/${this.props.logged.id}`}>
             <h1>My Books</h1>
           </Link>
           <Link className="nav-link" to={`/books/new`}>
