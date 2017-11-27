@@ -23,18 +23,21 @@ user3 = User.new(username:"john baker", email: "guestEmail", password:"123456")
 user3.image = File.open("app/assets/images/JB.jpg")
 user3.save!
 
-Shelf.create(name:"read", user_id:guest.id)
-Shelf.create(name:"to-read", user_id:guest.id)
-Shelf.create(name:"currently-reading", user_id:guest.id)
-Shelf.create(name:"read", user_id:user1)
-Shelf.create(name:"to-read", user_id:user1)
-Shelf.create(name:"currently-reading", user_id:user1)
-Shelf.create(name:"read", user_id:user2)
-Shelf.create(name:"to-read", user_id:user2)
-Shelf.create(name:"currently-reading", user_id:user2)
-Shelf.create(name:"read", user_id:user3)
-Shelf.create(name:"to-read", user_id:user3)
-Shelf.create(name:"currently-reading", user_id:user3)
+shelf1 = Shelf.create!(name:"read", user_id:guest.id)
+shelf2 = Shelf.create!(name:"to-read", user_id:guest.id)
+shelf3 = Shelf.create!(name:"currently-reading", user_id:guest.id)
+
+shelf4 = Shelf.create!(name:"read", user_id:user1.id)
+shelf5 = Shelf.create!(name:"to-read", user_id:user1.id)
+shelf6 = Shelf.create!(name:"currently-reading", user_id:user1.id)
+
+shelf7 = Shelf.create!(name:"read", user_id:user2.id)
+shelf8 = Shelf.create!(name:"to-read", user_id:user2.id)
+shelf9 = Shelf.create!(name:"currently-reading", user_id:user2.id)
+
+shelf10 = Shelf.create!(name:"read", user_id:user3.id)
+shelf11 = Shelf.create!(name:"to-read", user_id:user3.id)
+shelf12 = Shelf.create!(name:"currently-reading", user_id:user3.id)
 
 war_peace = Book.new(title:"War and Peace", author: "Lev Tolstoy" ,
 description:"The novel chronicles the history of the French invasion of Russia and
@@ -84,17 +87,28 @@ tale.image = File.open("app/assets/images/tale.jpg")
 tale.save!
 
 
-Status.create(user_id:user1.id , book_id:war_peace.id ,status:"Read")
-Status.create(user_id:user1.id , book_id:snows.id ,status:"Read")
-Status.create(user_id:user1.id , book_id:henry.id ,status:"Currently Reading")
+s1 = Status.create!(user_id:user1.id , book_id:war_peace.id ,status:"Read")
+ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf4.id )
+s2= Status.create!(user_id:user1.id , book_id:snows.id ,status:"Read")
+ShelveAssignment.create(book_id: snows.id , shelf_id: shelf5.id )
+s3= Status.create!(user_id:user1.id , book_id:henry.id ,status:"Currently Reading")
+ShelveAssignment.create(book_id: henry.id , shelf_id: shelf6.id )
 
-Status.create(user_id:user2.id , book_id:war_peace.id ,status:"Read")
-Status.create(user_id:user2.id , book_id:snows.id ,status:"To Read")
-Status.create(user_id:user2.id , book_id:henry.id ,status:"Read")
+s4= Status.create!(user_id:user2.id , book_id:war_peace.id ,status:"Read")
+ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf7.id )
+s5= Status.create!(user_id:user2.id , book_id:snows.id ,status:"To Read")
+ShelveAssignment.create(book_id: snows.id , shelf_id: shelf8.id )
+s6= Status.create!(user_id:user2.id , book_id:henry.id ,status:"Read")
+ShelveAssignment.create(book_id: henry.id , shelf_id: shelf9.id )
 
-Status.create(user_id:user3.id , book_id:war_peace.id ,status:"Read")
-Status.create(user_id:user3.id , book_id:snows.id ,status:"Currently Reading")
-Status.create(user_id:user3.id , book_id:henry.id ,status:"To read")
+
+s7= Status.create!(user_id:user3.id , book_id:war_peace.id ,status:"Read")
+ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf10.id )
+s8= Status.create!(user_id:user3.id , book_id:snows.id ,status:"Currently Reading")
+ShelveAssignment.create(book_id: snows.id , shelf_id: shelf11.id )
+s9= Status.create!(user_id:user3.id , book_id:henry.id ,status:"To read")
+ShelveAssignment.create(book_id: henry.id , shelf_id: shelf12.id )
+
 
 Review.create!(user_id:user1.id , book_id:war_peace.id ,review:"enjoyed the book a lot" ,rating:4)
 Review.create!(user_id:user1.id , book_id:snows.id ,review:"enjoyed the book a lot" ,rating:4)

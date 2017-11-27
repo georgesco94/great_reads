@@ -11,9 +11,6 @@ class Api::StatusesController < ApplicationController
   def create
     @status = Status.new(status_params)
     if @status.save
-      # shelfId = Shelf.where({user_id: status_params[:user_id], name: status_params[:status]}).first.id
-      # ShelveAssignment.create({shelf_id: shelf_id, book_id: status_params[:book_id].to_i})
-
       render 'api/statuses/show'
     else
       render json: @status.errors.full_messages, status: 422

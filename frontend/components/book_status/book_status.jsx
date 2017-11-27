@@ -26,7 +26,6 @@ class BookStatus extends React.Component{
   }
 
   handleClick(newstat,oldstat,e) {
-    debugger
     e.preventDefault();
     if(!this.props.currUser){
       this.setState({errors: true});

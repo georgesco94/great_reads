@@ -11,7 +11,6 @@ class BookShelf extends React.Component{
   }
 
   render() {
-    debugger
     const shelfs = this.props.shelves.map((shelf) => {
       return(
         <li>
@@ -19,7 +18,6 @@ class BookShelf extends React.Component{
         </li>
       );
     });
-    debugger
     return (
       <div className="my-books">
         <div className="shelfs">
