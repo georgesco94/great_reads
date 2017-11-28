@@ -15,12 +15,13 @@ class ShelfBooks extends React.Component{
   }
 
   render() {
-    console.log(this.props.books);
+    const books = this.props.books.map( book => {
+      return book.title;
+    });
     return (
       <div className="shelf-books">
-        <div>hi</div>;
-
-        </div>
+        {books}
+      </div>
 
     );
   }

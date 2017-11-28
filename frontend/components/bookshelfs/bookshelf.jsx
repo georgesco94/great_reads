@@ -31,7 +31,7 @@ class BookShelf extends React.Component{
         </li>
       );
     });
-    let books;
+    let books = [];
     debugger
     if(this.state.clicked) {
       books = this.props.books[this.state.clicked];
