@@ -1,23 +1,42 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ShelfBooks from './shelfBooks';
 
 class BookShelf extends React.Component{
   constructor(props){
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      clicked : false
+    };
   }
 
   componentDidMount() {
     this.props.fetchShelves(this.props.currUser.id);
   }
 
+  handleClick(e,shelfId){
+    debugger
+    e.preventDefault();
+    this.props.fetchShelfBooks(shelfId).then(() => this.setState({clicked:shelfId}));
+  }
+
   render() {
     const shelfs = this.props.shelves.map((shelf) => {
       return(
         <li>
-          {shelf.name}
+          <button onClick={ (e) => this.handleClick(e,shelf.id)}>
+            {shelf.name}
+          </button>
         </li>
       );
     });
+    let books;
+    debugger
+    if(this.state.clicked) {
+      books = this.props.books[this.state.clicked];
+    }
+
     return (
       <div className="my-books">
         <div className="shelfs">
@@ -31,9 +50,7 @@ class BookShelf extends React.Component{
               </ul>
             </div>
 
-            <div className="shelf-books">
-              books
-            </div>
+            <ShelfBooks books={books} />
 
           </div>
 

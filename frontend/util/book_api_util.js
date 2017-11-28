@@ -8,6 +8,16 @@ export const fetchBooks = (offset) => (
   )
 );
 
+export const fetchShelfBooks = (shelfId) => (
+  $.ajax(
+    {
+      method: "GET",
+      url: "api/books",
+      data: {shelfId:shelfId}
+    }
+  )
+);
+
 export const fetchBook = (id) => {
   return $.ajax(
     {

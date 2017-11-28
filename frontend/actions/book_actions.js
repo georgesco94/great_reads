@@ -12,6 +12,12 @@ export const fetchBooks = (offset) => dispatch => {
   ));
 };
 
+export const fetchShelfBooks = (shelfId) => dispatch => {
+  return APIUtil.fetchShelfBooks(shelfId).then(books => (
+    dispatch(receiveBooks(books))
+  ));
+};
+
 export const fetchBook = (id) => dispatch => {
   return APIUtil.fetchBook(id).then(book => (
     dispatch(receiveBook(book))

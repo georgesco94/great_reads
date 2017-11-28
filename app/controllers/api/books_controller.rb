@@ -10,6 +10,8 @@ class Api::BooksController < ApplicationController
     elsif params[:num]
       num = params[:num].to_i
       @books = Book.limit(num)
+    elsif params[:shelfId]
+      @books = Shelf.find(params[:shelfId].to_i).books
     else
       @books = Book.all()
     end

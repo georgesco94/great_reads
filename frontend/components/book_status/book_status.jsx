@@ -57,12 +57,20 @@ class BookStatus extends React.Component{
 
 
   render() {
-    debugger
     if(this.state.errors) {
       this.removeErrors();
     }
-
     let status = this.state.status.status ? this.state.status.status : "Want To Read";
+
+    const userShelves = this.props.userShelves.map( (shelf) => {
+      return(
+        <button onClick={ (e) => this.handleClick(shelf.name,status,e)}>
+          {shelf.name}
+        </button>
+      );
+    });
+
+
     return (
       <div className="book-status-box">
         {this.state.errors ? this.renderErrors() : ""}
@@ -72,9 +80,7 @@ class BookStatus extends React.Component{
             <i className="fa fa-sort-desc" aria-hidden="true"></i>
           </button>
           <div className="hid">
-            <button onClick={(e) => this.handleClick("Read",status,e)}>read</button>
-            <button onClick={(e) => this.handleClick("Currently Reading",status,e)}>currently reading</button>
-            <button onClick={(e) => this.handleClick("To-Read",status,e)}>to read</button>
+            {userShelves}
           </div>
         </div>
       </div>
