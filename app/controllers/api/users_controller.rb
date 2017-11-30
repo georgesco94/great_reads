@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
 
-      read_shelf = Shelf.create!(name:"Read", user_id:@user.id)
+      read_shelf = Shelf.create!(name:"read", user_id:@user.id)
       toread = Shelf.create!(name:"To-Read", user_id:@user.id)
       currread = Shelf.create!(name:"currently-reading", user_id:@user.id)
 

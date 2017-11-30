@@ -88,28 +88,28 @@ tale.image = File.open("app/assets/images/tale.jpg")
 tale.save!
 
 
-s0 = Status.create!(user_id:user1.id , book_id:slaughter.id ,status:"Read")
+s0 = Status.create!(user_id:user1.id , book_id:slaughter.id ,status:"read")
 ShelveAssignment.create(book_id: slaughter.id , shelf_id: shelf4.id )
-s1 = Status.create!(user_id:user1.id , book_id:war_peace.id ,status:"Read")
+s1 = Status.create!(user_id:user1.id , book_id:war_peace.id ,status:"read")
 ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf4.id )
-s2= Status.create!(user_id:user1.id , book_id:snows.id ,status:"To Read")
+s2= Status.create!(user_id:user1.id , book_id:snows.id ,status:"to-read")
 ShelveAssignment.create(book_id: snows.id , shelf_id: shelf5.id )
-s3= Status.create!(user_id:user1.id , book_id:henry.id ,status:"Currently Reading")
+s3= Status.create!(user_id:user1.id , book_id:henry.id ,status:"currently-reading")
 ShelveAssignment.create(book_id: henry.id , shelf_id: shelf6.id )
 
-s4= Status.create!(user_id:user2.id , book_id:war_peace.id ,status:"Read")
+s4= Status.create!(user_id:user2.id , book_id:war_peace.id ,status:"read")
 ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf7.id )
-s5= Status.create!(user_id:user2.id , book_id:snows.id ,status:"To Read")
+s5= Status.create!(user_id:user2.id , book_id:snows.id ,status:"to-read")
 ShelveAssignment.create(book_id: snows.id , shelf_id: shelf8.id )
-s6= Status.create!(user_id:user2.id , book_id:henry.id ,status:"Read")
+s6= Status.create!(user_id:user2.id , book_id:henry.id ,status:"read")
 ShelveAssignment.create(book_id: henry.id , shelf_id: shelf9.id )
 
 
-s7= Status.create!(user_id:user3.id , book_id:war_peace.id ,status:"Read")
+s7= Status.create!(user_id:user3.id , book_id:war_peace.id ,status:"read")
 ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf10.id )
-s8= Status.create!(user_id:user3.id , book_id:snows.id ,status:"Currently Reading")
+s8= Status.create!(user_id:user3.id , book_id:snows.id ,status:"currently-reading")
 ShelveAssignment.create(book_id: snows.id , shelf_id: shelf11.id )
-s9= Status.create!(user_id:user3.id , book_id:henry.id ,status:"To read")
+s9= Status.create!(user_id:user3.id , book_id:henry.id ,status:"to-read")
 ShelveAssignment.create(book_id: henry.id , shelf_id: shelf12.id )
 
 
