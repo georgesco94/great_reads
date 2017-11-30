@@ -6,8 +6,10 @@ class BookShelf extends React.Component{
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
-      clicked : false
+      clicked : false,
+      shelfName:""
     };
   }
 
@@ -23,6 +25,19 @@ class BookShelf extends React.Component{
   handleClick(e,shelfId){
     e.preventDefault();
     this.props.fetchShelfBooks(shelfId).then(() => this.setState({clicked:shelfId}));
+  }
+
+  update(field){
+    debugger
+    return e => this.setState({
+      [field]: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    debugger
+    this.props.createShelf({name:this.state.shelfName,user_id:this.props.currUser.id});
   }
 
   render() {
@@ -51,6 +66,14 @@ class BookShelf extends React.Component{
               <ul>
                 {shelfs}
               </ul>
+
+              <div>
+                <button className="new-shelf-button">Add Shelf</button>
+                <form onSubmit={this.handleSubmit}>
+                  <input onChange={this.update('shelfName')} />
+                  <input  type="submit" value="Add" />
+                </form>
+              </div>
             </div>
 
             <ShelfBooks books={books} />

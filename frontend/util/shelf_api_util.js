@@ -7,3 +7,14 @@ export const fetchShelves = (id) => {
     }
   );
 };
+
+
+export const createShelf = (shelf) => {
+  return $.ajax(
+    {
+      method: "POST",
+      url: `api/shelves`,
+      data: {shelf:shelf}
+    }
+  );
+};

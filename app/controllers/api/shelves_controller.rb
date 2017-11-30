@@ -7,4 +7,20 @@ class Api::ShelvesController < ApplicationController
     render :index
   end
 
+
+  def create
+    debugger
+    @shelf = Shelf.new(shelf_params)
+    if @shelf.save
+      
+      render 'api/shelves/show'
+    else
+      render json: @status.errors.full_messages, status: 422
+    end
+  end
+
+
+  def shelf_params
+    params.require(:shelf).permit(:name, :user_id)
+  end
 end
