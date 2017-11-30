@@ -37,7 +37,6 @@ class BookShelf extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.createShelf({name:this.state.shelfName,user_id:this.props.currUser.id});
-    debugger
     this.setState({adding:false,shelfName:""});
   }
 
