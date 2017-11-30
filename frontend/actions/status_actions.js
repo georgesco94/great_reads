@@ -4,9 +4,9 @@ export const RECEIVE_STATUSES = 'RECEIVE_STATUSES';
 
 
 
-export const createStatus = (status) => dispatch => {
+export const createStatus = (status,shelfId) => dispatch => {
 
-  return APIUtil.createStatus(status).then(status => (
+  return APIUtil.createStatus(status,shelfId).then(status => (
     dispatch(receiveStatus(status))
   )
   );

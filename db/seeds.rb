@@ -26,6 +26,7 @@ user3.save!
 shelf1 = Shelf.create!(name:"read", user_id:guest.id)
 shelf2 = Shelf.create!(name:"to-read", user_id:guest.id)
 shelf3 = Shelf.create!(name:"currently-reading", user_id:guest.id)
+shelf3 = Shelf.create!(name:"favs", user_id:guest.id)
 
 shelf4 = Shelf.create!(name:"read", user_id:user1.id)
 shelf5 = Shelf.create!(name:"to-read", user_id:user1.id)
@@ -88,7 +89,9 @@ tale.save!
 
 
 s1 = Status.create!(user_id:user1.id , book_id:war_peace.id ,status:"Read")
+s0 = Status.create!(user_id:user1.id , book_id:slaughter.id ,status:"Read")
 ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf4.id )
+ShelveAssignment.create(book_id: slaughter.id , shelf_id: shelf4.id )
 s2= Status.create!(user_id:user1.id , book_id:snows.id ,status:"Read")
 ShelveAssignment.create(book_id: snows.id , shelf_id: shelf5.id )
 s3= Status.create!(user_id:user1.id , book_id:henry.id ,status:"Currently Reading")

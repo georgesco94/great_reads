@@ -11,6 +11,8 @@ class Api::StatusesController < ApplicationController
   def create
     @status = Status.new(status_params)
     if @status.save
+      shelfId = params[:shelfId].to_i
+      ShelveAssignment.create!(shelf_id: shelfId, book_id: @status.book_id)
       render 'api/statuses/show'
     else
       render json: @status.errors.full_messages, status: 422
@@ -18,9 +20,12 @@ class Api::StatusesController < ApplicationController
   end
 
   def update
+    debugger
     @status = Status.where( { book_id: status_params[:book_id] , user_id: status_params[:user_id] } ).first
     if @status.update(status_params)
-
+      shelfId = params[:shelfId].to_i
+      shelveAssignment = ShelveAssignment.where(shelf_id:shelfId, book_id: @status.book_id)
+      shelveAssignment.update()
       render 'api/statuses/show'
     else
       render json: @status.errors.full_messages, status: 422
@@ -28,7 +33,7 @@ class Api::StatusesController < ApplicationController
   end
 
   def status_params
-    params.require(:status).permit(:user_id, :book_id, :status)
+    params.require(:status).permit(:user_id, :book_id, :status, :shelfId)
   end
 
 end

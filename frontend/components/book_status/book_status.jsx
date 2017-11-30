@@ -9,6 +9,7 @@ class BookStatus extends React.Component{
       errors: false
     };
     this.removeErrors = this.removeErrors.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -25,16 +26,18 @@ class BookStatus extends React.Component{
     );
   }
 
-  handleClick(newstat,oldstat,e) {
+  handleClick(newstat,oldstat,shelfId,e) {
+    debugger
     e.preventDefault();
     if(!this.props.currUser){
       this.setState({errors: true});
       return ;
     }
     if(oldstat!="Want To Read"){
+
       this.props.updateStatus(
-        {book_id: this.props.book.id,
-           user_id: this.props.currUser.id, status: newstat }).then(()=>{
+        { book_id: this.props.book.id,
+           user_id: this.props.currUser.id, status: newstat},shelfId).then(()=>{
              if(newstat==="Read"){
                this.props.history.push(`/review/${this.props.book.id}`);
              }
@@ -42,7 +45,7 @@ class BookStatus extends React.Component{
     }else{
       this.props.createStatus(
         {book_id: this.props.book.id,
-         user_id: this.props.currUser.id, status: newstat }).then(()=>{
+         user_id: this.props.currUser.id, status: newstat},shelfId).then(()=>{
            if(newstat==="Read"){
              this.props.history.push(`/review/${this.props.book.id}`);
         }
@@ -64,7 +67,7 @@ class BookStatus extends React.Component{
 
     const userShelves = this.props.userShelves.map( (shelf) => {
       return(
-        <button onClick={ (e) => this.handleClick(shelf.name,status,e)}>
+        <button onClick={ (e) => this.handleClick(shelf.name,status,shelf.id,e)}>
           {shelf.name}
         </button>
       );

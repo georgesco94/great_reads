@@ -27,7 +27,7 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = (dispatch,ownProps) => {
   return {
-    createStatus: (status) => dispatch(createStatus(status)),
+    createStatus: (status,shelfId) => dispatch(createStatus(status,shelfId)),
     updateStatus: (status) => dispatch(updateStatus(status))
   };
 };

@@ -1,9 +1,10 @@
-export const createStatus = (status) => {
+export const createStatus = (status,shelfId) => {
+  debugger
   return $.ajax(
     {
       method: "POST",
       url: `api/statuses`,
-      data: {status:status}
+      data: {status:status,shelfId:shelfId}
     }
   );
 };

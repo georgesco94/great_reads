@@ -16,7 +16,6 @@ class BookShelf extends React.Component{
   }
 
   handleClick(e,shelfId){
-    debugger
     e.preventDefault();
     this.props.fetchShelfBooks(shelfId).then(() => this.setState({clicked:shelfId}));
   }
@@ -32,7 +31,6 @@ class BookShelf extends React.Component{
       );
     });
     let books = [];
-    debugger
     if(this.state.clicked) {
       books = this.props.books[this.state.clicked];
     }
