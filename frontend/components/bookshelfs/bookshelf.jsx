@@ -13,6 +13,11 @@ class BookShelf extends React.Component{
 
   componentDidMount() {
     this.props.fetchShelves(this.props.currUser.id);
+    this.props.fetchAssignments(this.props.currUser.id);
+  }
+
+  componentWillReceiveProps(newProps) {
+
   }
 
   handleClick(e,shelfId){

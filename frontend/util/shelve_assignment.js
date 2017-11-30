@@ -1,5 +1,4 @@
 export const updateAssignment = (assignment,assignmentId) => {
-  debugger
   return $.ajax(
     {
       method: "PATCH",

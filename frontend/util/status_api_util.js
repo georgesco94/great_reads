@@ -1,5 +1,4 @@
 export const createStatus = (status,shelfId) => {
-  debugger
   return $.ajax(
     {
       method: "POST",

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import BookStatus from './book_status';
 import {createStatus,updateStatus} from '../../actions/status_actions';
 import {updateAssignment} from '../../actions/shelve_assignments_actions';
+import {fetchShelves} from '../../actions/shelf_actions';
 
 
 const mapStateToProps = (state,ownProps) => {
@@ -37,6 +38,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     createStatus: (status,shelfId) => dispatch(createStatus(status,shelfId)),
     updateStatus: (status) => dispatch(updateStatus(status)),
+    fetchShelves: (id) => dispatch(fetchShelves(id)),
     updateAssignment: (assignment,assignmentId) => dispatch(updateAssignment(assignment,assignmentId))
   };
 };
