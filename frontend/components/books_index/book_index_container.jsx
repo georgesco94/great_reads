@@ -3,6 +3,7 @@ import BookIndex from './book_index';
 import {fetchBooks} from '../../actions/book_actions';
 import {fetchStatuses} from '../../actions/status_actions';
 import {fetchShelves} from '../../actions/shelf_actions';
+import {fetchAssignments} from '../../actions/shelve_assignments_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state) => {
@@ -21,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchBooks: (offset) => dispatch(fetchBooks(offset)),
     fetchStatuses: (id) => dispatch(fetchStatuses(id)),
-    fetchShelves: (id) => dispatch(fetchShelves(id))
+    fetchShelves: (id) => dispatch(fetchShelves(id)),
+    fetchAssignments: (id) => dispatch(fetchAssignments(id))
   };
 };
 

@@ -13,6 +13,7 @@ class BooksIndex extends React.Component{
     this.props.fetchBooks(0);
     this.props.fetchStatuses(this.props.currUser.id);
     this.props.fetchShelves(this.props.currUser.id);
+    this.props.fetchAssignments(this.props.currUser.id);
     window.addEventListener('scroll',this.fetchMore);
   }
 

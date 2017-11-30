@@ -39,6 +39,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Status"
 
+  has_many :shelve_assignments,
+    through: :shelfs,
+    source: :shelve_assignmets
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     (user && user.is_password?(password)) ? user : nil

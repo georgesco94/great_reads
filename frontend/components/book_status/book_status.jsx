@@ -26,8 +26,7 @@ class BookStatus extends React.Component{
     );
   }
 
-  handleClick(newstat,oldstat,shelfId,e) {
-    debugger
+  handleClick(newstat,oldstat,shelfId,assignmentId,e) {
     e.preventDefault();
     if(!this.props.currUser){
       this.setState({errors: true});
@@ -41,7 +40,8 @@ class BookStatus extends React.Component{
              if(newstat==="Read"){
                this.props.history.push(`/review/${this.props.book.id}`);
              }
-           });
+            });
+      this.props.updateAssignment({shelf_id:shelfId},assignmentId);
     }else{
       this.props.createStatus(
         {book_id: this.props.book.id,
@@ -64,10 +64,13 @@ class BookStatus extends React.Component{
       this.removeErrors();
     }
     let status = this.state.status.status ? this.state.status.status : "Want To Read";
-
+    let assignmentId=0;
+    if(this.props.assignment[0]){
+      assignmentId = this.props.assignment[0].id;
+    }
     const userShelves = this.props.userShelves.map( (shelf) => {
       return(
-        <button onClick={ (e) => this.handleClick(shelf.name,status,shelf.id,e)}>
+        <button onClick={ (e) => this.handleClick(shelf.name,status,shelf.id,assignmentId,e)}>
           {shelf.name}
         </button>
       );

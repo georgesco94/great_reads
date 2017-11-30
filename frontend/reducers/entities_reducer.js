@@ -4,6 +4,7 @@ import ReviewsReducer from './reviews_reducer';
 import UsersReducer from './users_reducer';
 import StatusesReducer from './statuses_reducer';
 import ShelvesReducer from './shelves_reducer';
+import AssignmentsReducer from './shelve_assignments_reducer';
 
 
 export default combineReducers(
@@ -12,6 +13,7 @@ export default combineReducers(
     reviews: ReviewsReducer,
     statuses: StatusesReducer,
     users: UsersReducer,
-    shelves: ShelvesReducer
+    shelves: ShelvesReducer,
+    assignments: AssignmentsReducer
   }
 );

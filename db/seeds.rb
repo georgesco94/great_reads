@@ -88,11 +88,11 @@ tale.image = File.open("app/assets/images/tale.jpg")
 tale.save!
 
 
-s1 = Status.create!(user_id:user1.id , book_id:war_peace.id ,status:"Read")
 s0 = Status.create!(user_id:user1.id , book_id:slaughter.id ,status:"Read")
-ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf4.id )
 ShelveAssignment.create(book_id: slaughter.id , shelf_id: shelf4.id )
-s2= Status.create!(user_id:user1.id , book_id:snows.id ,status:"Read")
+s1 = Status.create!(user_id:user1.id , book_id:war_peace.id ,status:"Read")
+ShelveAssignment.create(book_id: war_peace.id , shelf_id: shelf4.id )
+s2= Status.create!(user_id:user1.id , book_id:snows.id ,status:"To Read")
 ShelveAssignment.create(book_id: snows.id , shelf_id: shelf5.id )
 s3= Status.create!(user_id:user1.id , book_id:henry.id ,status:"Currently Reading")
 ShelveAssignment.create(book_id: henry.id , shelf_id: shelf6.id )

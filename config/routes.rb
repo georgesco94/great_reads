@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show,:index,:create,:destroy,:update]
     resources :statuses, only: [:show,:create,:index,:update]
     resources :shelves, only: [:show,:create,:index,:update]
+    resources :shelve_assignments, only: [:index,:update]
   end
 end
