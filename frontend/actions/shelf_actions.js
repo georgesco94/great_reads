@@ -4,14 +4,12 @@ export const RECEIVE_SHELF = 'RECEIVE_SHELF';
 
 
 export const fetchShelves = (id) => dispatch => {
-  debugger
   return APIUtil.fetchShelves(id).then(shelfs => (
     dispatch(receiveShelves(shelfs))
   ));
 };
 
 export const createShelf = (shelf) => dispatch => {
-  debugger
   return APIUtil.createShelf(shelf).then(shelf => (
     dispatch(receiveShelf(shelf))
   ));

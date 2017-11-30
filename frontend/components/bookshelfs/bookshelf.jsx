@@ -9,7 +9,8 @@ class BookShelf extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       clicked : false,
-      shelfName:""
+      shelfName:"",
+      adding: false
     };
   }
 
@@ -28,7 +29,6 @@ class BookShelf extends React.Component{
   }
 
   update(field){
-    debugger
     return e => this.setState({
       [field]: e.target.value
     });
@@ -36,8 +36,9 @@ class BookShelf extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     this.props.createShelf({name:this.state.shelfName,user_id:this.props.currUser.id});
+    debugger
+    this.setState({adding:false,shelfName:""});
   }
 
   render() {
@@ -56,6 +57,7 @@ class BookShelf extends React.Component{
     }
 
     return (
+
       <div className="my-books">
         <div className="shelfs">
           <h1 className="shelf-header">My Books</h1>
@@ -68,11 +70,15 @@ class BookShelf extends React.Component{
               </ul>
 
               <div>
-                <button className="new-shelf-button">Add Shelf</button>
+                <button className="new-shelf-button"onClick={ (e) => this.setState({adding: true})}>
+                  Add Shelf
+                </button>
+                {this.state['adding'] ?
                 <form onSubmit={this.handleSubmit}>
-                  <input onChange={this.update('shelfName')} />
+                  <input className="add-shelf-input" onChange={this.update('shelfName')} />
                   <input  type="submit" value="Add" />
                 </form>
+                : "" }
               </div>
             </div>
 
