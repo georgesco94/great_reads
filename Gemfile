@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'better_errors'
 gem 'binding_of_caller'
-gem 'pry-rails'
+
 gem 'annotate'
 gem 'jquery-rails'
 gem "paperclip", '~> 5.0.0'
@@ -43,6 +43,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'pry-rails'
   gem 'selenium-webdriver'
 end
 
