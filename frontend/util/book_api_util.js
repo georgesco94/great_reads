@@ -17,6 +17,15 @@ export const fetchShelfBooks = (shelfId) => (
     }
   )
 );
+export const fetchUserBooks = (userId) => (
+  $.ajax(
+    {
+      method: "GET",
+      url: "api/books",
+      data: {userId:userId}
+    }
+  )
+);
 
 export const fetchBook = (id) => {
   return $.ajax(

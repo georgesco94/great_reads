@@ -18,6 +18,12 @@ export const fetchShelfBooks = (shelfId) => dispatch => {
   ));
 };
 
+export const fetchUserBooks = (userId) => dispatch => {
+  return APIUtil.fetchShelfBooks(userId).then(books => (
+    dispatch(receiveBooks(books))
+  ));
+};
+
 export const fetchBook = (id) => dispatch => {
   return APIUtil.fetchBook(id).then(book => (
     dispatch(receiveBook(book))

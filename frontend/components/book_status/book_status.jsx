@@ -33,16 +33,19 @@ class BookStatus extends React.Component{
       return ;
     }
     if(oldstat!="Want To Read"){
+      debugger
       this.props.updateStatus(
         { book_id: this.props.book.id,
            user_id: this.props.currUser.id, status: newstat},shelfId);
-      this.props.updateAssignment({shelf_id:shelfId},assignmentId);
+      this.props.updateAssignment({shelf_id:shelfId},assignmentId).then( () => {
+        this.props.fetchShelves(this.props.currUser.id);
+      });
     }else{
       this.props.createStatus(
         {book_id: this.props.book.id,
          user_id: this.props.currUser.id, status: newstat},shelfId);
     }
-    this.props.fetchShelves(this.props.currUser.id);
+    
     let bookId = this.props.book.id;
     if(newstat==="read"){
       this.props.history.push(`/review/${this.props.book.id}`);

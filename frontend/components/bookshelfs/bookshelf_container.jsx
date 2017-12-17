@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import BookShelf from './bookshelf';
 import {updateStatus} from '../../actions/status_actions';
 import {fetchShelves,createShelf} from '../../actions/shelf_actions';
-import {fetchShelfBooks} from '../../actions/book_actions';
+import {fetchShelfBooks,fetchUserBooks} from '../../actions/book_actions';
 import {fetchAssignments} from '../../actions/shelve_assignments_actions';
 
 const mapStateToProps = (state,ownProps) => {
-
+  debugger
   const books = {};
   Object.values(state.entities.shelves).forEach( (shelf) => {
 
@@ -29,7 +29,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
     fetchShelves: (id) => dispatch(fetchShelves(id)),
     fetchShelfBooks: (shelfId) => dispatch(fetchShelfBooks(shelfId)),
     createShelf: (shelf) => dispatch(createShelf(shelf)),
-    fetchAssignments: (id) => dispatch(fetchAssignments(id))
+    fetchAssignments: (id) => dispatch(fetchAssignments(id)),
+    fetchUserBooks: (id) => dispatch(fetchUserBooks(id))
   };
 };
 

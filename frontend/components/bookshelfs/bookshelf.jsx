@@ -17,6 +17,7 @@ class BookShelf extends React.Component{
   componentDidMount() {
     this.props.fetchShelves(this.props.currUser.id);
     this.props.fetchAssignments(this.props.currUser.id);
+    this.props.fetchUserBooks(this.props.currUser.id);
   }
 
   componentWillReceiveProps(newProps) {
@@ -25,7 +26,7 @@ class BookShelf extends React.Component{
 
   handleClick(e,shelfId){
     e.preventDefault();
-    this.props.fetchShelfBooks(shelfId).then(() => this.setState({clicked:shelfId}));
+    this.setState({clicked:shelfId});
   }
 
   update(field){

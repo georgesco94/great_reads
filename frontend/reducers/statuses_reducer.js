@@ -5,6 +5,7 @@ import {RECEIVE_STATUS, RECEIVE_STATUSES} from '../actions/status_actions';
 
 
 const StatusesReducer = (state = {} , action) => {
+  debugger
   switch(action.type) {
     case RECEIVE_STATUS:
       return merge({}, state, {[action.status.id]: action.status});

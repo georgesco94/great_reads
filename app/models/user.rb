@@ -43,6 +43,10 @@ class User < ApplicationRecord
     through: :shelfs,
     source: :shelve_assignmets
 
+  has_many :books,
+    through: :shelfs,
+    source: :books
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     (user && user.is_password?(password)) ? user : nil

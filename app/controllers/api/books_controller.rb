@@ -12,6 +12,8 @@ class Api::BooksController < ApplicationController
       @books = Book.limit(num)
     elsif params[:shelfId]
       @books = Shelf.find(params[:shelfId].to_i).books
+    elsif params[:userId]
+      @books = User.find(params[:userId].to_i).books
     else
       @books = Book.all()
     end
