@@ -17,6 +17,15 @@ class Api::ShelveAssignmentsController < ApplicationController
     end
   end
 
+  def destroy
+    shelve_assignment = ShelveAssignment.find(params[:id].to_i)
+    book_id = shelve_assignment.book_id
+    status = Status.where(book_id: book_id, user_id:current_user.id).first
+    status.destroy
+    shelve_assignment.destroy
+    @assignments = User.find(current_user.id).shelve_assignments
+    render 'api/shelve_assignments/index'
+  end
 
 
   def assignment_params

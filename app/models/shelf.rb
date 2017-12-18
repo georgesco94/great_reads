@@ -17,10 +17,12 @@ class Shelf < ApplicationRecord
 
   has_many :shelve_assignmets,
     foreign_key: :shelf_id,
-    class_name: "ShelveAssignment"
+    class_name: "ShelveAssignment",
+    dependent: :destroy
 
   has_many :books,
     through: :shelve_assignmets,
-    source: :book
+    source: :book,
+    dependent: :destroy
 
 end

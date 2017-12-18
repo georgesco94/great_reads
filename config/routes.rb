@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :books, only: [:show,:index,:update,:create]
     resource :session, only: [:create, :destroy, :show]
     resources :reviews, only: [:show,:index,:create,:destroy,:update]
-    resources :statuses, only: [:show,:create,:index,:update]
+    resources :statuses, only: [:show,:create,:index,:update,:destroy]
     resources :shelves, only: [:show,:create,:index,:update]
-    resources :shelve_assignments, only: [:index,:update]
+    resources :shelve_assignments, only: [:index,:update,:destroy]
   end
 end

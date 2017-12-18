@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import {SearchResultItem} from "../search_results/search_result_item";
+import SearchResultItem from "../search_results/search_result_item";
 
 
 class ReviewForm extends React.Component{

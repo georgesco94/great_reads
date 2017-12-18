@@ -28,3 +28,11 @@ export const fetchStatuses = (id) => {
     }
   );
 };
+export const deleteStatus = (id) => {
+  return $.ajax(
+    {
+      method: "DELETE",
+      url: `api/statuses/${id}`,
+    }
+  );
+};

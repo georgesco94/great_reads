@@ -11,6 +11,13 @@ export const updateAssignment = (assignment,id) => dispatch => {
   )
   );
 };
+export const deleteAssignment = (id) => dispatch => {
+
+  return APIUtil.deleteAssignment(id).then(assignments => (
+    dispatch(receiveAssignments(assignments))
+  )
+  );
+};
 export const fetchAssignments = (userId) => dispatch => {
 
   return APIUtil.fetchAssignments(userId).then(assignments => (

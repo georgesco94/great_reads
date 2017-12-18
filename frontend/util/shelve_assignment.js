@@ -7,6 +7,14 @@ export const updateAssignment = (assignment,assignmentId) => {
     }
   );
 };
+export const deleteAssignment = (id) => {
+  return $.ajax(
+    {
+      method: "DELETE",
+      url: `api/shelve_assignments/${id}`,
+    }
+  );
+};
 export const fetchAssignments = (userId) => {
   return $.ajax(
     {

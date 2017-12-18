@@ -21,6 +21,14 @@ export const updateStatus = (status) => dispatch => {
   );
 };
 
+export const deleteStatus = (id) => dispatch => {
+
+  return APIUtil.updateStatus(id).then(statuses => (
+    dispatch(receiveStatuses(statuses))
+  )
+  );
+};
+
 
 export const fetchStatuses = (id) => dispatch => {
   return APIUtil.fetchStatuses(id).then(statuses => (

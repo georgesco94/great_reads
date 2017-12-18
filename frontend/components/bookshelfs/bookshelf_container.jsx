@@ -1,23 +1,24 @@
 import { connect } from 'react-redux';
 import BookShelf from './bookshelf';
-import {updateStatus} from '../../actions/status_actions';
+import {updateStatus,deleteStatus} from '../../actions/status_actions';
 import {fetchShelves,createShelf} from '../../actions/shelf_actions';
 import {fetchShelfBooks,fetchUserBooks} from '../../actions/book_actions';
-import {fetchAssignments} from '../../actions/shelve_assignments_actions';
+import {fetchAssignments,deleteAssignment} from '../../actions/shelve_assignments_actions';
 
 const mapStateToProps = (state,ownProps) => {
+  debugger
   const books = {};
-  Object.values(state.entities.shelves).forEach( (shelf) => {
 
-    books[shelf.id] = [];
-    shelf.bookIds.map( (bookId) => {
-      books[shelf.id].push(state.entities.books[bookId]);
-    });
+  Object.values(state.entities.assignments).forEach( assignment => {
+    books[assignment.shelf_id] = books[assignment.shelf_id] || [];
+    books[assignment.shelf_id].push(state.entities.books[assignment.book_id]);
   });
+
   return {
     shelves: Object.values(state.entities.shelves),
     currUser: state.session.currentUser,
-    books: books
+    books: books,
+    assignments:Object.values(state.entities.assignments)
   };
 };
 
@@ -29,6 +30,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
     fetchShelfBooks: (shelfId) => dispatch(fetchShelfBooks(shelfId)),
     createShelf: (shelf) => dispatch(createShelf(shelf)),
     fetchAssignments: (id) => dispatch(fetchAssignments(id)),
+    deleteAssignment: (id) => dispatch(deleteAssignment(id)),
+    deleteStatus: (id) => dispatch(deleteStatus(id)),
     fetchUserBooks: (id) => dispatch(fetchUserBooks(id))
   };
 };

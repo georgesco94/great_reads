@@ -9,7 +9,6 @@ class BookShow extends React.Component{
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBook(parseInt(this.props.match.params.bookId))
       .then(() => {
         this.props.fetchReviews(parseInt(this.props.match.params.bookId))

@@ -88,7 +88,9 @@ class BookShelf extends React.Component{
               </div>
             </div>
 
-            <ShelfBooks books={books} />
+            <ShelfBooks books={books} assignments={this.props.assignments}
+                          deleteAssignment={this.props.deleteAssignment}
+                          deleteStatus={this.props.deleteStatus}/>
 
           </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import {SearchResultItem} from "./search_result_item";
+import SearchResultItem from "./search_result_item";
 
 class SearchResults extends React.Component{
   constructor(props){

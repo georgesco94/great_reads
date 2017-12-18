@@ -29,6 +29,14 @@ class Api::StatusesController < ApplicationController
     end
   end
 
+
+  def destroy
+    debugger
+    Status.find(params[:id]).destroy
+    @statuses = Status.all()
+    render 'api/statuses/index'
+  end
+
   def status_params
     params.require(:status).permit(:user_id, :book_id, :status, :shelfId)
   end

@@ -37,6 +37,7 @@ class BookStatus extends React.Component{
       return ;
     }
     if(oldstat!="Want To Read"){
+      debugger
       this.props.updateStatus(
         { book_id: this.props.book.id,
            user_id: this.props.currUser.id, status: newstat},shelfId);
