@@ -15,7 +15,6 @@ class BookShelf extends React.Component{
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchShelves(this.props.currUser.id);
     this.props.fetchAssignments(this.props.currUser.id);
     this.props.fetchUserBooks(this.props.currUser.id);
@@ -47,7 +46,7 @@ class BookShelf extends React.Component{
       return(
         <li>
           <button onClick={ (e) => this.handleClick(e,shelf.id)}>
-            {shelf.name}
+            {shelf.name} {`(${shelf.bookIds.length})`}
           </button>
         </li>
       );
@@ -55,6 +54,12 @@ class BookShelf extends React.Component{
     let books = [];
     if(this.state.clicked) {
       books = this.props.books[this.state.clicked];
+    }else{
+      Object.values(this.props.books).forEach( (shelf) => {
+        shelf.forEach(book => {
+          books.push(book);
+        });
+      });
     }
 
     return (
