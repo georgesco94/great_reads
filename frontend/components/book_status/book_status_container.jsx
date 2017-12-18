@@ -22,13 +22,15 @@ const mapStateToProps = (state,ownProps) => {
         assignment.push(sassignment);
       }
     });
+    const hasReview = state.entities.reviews[booki.id];
     return (
       {
         book: booki,
         currUser: state.session.currentUser,
         status: status,
         userShelves: Object.values(state.entities.shelves),
-        assignment: assignment
+        assignment: assignment,
+        hasReview: hasReview
       }
     );
 };

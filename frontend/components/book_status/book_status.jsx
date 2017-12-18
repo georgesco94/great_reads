@@ -47,7 +47,11 @@ class BookStatus extends React.Component{
 
     let bookId = this.props.book.id;
     if(newstat==="read"){
-      this.props.history.push(`/review/${this.props.book.id}`);
+      if(this.props.hasReview){
+        this.props.history.push(`/review/${this.props.book.id}/edit`);
+      }else{
+        this.props.history.push(`/review/${this.props.book.id}`);
+      }
     }
 
   }
