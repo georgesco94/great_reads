@@ -9,12 +9,16 @@ class BookShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchBook(parseInt(this.props.match.params.bookId));
-    this.props.fetchReviews(parseInt(this.props.match.params.bookId));
-    this.props.fetchUsers();
-    if(this.props.currUser){
-      this.props.fetchStatuses(this.props.currUser.id);
-    }
+    debugger
+    this.props.fetchBook(parseInt(this.props.match.params.bookId))
+      .then(() => {
+        this.props.fetchReviews(parseInt(this.props.match.params.bookId))
+        .then(()=>{this.props.fetchUsers();}).then(() =>{
+          if(this.props.currUser){
+            this.props.fetchStatuses(this.props.currUser.id);
+          }
+        });
+      });
   }
 
   render() {

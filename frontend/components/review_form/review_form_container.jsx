@@ -11,7 +11,6 @@ const mapStateToProps = (state,ownProps) => {
     if (state.entities.reviews[revId] &&
     state.entities.reviews[revId].book_id === parseInt(ownProps.match.params.bookId)
     ){
-
       rev = state.entities.reviews[revId];
     }
   });

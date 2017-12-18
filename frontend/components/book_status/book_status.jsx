@@ -12,6 +12,10 @@ class BookStatus extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchReviews();
+  }
+
   componentWillReceiveProps(newProps) {
     this.setState({status: newProps.status});
   }
@@ -47,6 +51,7 @@ class BookStatus extends React.Component{
 
     let bookId = this.props.book.id;
     if(newstat==="read"){
+      debugger
       if(this.props.hasReview){
         this.props.history.push(`/review/${this.props.book.id}/edit`);
       }else{
