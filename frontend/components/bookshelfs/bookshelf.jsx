@@ -15,6 +15,7 @@ class BookShelf extends React.Component{
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchShelves(this.props.currUser.id);
     this.props.fetchAssignments(this.props.currUser.id);
     this.props.fetchUserBooks(this.props.currUser.id);

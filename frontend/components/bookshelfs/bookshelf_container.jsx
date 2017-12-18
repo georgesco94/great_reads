@@ -6,7 +6,6 @@ import {fetchShelfBooks,fetchUserBooks} from '../../actions/book_actions';
 import {fetchAssignments} from '../../actions/shelve_assignments_actions';
 
 const mapStateToProps = (state,ownProps) => {
-  debugger
   const books = {};
   Object.values(state.entities.shelves).forEach( (shelf) => {
 
