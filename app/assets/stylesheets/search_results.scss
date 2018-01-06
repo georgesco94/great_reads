@@ -40,3 +40,11 @@
   height: 80px;
   width: 55px;
 }
+
+.remove-button {
+  display: flex;
+  flex-direction: column;
+}
+.fa-times {
+  font-size: 14px;
+}

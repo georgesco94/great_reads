@@ -33,7 +33,7 @@ class SearchResultItem extends React.Component{
 
           <div className="book-status">
             <BookStatusContainer book={this.props.book} />
-            <button onClick={this.handleClick}>
+            <button className="remove-button" onClick={this.handleClick}>
               <i class="fa fa-times" aria-hidden="true"></i>
             </button>
 
