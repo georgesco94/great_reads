@@ -8,7 +8,6 @@ class ShelfBooks extends React.Component{
   }
 
   render() {
-    debugger
     if(this.props.books){
       const books = this.props.books.map( book => {
         let assignmentId = 0;

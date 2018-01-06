@@ -31,7 +31,6 @@ class Api::StatusesController < ApplicationController
 
 
   def destroy
-    debugger
     Status.find(params[:id]).destroy
     @statuses = Status.all()
     render 'api/statuses/index'
