@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SearchResultItem from "../search_results/search_result_item";
+import ReactStars from 'react-stars';
 
 
 class ReviewForm extends React.Component{
@@ -11,9 +12,11 @@ class ReviewForm extends React.Component{
       rating: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.ratingChanged = this.ratingChanged.bind(this);
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const review = {review:this.state.review,
       rating:this.state.rating,user_id:this.props.user.id,
@@ -35,6 +38,13 @@ class ReviewForm extends React.Component{
     });
   }
 
+  ratingChanged(rating) {
+    this.setState(
+      {
+        ["rating"]: rating
+      }
+    );
+  }
 
   render(){
     if(!this.props.book) {
@@ -45,7 +55,15 @@ class ReviewForm extends React.Component{
         <div className="review-items">
           <div className="review-title">{this.props.book.title} > Review </div>
           <SearchResultItem review={true} book={this.props.book} />
-          <div className="my-rating">myrating</div>
+          <div className="my-rating">
+            <ReactStars
+              count={5}
+              value={this.state.rating}
+              onChange={this.ratingChanged}
+              size={24}
+              half={false}
+              color2={'red'} />
+          </div>
           <div className="review-shelve">shelves/tags</div>
           <form className="my-review" onSubmit={this.handleSubmit}>
             <p>What do you think?</p>

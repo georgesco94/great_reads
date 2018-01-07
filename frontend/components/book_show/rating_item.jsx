@@ -40,8 +40,8 @@ export const RatingItem = (props) => {
            <div>
              <i className="fa fa-star"></i>
              <i className="fa fa-star"></i>
-             <i className="fa fa-star-"></i>
-             <i className="fa fa-star-"></i>
+             <i className="fa fa-star"></i>
+             <i className="fa fa-star"></i>
              <i className="fa fa-star-o"></i>
            </div>
          );
