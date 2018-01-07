@@ -9,14 +9,13 @@ class ReviewForm extends React.Component{
     super(props);
     this.state = {
       review: this.props.review,
-      rating: '',
+      rating: this.props.review.rating,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.ratingChanged = this.ratingChanged.bind(this);
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const review = {review:this.state.review,
       rating:this.state.rating,user_id:this.props.user.id,
