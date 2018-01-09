@@ -1,10 +1,10 @@
 .column-wrapper{
   margin: auto;
-  width: 80%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-column-gap: 2px;
   margin-top: 45px;
+  background-color: #f4f4ea;
 }
 
 .books-index-column{
