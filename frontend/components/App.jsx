@@ -9,6 +9,7 @@ import SearchResultsContainer from './search_results/search_results_container';
 import ReviewFormContainer from './review_form/review_form_container';
 import BookShelfContainer from './bookshelfs/bookshelf_container';
 import NavBar from './nav_bar/nav_bar';
+import Footer from './footer/footer';
 import UnlogContainer from './nav_bar/unlog_container';
 import LoginPage from './login_page/login_page';
 import { withRouter } from 'react-router';
@@ -21,6 +22,10 @@ import {
 } from 'react-router-dom';
 
 const App = (props) => {
+  const isLogin = !props.loggedIn;
+  debugger
+  const isLoginPage = !props.loggedIn && props.location.pathname === "/";
+  console.log(isLoginPage);
   return (
 
     <div id="App">
@@ -43,6 +48,7 @@ const App = (props) => {
             <Route path="/review/:bookId" component={ReviewFormContainer} />
             <Route path="/shelf/:userId" component={BookShelfContainer} />
           </Switch>
+          {!isLoginPage ? <Footer />:""}
         </div>
 
       }
