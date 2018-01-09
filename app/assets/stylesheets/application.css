@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
- html,body{
-     min-height: 100%;
-     min-width: 100%;
- }
-
  #root{
    height: 100%;
    width:100%;

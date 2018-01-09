@@ -22,8 +22,6 @@ import {
 } from 'react-router-dom';
 
 const App = (props) => {
-  const isLogin = !props.loggedIn;
-  debugger
   const isLoginPage = !props.loggedIn && props.location.pathname === "/";
   console.log(isLoginPage);
   return (

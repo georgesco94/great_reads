@@ -15,7 +15,9 @@ span, article, footer, time, small {
   font-weight: normal;
   list-style: none;
 }
-
+html {
+  height: 100vh;
+}
 img {
   display: block;
   width: 100%;
