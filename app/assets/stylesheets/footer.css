@@ -1,6 +1,22 @@
 .footer {
-    background-color: #efefef;
-    height: 30px;
+    background-color: #F4F1EA;
+    color: #666;
+    font-size: 11px;
+    margin-top: 35px;
+    height: 28px;
     text-align: center;
     bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.footerlink {
+  padding: 3px;
+  border-right: 1px solid #666;
+}
+.footer :last-child {
+  border: none;
 }
