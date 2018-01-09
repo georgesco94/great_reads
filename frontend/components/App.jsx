@@ -23,34 +23,33 @@ import {
 
 const App = (props) => {
   const isLoginPage = !props.loggedIn && props.location.pathname === "/";
-  console.log(isLoginPage);
   return (
-
-    <div id="App">
-      {
-        <div className="logged-overall">
-          {!props.loggedIn ? (
+      <div id="App">
+        {
+          <div className="logged-overall">
+            {!props.loggedIn ? (
+              <Switch>
+                <Route exact path="/" component={LoginPage} />
+                <UnlogContainer />
+              </Switch>
+            ) : (
+              <NavLoginFormContainer logged={"true"} />
+            )}
             <Switch>
-              <Route exact path="/" component={LoginPage} />
-              <UnlogContainer />
+              <Route path="/books/new" component={BookCreateContainer} />
+              <Route path="/books/:bookId" component={BookShowContainer} />
+              <Route path="/books" component={BookIndexContainer} />
+              <Route path="/search" component={SearchResultsContainer} />
+              <Route path="/review/:bookId/edit" component={ReviewFormContainer} />
+              <Route path="/review/:bookId" component={ReviewFormContainer} />
+              <Route path="/shelf/:userId" component={BookShelfContainer} />
             </Switch>
-          ) : (
-            <NavLoginFormContainer logged={"true"} />
-          )}
-          <Switch>
-            <Route path="/books/new" component={BookCreateContainer} />
-            <Route path="/books/:bookId" component={BookShowContainer} />
-            <Route path="/books" component={BookIndexContainer} />
-            <Route path="/search" component={SearchResultsContainer} />
-            <Route path="/review/:bookId/edit" component={ReviewFormContainer} />
-            <Route path="/review/:bookId" component={ReviewFormContainer} />
-            <Route path="/shelf/:userId" component={BookShelfContainer} />
-          </Switch>
-          {!isLoginPage ? <Footer />:""}
-        </div>
+          </div>
 
-      }
-    </div>
+        }
+        {!isLoginPage ?<Footer /> : ""}
+      </div>
+
   );
 };
 const mapStateToProps = (state) => {

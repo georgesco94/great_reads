@@ -8,14 +8,28 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+
 }
-
-
 
 .footerlink {
   padding: 3px;
   border-right: 1px solid #666;
+
 }
 .footer :last-child {
   border: none;
+}
+
+.login-footer {
+  background-color: #F4F1EA;
+  color: #666;
+  font-size: 11px;
+  height: 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }

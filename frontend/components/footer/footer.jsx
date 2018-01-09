@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = (props) => {
+  let footerClass = "footer";
+  if(props.loginPage) {
+    footerClass = "login-footer";
+  }
   return (
-      <div className="footer">
+      <div className={footerClass}>
         <div className="copywright">© GreatReads Inc</div>
         <div className="links">
           <a className="footerlink" href="https://github.com/georgesco94/greatReads">Github</a>

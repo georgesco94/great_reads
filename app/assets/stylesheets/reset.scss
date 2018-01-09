@@ -15,12 +15,13 @@ span, article, footer, time, small {
   font-weight: normal;
   list-style: none;
 }
-html {
+html{
   height: 100%;
 }
-body{
-  height: 100%;
+body {
+  min-height: 100%;
 }
+
 img {
   display: block;
   width: 100%;

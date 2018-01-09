@@ -13,7 +13,7 @@ const LoginPage = () => (
         <SessionFormContainer />
         <DiscoverBoxContainer />
       </div>
-      <Footer />
+      <Footer loginPage={true}/>
     </div>
   </main>
 );
