@@ -58,6 +58,7 @@
   float: right;
   background-color: white;
   margin: auto;
+  margin-right: initial;
 }
 .search-wrap {
   margin-top: 5px;
@@ -72,4 +73,5 @@
 .search-input {
   padding: 2px;
   padding-left: 4px;
+  width: 85%;
 }
