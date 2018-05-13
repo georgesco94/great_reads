@@ -11,8 +11,7 @@ const Footer = (props) => {
         <div className="links">
           <a className="footerlink" href="https://github.com/georgesco94/greatReads">Github</a>
           <a className="footerlink" href="https://www.linkedin.com/in/george-najm-707003149/">Linkedin</a>
-          <a className="footerlink" href="https://www.amazon.com/">Amazon</a>
-          <a className="footerlink" href="https://www.thriftbooks.com/">Thriftbooks</a>
+          <a className="footerlink" href="http://georgenajm.me/">By George Najm</a>
         </div>
       </div>
   );
