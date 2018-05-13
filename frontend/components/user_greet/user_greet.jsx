@@ -10,12 +10,17 @@ const UserGreet = (props) => {
 
         <div className='challenge-box'>
           <img className="read-challenge-logo" src={window.readChallenge} />
-          <div>Scroll through the books in the database and toggle their status to add them to your
-          bookshelf.</div>
+          <div className='challenge-text-wrapper'>
+            <div className = "challenge-text">
+              So far you've read: {numRead(props.shelves)} books. <br/> Add more !
+
+            </div>
+          </div>
         </div>
 
         <div className='add-more'>
-          So far you've read: {numRead(props.shelves)} books. <br/> Add more !
+          Scroll through the books in the database and toggle their status to add them to your
+          bookshelf.
 
         </div>
       </div>
