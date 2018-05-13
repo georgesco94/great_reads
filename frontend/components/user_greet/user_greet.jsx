@@ -4,10 +4,20 @@ const UserGreet = (props) => {
   return (
     <div className= "user-greet-wrapper">
       <div className="user-greet">
-        Gretings: {props.user.username} ! <br/>
-      <img className="read-challenge-logo" src={window.readChallenge} />
-      Scroll through the books in the database and toggle their status to add them to your
-      bookshelf. <br/> So far you've read: {numRead(props.shelves)} books. <br/> Add more !
+        <div className= 'greet-text'>
+            Gretings: {props.user.username} ! <br/>
+        </div>
+
+        <div className='challenge-box'>
+          <img className="read-challenge-logo" src={window.readChallenge} />
+          <div>Scroll through the books in the database and toggle their status to add them to your
+          bookshelf.</div>
+        </div>
+
+        <div className='add-more'>
+          So far you've read: {numRead(props.shelves)} books. <br/> Add more !
+
+        </div>
       </div>
     </div>
   );

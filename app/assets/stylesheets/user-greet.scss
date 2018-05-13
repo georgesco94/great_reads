@@ -3,6 +3,8 @@
   height: 90%;
   font-size: 18px;
   font-family: Merriweather, Georgia, serif;
+  display: flex;
+  flex-direction: column;
 }
 .user-greet-wrapper {
   width:300px;
