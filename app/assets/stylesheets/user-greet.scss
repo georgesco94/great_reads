@@ -6,7 +6,6 @@
 }
 .user-greet-wrapper {
   width:300px;
-  height: 230px;
   margin-top: 30px;
   display: flex;
   align-items: center;
@@ -16,4 +15,8 @@
 .user-info-column {
   display: flex;
   justify-content: center;
+}
+
+.read-challenge-logo {
+  width: auto;
 }
