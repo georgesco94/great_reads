@@ -48,12 +48,15 @@ war_peace.image = File.open("app/assets/images/war_peace.jpeg")
 war_peace.save!
 
 stories = Book.new(title:"The Afterlife", author: "John Updike" ,
-description:"Short stories by John Updike")
+description:"This is a collection of stories which look back on the past. They
+include stories of moving to the country as a young boy; of seeing the city house
+they left behind transformed by other occupants over
+the years.")
 stories.image = File.open("app/assets/images/updike_short.jpg")
 stories.save!
 
 snows = Book.new(title:"Snows of Kilimanjaro", author: "Ernest Hemingway" ,
-description:"Collection of short stories by Hemingway")
+description:"The Snows of Kilimanjaro and Other Stories is a collection of short stories by Ernest Hemingway, published in 1961. The title story is considered by some to be the best story Hemingway ever wrote.")
 snows.image = File.open("app/assets/images/snows.jpg")
 snows.save!
 
