@@ -1,7 +1,17 @@
 .user-greet {
+  width:87%;
+  height: 90%;
+  background-color: yellow;
+}
+.user-greet-wrapper {
   width:300px;
   height: 230px;
   background-color: red;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:fixed;
 }
 .user-info-column {
   display: flex;
