@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserGreet = (props) => {
+  const numBooks = numRead(props.shelves);
   return (
     <div className= "user-greet-wrapper">
       <div className="user-greet">
@@ -12,7 +13,7 @@ const UserGreet = (props) => {
           <img className="read-challenge-logo" src={window.readChallenge} />
           <div className='challenge-text-wrapper'>
             <div className = "challenge-text">
-              So far you've read: {numRead(props.shelves)} books. <br/> Add more !
+              So far you've read: {numBooks} {numBooks === 1 ? 'Book' :'Books'}. <br/> Add more !
 
             </div>
           </div>
