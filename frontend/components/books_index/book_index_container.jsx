@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
       books: Object.values(state.entities.books),
       currUser: state.session.currentUser,
       statuses: state.entities.statuses,
+      shelves: state.entities.shelves,
       errors: state.errors
     }
   );

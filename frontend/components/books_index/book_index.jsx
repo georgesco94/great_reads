@@ -48,7 +48,7 @@ class BooksIndex extends React.Component{
     return (
       <div className="column-wrapper">
         <div className="user-info-column">
-          <UserGreet user={this.props.currUser} />
+          <UserGreet user={this.props.currUser} shelves={this.props.shelves} />
         </div>
 
         <div className="books-index-column">
