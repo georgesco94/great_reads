@@ -37,7 +37,7 @@ class DiscoverBox extends React.Component{
         <div className="discover-text">
             <div className="text-div">
               <h1 className="header-discover">Deciding what to read next?</h1>
-              <p>You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.</p>
+              <p>You’re in the right place. Search for books, check out reviews, and add them to one of your virtual bookshelves.</p>
             </div>
             <div>
               <h1 className="header-discover">What are your friends reading?</h1>

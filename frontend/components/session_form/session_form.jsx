@@ -72,7 +72,7 @@ class SessionForm extends React.Component{
         </div>
 
         <form className="signup-form-box" onSubmit={this.handleSubmit}>
-          <h2>New Here? Create a free account!</h2>
+          <h2 className="signup-form-text">New Here? Create a free account!</h2>
           <input className="input-signup" placeholder="Username" type="text" onChange={this.update('username')} />
           <input className="input-signup" placeholder="Email Address" type="text" onChange={this.update('email')} />
           <input className="input-signup" placeholder="Password" type="password" onChange={this.update('password')} />
