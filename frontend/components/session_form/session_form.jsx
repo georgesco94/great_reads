@@ -13,6 +13,7 @@ class SessionForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.removeErrors = this.removeErrors.bind(this);
+
   }
 
   handleSubmit(e) {
@@ -58,6 +59,7 @@ class SessionForm extends React.Component{
        this.setState({displayErrors: false});
      }.bind(this), 2000);
   }
+  // <img alt="Meet your next favorite book." src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" />
 
   render(){
     if(this.state.displayErrors) {
@@ -67,7 +69,6 @@ class SessionForm extends React.Component{
       <div className="signup-form-container">
         {this.state.displayErrors ? this.renderErrors() : ""}
         <div id="login-headling">
-          <img alt="Meet your next favorite book." src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" />
         </div>
 
         <form className="signup-form-box" onSubmit={this.handleSubmit}>

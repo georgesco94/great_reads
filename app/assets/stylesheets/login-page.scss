@@ -3,9 +3,11 @@
 }
 
 .nav-and-form{
-  background-image: image-url("masthead_background.jpg");
+  // background-image: image-url("masthead_background.jpg");
+  background-image: image-url("b1.jpg");
   background-position: center;
   background-repeat:repeat-x;
+  background-size: contain;
   height: 370px;
 }
 
