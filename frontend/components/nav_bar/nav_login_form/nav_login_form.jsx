@@ -15,7 +15,6 @@ class NavLoginForm extends React.Component{
 
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const user = this.props.currentUser || this.state;
     let goTo = this.props.currentUser ? "/" : "/books";
