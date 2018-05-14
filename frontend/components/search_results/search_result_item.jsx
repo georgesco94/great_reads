@@ -13,6 +13,7 @@ class SearchResultItem extends React.Component{
   }
 
   render() {
+    const onShelf = this.props.deleteStatus ? true : false ;
     if(this.props.book){
       return (
         <div className="result-item">
@@ -33,9 +34,14 @@ class SearchResultItem extends React.Component{
 
           <div className="book-status">
             <BookStatusContainer book={this.props.book} />
-            <button className="remove-button" onClick={this.handleClick}>
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
+            {
+              onShelf ?
+                      <button className="remove-button" onClick={this.handleClick}>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      </button>
+                      : ''
+            }
+
 
           </div>
 
