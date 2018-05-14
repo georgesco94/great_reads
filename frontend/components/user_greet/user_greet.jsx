@@ -2,11 +2,12 @@ import React from 'react';
 
 const UserGreet = (props) => {
   const numBooks = numRead(props.shelves);
+  const user = props.user === null ? '' : props.user.username;
   return (
     <div className= "user-greet-wrapper">
       <div className="user-greet">
         <div className= 'greet-text'>
-            Greetings: {props.user.username} ! <br/>
+            Greetings: {user} ! <br/>
         </div>
 
         <div className='challenge-box'>

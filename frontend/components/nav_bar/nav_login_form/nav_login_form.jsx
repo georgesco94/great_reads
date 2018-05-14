@@ -15,9 +15,10 @@ class NavLoginForm extends React.Component{
 
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
-    const user = this.state;
-    let goTo = this.props.logged ? "/" : "/books";
+    const user = this.props.currentUser;
+    let goTo = this.props.currentUser ? "/" : "/books";
 
     this.props.action(user).then(()=>{
       this.props.history.push(goTo);
@@ -43,7 +44,7 @@ class NavLoginForm extends React.Component{
           <Link className="nav-link-img" to={`/books`}>
             <div className="logo"></div>
           </Link>
-          <Link className="nav-link" to={`/shelf/${this.props.logged.id}`}>
+          <Link className="nav-link" to={`/shelf/${this.props.currentUser.id}`}>
             <h1>My Books</h1>
           </Link>
           <Link className="nav-link" to={`/books/new`}>
@@ -57,7 +58,7 @@ class NavLoginForm extends React.Component{
   }
 
   render(){
-    if(this.props.logged){
+    if(this.props.currentUser){
       return this.loggedNav();
     }
     else{
