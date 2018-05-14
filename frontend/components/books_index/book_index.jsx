@@ -40,7 +40,6 @@ class BooksIndex extends React.Component{
   }
 
   render() {
-    debugger
     const books = this.props.books.map(book => (
         <BookIndexItem key={book.id} book={book}
            currUser={this.props.currUser} statuses={this.props.statuses} />
