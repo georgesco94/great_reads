@@ -6,7 +6,7 @@ const UserGreet = (props) => {
     <div className= "user-greet-wrapper">
       <div className="user-greet">
         <div className= 'greet-text'>
-            Gretings: {props.user.username} ! <br/>
+            Greetings: {props.user.username} ! <br/>
         </div>
 
         <div className='challenge-box'>
