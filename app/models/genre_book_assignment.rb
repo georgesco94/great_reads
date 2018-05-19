@@ -16,7 +16,7 @@ class GenreBookAssignment < ApplicationRecord
     optional: true
 
   belongs_to :genre,
-    foreign_key: :book_id,
+    foreign_key: :genre_id,
     class_name: "Genre",
     optional: true
 end
