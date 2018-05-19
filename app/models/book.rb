@@ -36,4 +36,8 @@ class Book < ApplicationRecord
     foreign_key: :book_id,
     class_name: "Status"
 
+  has_many :genres,
+    foreign_key: :book_id,
+    class_name: "GenreBookAssignment"
+
 end
