@@ -133,9 +133,9 @@ tale = Book.new(title:"A tale of Two Cities", author: "Charles Dickens" ,
 description:"'Liberty, equality, fraternity, or death; -- the last, much the easiest to bestow, O Guillotine!' After eighteen years as a political prisoner in the Bastille ")
 tale.image = File.open("app/assets/images/tale.jpg")
 tale.save!
-GenreBookAssignment.create!(book_id: henry.id, genre_id:fiction.id)
-GenreBookAssignment.create!(book_id: henry.id, genre_id:historical_fiction.id)
-GenreBookAssignment.create!(book_id: henry.id, genre_id:classics.id)
+GenreBookAssignment.create!(book_id: tale.id, genre_id:fiction.id)
+GenreBookAssignment.create!(book_id: tale.id, genre_id:historical_fiction.id)
+GenreBookAssignment.create!(book_id: tale.id, genre_id:classics.id)
 
 
 s0 = Status.create!(user_id:user1.id , book_id:slaughter.id ,status:"read")
