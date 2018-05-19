@@ -12,9 +12,11 @@
 class GenreBookAssignment < ApplicationRecord
   belongs_to :book,
     foreign_key: :book_id,
-    class_name: "Book"
+    class_name: "Book",
+    optional: true
 
   belongs_to :genre,
     foreign_key: :book_id,
-    class_name: "Genre"
+    class_name: "Genre",
+    optional: true
 end

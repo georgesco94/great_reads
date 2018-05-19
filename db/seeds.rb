@@ -11,6 +11,7 @@ Review.destroy_all
 Shelf.destroy_all
 Status.destroy_all
 ShelveAssignment.destroy_all
+Genre.destroy_all
 GenreBookAssignment.destroy_all
 
 guest = User.create!(username:"guest", email: "guestEmail", password:"123456")
@@ -42,10 +43,13 @@ shelf11 = Shelf.create!(name:"to-read", user_id:user3.id)
 shelf12 = Shelf.create!(name:"currently-reading", user_id:user3.id)
 
 fiction = Genre.new(name:"Fiction", description: "Fiction")
+fiction.save!
 historical_fiction = Genre.new(name:"Historical Fiction", description: "Historical Fiction")
+historical_fiction.save!
 short_stories = Genre.new(name:"Short Stories", description: "Short stories")
+short_stories.save!
 classics = Genre.new(name:"Classics", description: "Classics")
-
+classics.save!
 
 
 
@@ -55,9 +59,11 @@ the impact of the Napoleonic era on Tsarist society through the stories of five
 Russian aristocratic families")
 war_peace.image = File.open("app/assets/images/war_peace.jpeg")
 war_peace.save!
-w1 = GenreBookAssignment.create(book_id: war_peace.id, genre_id:fiction.id)
-w2 = GenreBookAssignment.create(book_id: war_peace.id, genre_id:historical_fiction.id)
-w3 = GenreBookAssignment.create(book_id: war_peace.id, genre_id:classics.id)
+w1 = GenreBookAssignment.create!(book_id: war_peace.id, genre_id:fiction.id)
+w2 = GenreBookAssignment.create!(book_id: war_peace.id, genre_id:historical_fiction.id)
+w3 = GenreBookAssignment.create!(book_id: war_peace.id, genre_id:classics.id)
+
+
 
 stories = Book.new(title:"The Afterlife", author: "John Updike" ,
 description:"This is a collection of stories which look back on the past. They
