@@ -5,7 +5,6 @@ import {RECEIVE_RECOMMENDATION} from '../actions/user_actions';
 
 
 const RecommendationReducer = (state = {} , action) => {
-  debugger
   switch(action.type) {
     case RECEIVE_RECOMMENDATION:
       let newState = merge({},state);
