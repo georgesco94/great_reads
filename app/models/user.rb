@@ -68,9 +68,9 @@ class User < ApplicationRecord
   end
 
   def get_recommended_books
-    read_statuses = statuses.select {|s| s.status == 'read'}
-    read_books_ids = read_statuses.map {|s| s.book_id}
-    
+    read_books = shelfs.select {|s| s.name == 'read'}.first.books
+    read_genres = read_books.map { |book| book.genres}
+
 
   end
 
