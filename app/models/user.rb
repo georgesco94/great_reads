@@ -70,9 +70,9 @@ class User < ApplicationRecord
   def get_recommended_books
     recommended_genres = get_recommended_genres
     recommended_books = []
-    debugger
+
     recommended_genres.each do |genre|
-      recommended_books << genre.books
+      recommended_books.concat(genre.books)
     end
     recommended_books
 
@@ -90,7 +90,6 @@ class User < ApplicationRecord
       book_genres.each {|genre| genres_array << genre}
     end
     genres_array
-
   end
 
   def ensure_session_token
