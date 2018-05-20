@@ -5,11 +5,13 @@ import UsersReducer from './users_reducer';
 import StatusesReducer from './statuses_reducer';
 import ShelvesReducer from './shelves_reducer';
 import AssignmentsReducer from './shelve_assignments_reducer';
+import RecommendationReducer from './recommendation_reducer';
 
 
 export default combineReducers(
   {
     books: BooksReducer,
+    recommended: RecommendationReducer,
     reviews: ReviewsReducer,
     statuses: StatusesReducer,
     users: UsersReducer,

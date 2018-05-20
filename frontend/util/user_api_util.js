@@ -10,7 +10,7 @@ export const getRecommendation = () => (
   $.ajax(
     {
       method: "GET",
-      url: "api/users",
+      url: "api/users/recommendation",
     }
   )
 );
