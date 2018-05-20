@@ -11,21 +11,6 @@ const ShelvesReducer = (state = {} , action) => {
       return action.shelves;
     case RECEIVE_SHELF:
       return merge({}, state, {[action.shelf.id]: action.shelf});
-    // case RECEIVE_ASSIGNMENT:
-      // debugger
-      // const bookId = action.assignment.book_id;
-      // const shelfId = action.assignment.shelf_id;
-      // Object.values(state).forEach( (shelf) => {
-      //   for(var i = shelf.bookIds.length - 1; i >= 0; i--) {
-      //     if(shelf.bookIds[i] === bookId) {
-      //       shelf.bookIds.splice(i, 1);
-      //     }
-      //   }
-      // });
-      // let newState = merge({},state);
-      // debugger
-      // newState[action.assignment.shelf_id].bookIds.push(bookId);
-      // return newState
     default:
       return state;
   }

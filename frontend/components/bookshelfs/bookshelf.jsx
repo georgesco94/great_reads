@@ -20,8 +20,10 @@ class BookShelf extends React.Component{
     this.props.fetchUserBooks(this.props.currUser.id);
   }
 
-  componentWillReceiveProps(newProps) {
-
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.assignments.length !== this.props.assignments.length){
+      this.props.fetchShelves(this.props.currUser.id);
+    }
   }
 
   handleClick(e,shelfId){
