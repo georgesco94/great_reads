@@ -27,7 +27,6 @@ class Api::UsersController < ApplicationController
   end
 
   def get_recommendation
-    debugger
     @books = current_user.get_recommended_books
     render 'api/books/index'
   end
