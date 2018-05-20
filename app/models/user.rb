@@ -67,15 +67,16 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def get_recommended_books
-    read_books = shelfs.select {|s| s.name == 'read'}.first.books
+  def get_recommended_genres
     read_genres = read_books.map { |book| book.genres}
-
-
   end
 
 
   private
+
+  def read_books
+    read_books = shelfs.select {|s| s.name == 'read'}.first.books
+  end
 
   def ensure_session_token
     (self.session_token = SecureRandom.urlsafe_base64) unless self.session_token
