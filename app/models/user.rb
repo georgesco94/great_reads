@@ -67,6 +67,13 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def get_recommended_books
+    read_statuses = statuses.select {|s| s.status == 'read'}
+    read_books_ids = read_statuses.map {|s| s.book_id}
+    
+
+  end
+
 
   private
 
