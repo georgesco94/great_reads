@@ -67,15 +67,29 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def get_recommended_genres
-    read_genres = read_books.map { |book| book.genres}
+  def get_recommended_books
+    recommended_genres = get_recommended_genres
+    debugger
+
+    same_genre_books = Book.all.select do |book|
+      book.genres.any? do |genre|
+        recommended_genres.include?(genre)
+      end
+
+    end
+
+    same_genre_books.map{|b|b.title}
+
+
   end
 
-
   private
-
   def read_books
     read_books = shelfs.select {|s| s.name == 'read'}.first.books
+  end
+
+  def get_recommended_genres
+    read_genres = read_books.map { |book| book.genres}
   end
 
   def ensure_session_token

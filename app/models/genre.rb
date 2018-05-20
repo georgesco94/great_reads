@@ -10,5 +10,13 @@
 #
 
 class Genre < ApplicationRecord
-  
+  has_many :genre_book_assignments,
+    foreign_key: :genre_id,
+    class_name: "GenreBookAssignment"
+
+
+  has_many :books,
+    through: :genre_book_assignments,
+    source: :book
+    
 end
