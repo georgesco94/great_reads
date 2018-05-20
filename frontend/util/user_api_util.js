@@ -6,3 +6,11 @@ export const fetchUsers = () => (
     }
   )
 );
+export const getRecommendation = () => (
+  $.ajax(
+    {
+      method: "GET",
+      url: "api/users",
+    }
+  )
+);

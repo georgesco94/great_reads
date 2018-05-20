@@ -26,6 +26,10 @@ class Api::UsersController < ApplicationController
     render :show
   end
 
+  def get_recommendation
+
+  end
+
 
 
   def user_params

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:show,:create,:index]
+    get 'users/recommendation', :to => 'users#get_recommendation'
     resources :books, only: [:show,:index,:update,:create]
     resource :session, only: [:create, :destroy, :show]
     resources :reviews, only: [:show,:index,:create,:destroy,:update]
