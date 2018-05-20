@@ -6,7 +6,7 @@ import {getRecommendation} from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    recommendedBook: state.entities.recommendedBook
+    recommendedBooks: state.entities.recommendedBooks
   });
 };
 

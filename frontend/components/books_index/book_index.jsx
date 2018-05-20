@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import {BookIndexItem} from './book_index_item';
 import UserGreet from '../user_greet/user_greet';
+import BookRecommendationContainer from '../book_recommendation/book_recommendation_container';
 
 class BooksIndex extends React.Component{
   constructor(props){
@@ -58,7 +59,9 @@ class BooksIndex extends React.Component{
           </div>
         </div>
 
-        <div className="recommendations-column"></div>
+        <div className="recommendations-column">
+          <BookRecommendationContainer />
+        </div>
 
       </div>
     );

@@ -7,14 +7,21 @@ class BookRecommendation extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.getRecommendation();
   }
 
   render () {
-
+    // const books = this.props.recommendedBooks.map( (book) => {
+    //   return (
+    //     <div>
+    //       book.title
+    //     </div>
+    //   );
+    // });
     return (
       <div className="create-wrap">
-        this.props.recommendedBook.title
+        {}
       </div>
     );
   }

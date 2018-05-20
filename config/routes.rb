@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
   root to: "static_pages#root"
+  get 'api/users/recommendation', :to => 'api/users#get_recommendation'
 
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:show,:create,:index]
-    get 'users/recommendation', :to => 'users#get_recommendation'
     resources :books, only: [:show,:index,:update,:create]
     resource :session, only: [:create, :destroy, :show]
     resources :reviews, only: [:show,:index,:create,:destroy,:update]
