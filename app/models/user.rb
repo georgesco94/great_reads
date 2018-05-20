@@ -69,17 +69,12 @@ class User < ApplicationRecord
 
   def get_recommended_books
     recommended_genres = get_recommended_genres
+    recommended_books = []
     debugger
-
-    same_genre_books = Book.all.select do |book|
-      book.genres.any? do |genre|
-        recommended_genres.include?(genre)
-      end
-
+    recommended_genres.each do |genre|
+      recommended_books << genre.books
     end
-
-    same_genre_books.map{|b|b.title}
-
+    recommended_books
 
   end
 
@@ -89,7 +84,13 @@ class User < ApplicationRecord
   end
 
   def get_recommended_genres
-    read_genres = read_books.map { |book| book.genres}
+    genres_array = []
+    read_books.each do |book|
+      book_genres = book.genres
+      book_genres.each {|genre| genres_array << genre}
+    end
+    genres_array
+
   end
 
   def ensure_session_token
