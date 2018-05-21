@@ -49,10 +49,12 @@ class Book < ApplicationRecord
     reviews.reduce(0) { |init,review| init + review.rating }
   end
 
+  def self.sorted_books_rating
+    Book.all.sort {|book1,book2| book1.book_total_rating <=> book2.book_total_rating}
+  end
 
-  def highest_rated_book
-    
-
+  def self.highest_rated_book
+    self.sorted_books_rating.last
   end
 
 end
