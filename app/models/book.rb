@@ -44,4 +44,15 @@ class Book < ApplicationRecord
     through: :genre_book_assignments,
     source: :genre
 
+
+  def book_total_rating
+    reviews.reduce(0) { |init,review| init + review.rating }
+  end
+
+
+  def highest_rated_book
+    
+
+  end
+
 end
