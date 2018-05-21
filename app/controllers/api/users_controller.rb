@@ -27,7 +27,6 @@ class Api::UsersController < ApplicationController
   end
 
   def get_recommendation
-    debugger
     @book = current_user.get_recommended_book || Book.highest_rated_book
     render 'api/books/show'
   end
