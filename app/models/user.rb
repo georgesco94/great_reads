@@ -67,20 +67,21 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def get_recommended_books
+  def get_recommended_book
     recommended_genres = get_recommended_genres
     recommended_books = []
 
     recommended_genres.each do |genre|
       recommended_books.concat(genre.books)
     end
-    recommended_books
-
+    recommended_books = recommended_books.uniq.reject{|book| read_books.include?(book)}
+    recommended_books.shuffle.first
   end
 
   private
   def read_books
-    read_books = shelfs.select {|s| s.name == 'read'}.first.books
+    read_shelf = shelfs.select {|s| s.name == 'read'}
+    read_shelf.first.books
   end
 
   def get_recommended_genres

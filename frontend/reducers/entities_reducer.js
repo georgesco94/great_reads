@@ -11,7 +11,7 @@ import RecommendationReducer from './recommendation_reducer';
 export default combineReducers(
   {
     books: BooksReducer,
-    recommendedBooks: RecommendationReducer,
+    recommendedBook: RecommendationReducer,
     reviews: ReviewsReducer,
     statuses: StatusesReducer,
     users: UsersReducer,

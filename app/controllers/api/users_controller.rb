@@ -27,8 +27,8 @@ class Api::UsersController < ApplicationController
   end
 
   def get_recommendation
-    @books = current_user.get_recommended_books
-    render 'api/books/index'
+    @book = current_user.get_recommended_book
+    render 'api/books/show'
   end
 
 

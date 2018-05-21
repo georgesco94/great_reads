@@ -11,17 +11,20 @@ class BookRecommendation extends React.Component {
   }
 
   render () {
-    const books = this.props.recommendedBooks.map( (book) => {
-      debugger
-      return (
-        <div>
-          {book.title}
-        </div>
-      );
-    });
+    let book = this.props.recommendedBook;
     return (
-      <div className="create-wrap">
-        {books}
+      <div className="user-greet-wrapper">
+        <div className="user-greet">
+          <div className="greet-text">
+            This book is recommended to you based on genres and read books.
+          </div>
+          <div className="challenge-box">
+            {book.title}
+          </div>
+          <div className="add-more">
+
+          </div>
+        </div>
       </div>
     );
   }
