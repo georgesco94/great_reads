@@ -3,14 +3,33 @@ import React from 'react';
 class BookRecommendation extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      clicked: false
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.props.getRecommendation();
   }
 
+  handleClick() {
+    this.setState({clicked: true});
+  }
+
+  notClickedRender() {
+    return (
+      <div>
+        <button onClick = {this.handleClick}>ssss</button>
+      </div>
+
+    );
+  }
+
   render () {
+    if (!this.state.clicked) {
+      return this.notClickedRender();
+    }
     let book = this.props.recommendedBook;
     return (
       <div className="user-greet-wrapper">
