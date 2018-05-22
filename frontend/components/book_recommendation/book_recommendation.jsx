@@ -4,7 +4,8 @@ class BookRecommendation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false
+      clicked: false,
+      loading:false
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -14,19 +15,39 @@ class BookRecommendation extends React.Component {
   }
 
   handleClick() {
-    this.setState({clicked: true});
+    this.setState({loading:true});
+  }
+
+  spinning() {
+    return (
+      <div className="user-greet-wrapper recommendation-wrapper">
+        <div className="user-greet recommendation-box">
+          <div className="spinner">
+            <i className="fa fa-spinner fa-spin" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   notClickedRender() {
     return (
-      <div>
-        <button onClick = {this.handleClick}>ssss</button>
-      </div>
+      <div className="user-greet-wrapper recommendation-wrapper">
+        <div className="user-greet recommendation-box">
+          Get Recommendation
+          <button className="recommendation-button" onClick = {this.handleClick}>
+            GO
+          </button>
 
+        </div>
+      </div>
     );
   }
 
   render () {
+    if(this.state.loading) {
+      return this.spinning();
+    }
     if (!this.state.clicked) {
       return this.notClickedRender();
     }
