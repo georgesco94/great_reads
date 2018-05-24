@@ -67,7 +67,7 @@ class BookRecommendation extends React.Component {
             This book is recommended to you based on genres and read books.
           </div>
           <div className="challenge-box">
-            <img></img>
+            <img src={book.image_url}/>
             {book.title}
           </div>
           <div className="add-more">
