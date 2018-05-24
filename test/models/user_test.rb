@@ -18,7 +18,25 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "shouldnt save user without attr" do
+    user = User.new
+    assert_not user.save
+  end
+
+  test "shouldnt save user with <6 char password" do
+    user = User.new({username:"George", email:"s", password:'12345' })
+    assert_not user.save
+  end
+
+  test "isPassword returns true on real password" do
+    user = User.new({username:"George", email:"s", password:'1234567' })
+    assert user.is_password?('1234567')
+  end
+  test "isPassword returns false on false password" do
+    user = User.new({username:"George", email:"s", password:'1234567' })
+    assert_not user.is_password?('123456')
+  end
+
+
 end
