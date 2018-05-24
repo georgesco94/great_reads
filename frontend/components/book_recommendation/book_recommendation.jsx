@@ -61,23 +61,8 @@ class BookRecommendation extends React.Component {
     }
     let book = this.props.recommendedBook;
     return (
-      <div className="user-greet-wrapper recommendation-wrapper">
-        <div className="user-greet">
-          <div className="greet-text">
-            This book is recommended to you based on genres and read books.
-          </div>
-          <div className="challenge-box recommendation-box">
-            <img className="recommendation-img" src={book.image_url}/>
-            <div className="challenge-text-wrapper">
-              <div className="challenge-text">
-                {book.description}
-              </div>
-            </div>
-          </div>
-          <div className="add-more">
-
-          </div>
-        </div>
+      <div className="recommendation-wrapper">
+        asd
       </div>
     );
   }
