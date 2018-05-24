@@ -11,11 +11,19 @@ class BookRecommendation extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getRecommendation();
+    // this.props.getRecommendation();
   }
 
   handleClick() {
-    this.setState({loading:true});
+    this.setState({loading:true,clicked:true}, () => {
+      setTimeout(()=>{
+        console.log('before recommendation fetch');
+        this.props.getRecommendation().then( ()=>{
+          console.log('after recommendation fetch');
+          this.setState({loading:false});
+        });
+      },1000);
+    });
   }
 
   spinning() {
