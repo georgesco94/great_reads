@@ -1,6 +1,22 @@
-.recommendation-img {
-  width:35%;
+.recommendation-wrap{
+  width: 300px;
+  height: 50%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin-top: 30px;
 }
-.recommendation-box {
-  max-height: 200px;
+
+.recc-box{
+  width: 80%;
+  height: 90%;
+  background-color: blue;
+  display: flex;
+}
+
+.recc-book-box {
+  width: 80%;
+  height: 80%;
 }

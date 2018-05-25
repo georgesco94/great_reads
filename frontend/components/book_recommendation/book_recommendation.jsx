@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 class BookRecommendation extends React.Component {
   constructor(props) {
     super(props);
@@ -61,8 +61,18 @@ class BookRecommendation extends React.Component {
     }
     let book = this.props.recommendedBook;
     return (
-      <div className="recommendation-wrapper">
-        asd
+      <div className="recommendation-wrap">
+        <div className="recc-box">
+          <div className="recc-book-box">
+            <Link to={`/books/${book.id}`}>
+              <img className="book-cover" src={book.image_url}/>
+            </Link>
+          </div>
+          <div className="recc-text">
+            asd
+          </div>
+        </div>
+
       </div>
     );
   }
