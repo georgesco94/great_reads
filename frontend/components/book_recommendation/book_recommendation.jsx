@@ -8,6 +8,7 @@ class BookRecommendation extends React.Component {
       loading:false
     };
     this.handleClick = this.handleClick.bind(this);
+    this.generateText = this.generateText.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +53,17 @@ class BookRecommendation extends React.Component {
     );
   }
 
+  generateText(book) {
+    let text = '';
+    let hasRead = this.props.hasRead;
+    if (hasRead) {
+      text = `${book.title} recommended to you based on your previously read books.`;
+    }else {
+      text = `${book.title} recommended to you as the highest rated book on the website.`;
+    }
+    return text;
+  }
+
   render () {
     if(this.state.loading) {
       return this.spinning();
@@ -60,16 +72,18 @@ class BookRecommendation extends React.Component {
       return this.notClickedRender();
     }
     let book = this.props.recommendedBook;
+    let hasRead = this.props.hasRead;
+    let text = this.generateText(book);
     return (
       <div className="recommendation-wrap">
         <div className="recc-box">
           <div className="recc-book-box">
             <Link to={`/books/${book.id}`}>
-              <img className="book-cover" src={book.image_url}/>
+              <img className="recc-book-img" src={book.image_url}/>
             </Link>
           </div>
           <div className="recc-text">
-            asd
+            {text}
           </div>
         </div>
 
