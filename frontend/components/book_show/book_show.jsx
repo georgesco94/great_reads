@@ -57,7 +57,7 @@ class BookShow extends React.Component{
 
                 </div>
               </div>
-              {this.props.status.status ? <Link className="link-review-edit" to={`/review/${this.props.book.id}/edit`}>Edit Review</Link> : <p></p>}
+              {this.props.status.status === 'read' ? <Link className="link-review-edit" to={`/review/${this.props.book.id}/edit`}>Edit Review</Link> : <p></p>}
               <div className="reviewz">
                 {reviews}
               </div>
