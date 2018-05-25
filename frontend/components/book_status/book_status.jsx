@@ -75,13 +75,22 @@ class BookStatus extends React.Component{
     if(this.props.assignment[0]){
       assignmentId = this.props.assignment[0].id;
     }
-    const userShelves = this.props.userShelves.map( (shelf) => {
-      return(
-        <button onClick={ (e) => this.handleClick(shelf.name,status,shelf.id,assignmentId,e)}>
-          {shelf.name}
+    let userShelves;
+    if(this.props.userShelves.length < 1) {
+      userShelves = (
+        <button onClick={ (e) => this.handleClick('read',status,-1,assignmentId,e)}>
+          {'read'}
         </button>
       );
-    });
+    }else {
+      userShelves = this.props.userShelves.map( (shelf) => {
+        return(
+          <button onClick={ (e) => this.handleClick(shelf.name,status,shelf.id,assignmentId,e)}>
+            {shelf.name}
+          </button>
+        );
+      });
+    }
 
 
     return (
