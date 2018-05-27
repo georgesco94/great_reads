@@ -7,7 +7,8 @@ import {getRecommendation} from '../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => {
   return ({
     recommendedBook: state.entities.recommendedBook,
-    hasRead: Object.keys(state.entities.assignments).length > 0 ? true : false
+    hasRead:
+        (Object.values(state.entities.statuses).some((stat)=>stat.status === 'read')) ? true : false
   });
 };
 
