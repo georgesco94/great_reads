@@ -7,6 +7,9 @@ const NavBar = () => {
       <nav className="nav-bar">
         <Link className="nav-link-img" to={`/`}>
           <div className="logo"></div>
+          <div className="greatreads-text">
+            GreatReads
+          </div>
         </Link>
         <NavLoginFormContainer />
       </nav>

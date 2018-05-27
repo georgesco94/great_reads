@@ -78,7 +78,8 @@
 }
 
 .logo {
-  width: 100%;
+  // width: 100%;
+  width: 30%;
   height: 100%;
   // background-image: image-url("header_logo.png");
   background-image: image-url("b2.png");
@@ -87,6 +88,13 @@
 }
 
 .nav-link-img {
-  width: 180px;;
+  width: 210px;
   height: 38px;
+  display: flex;
+}
+
+.greatreads-text {
+  font-size: 34px;
+  color: white;
+  font-family: 'Poiret One', cursive;
 }
