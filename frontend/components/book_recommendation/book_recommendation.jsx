@@ -30,7 +30,7 @@ class BookRecommendation extends React.Component {
   spinning() {
     return (
       <div className="user-greet-wrapper recommendation-wrapper">
-        <div className="user-greet recommendation-box">
+        <div className="recommendation-box">
           <div className="spinner">
             <i className="fa fa-spinner fa-spin" aria-hidden="true"></i>
           </div>
@@ -42,7 +42,7 @@ class BookRecommendation extends React.Component {
   notClickedRender() {
     return (
       <div className="user-greet-wrapper recommendation-wrapper">
-        <div className="user-greet recommendation-box">
+        <div className="recommendation-box">
           Get Recommendation
           <button className="recommendation-button" onClick = {this.handleClick}>
             GO

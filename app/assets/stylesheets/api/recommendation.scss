@@ -5,20 +5,34 @@
   line-height:50px;
   border: 2px solid #f5f5f5;
   border-radius: 50%;
-  color:#f5f5f5;
+  color:#F06057;
   text-align:center;
   text-decoration:none;
   background: #464646;
   box-shadow: 0 0 3px gray;
   font-size:20px;
   font-weight:bold;
-  margin-top: 11px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
-
+.recommendation-button:hover {
+  background-color: #409d69;
+}
 .recommendation-wrapper {
   min-height: 250px;
 }
 
 .recommendation-box {
   align-items: center;
+  background-color: #464646;
+  color: white;
+  color: #F06057;
+  border-radius: 10px;
+  font-family: 'Rubik', sans-serif;
+  // font-family: 'Russo One', sans-serif;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  padding: 7px;
 }
