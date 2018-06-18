@@ -16,11 +16,10 @@ class BookRecommendation extends React.Component {
   }
 
   handleClick() {
-    this.setState({loading:true,clicked:true}, () => {
+    const clicked = !this.state.clicked;
+    this.setState({loading:true,clicked:clicked}, () => {
       setTimeout(()=>{
-        console.log('before recommendation fetch');
         this.props.getRecommendation().then( ()=>{
-          console.log('after recommendation fetch');
           this.setState({loading:false});
         });
       },1000);
@@ -43,7 +42,9 @@ class BookRecommendation extends React.Component {
     return (
       <div className="user-greet-wrapper recommendation-wrapper">
         <div className="recommendation-box">
-          Get Recommendation
+          <span>
+            Want a Recommendation? Get one based on read books.
+          </span>
           <button className="recommendation-button" onClick = {this.handleClick}>
             GO
           </button>
@@ -83,6 +84,9 @@ class BookRecommendation extends React.Component {
             </Link>
           </div>
           <div className="recc-text">
+            <button className="recommendation-button" onClick={this.handleClick}>
+              <i class="fa fa-undo"></i>
+            </button>
             {text}
           </div>
         </div>

@@ -23,7 +23,8 @@
   width: 85%;
 }
 .recc-text {
+  display: flex;
+  flex-direction: column;
   width:50%;
   font-family: 'Rubik',sans-serif;
-  font-size: 18px;
 }
