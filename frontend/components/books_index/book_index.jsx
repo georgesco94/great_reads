@@ -26,16 +26,17 @@ class BooksIndex extends React.Component{
   fetchMore() {
     let off = this.props.books.length;
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight)  {
-      this.setState({loading: true});
-      setTimeout(() => this.props.fetchBooks(off).then(
-        (action) =>
-        {
-          if(Object.keys(action.books).length === 0){
-            window.removeEventListener('scroll',this.fetchMore);
-          }
-          this.setState({loading: false});}
-      )
-        , 700);
+      this.setState({loading: true},()=>{
+        setTimeout(() => this.props.fetchBooks(off).then(
+          (action) =>
+          {
+            if(Object.keys(action.books).length === 0){
+              window.removeEventListener('scroll',this.fetchMore);
+            }
+            this.setState({loading: false});}
+          )
+          , 700);
+      });
 
     }
   }
@@ -60,7 +61,7 @@ class BooksIndex extends React.Component{
         </div>
 
         <div className="recommendations-column">
-          <BookRecommendationContainer />
+
         </div>
 
       </div>
@@ -71,5 +72,5 @@ class BooksIndex extends React.Component{
 
 }
 
-
+// <BookRecommendationContainer />
 export default withRouter(BooksIndex);
